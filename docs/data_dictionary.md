@@ -46,7 +46,7 @@ Checks: approved + bd + td = 100 (±0.05), which also catches NPCI's reported Au
 | p2p_value_cr | float | Person-to-person value, ₹ crore |
 | p2m_volume_mn | float | Person-to-merchant volume, millions |
 | p2m_value_cr | float | Person-to-merchant value, ₹ crore |
-| p2m_share_pct | float | Calculated: P2M ÷ total volume (used for question 6) |
+| p2m_share_pct | float | Calculated: P2M ÷ total volume (used for question 5, checkout payments at risk) |
 
 ## Totals (estimated)
 
