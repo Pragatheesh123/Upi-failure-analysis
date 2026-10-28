@@ -21,3 +21,4 @@ Every choice we make, and why. These double as interview answers.
 | 2026-10-28 | Rupee cost from real data: failed payments × average payment value (RBI-hosted NPCI files) | Others show ₹ only on synthetic data. Labelled as an estimate. |
 | 2026-10-28 | App market share reduced to one supporting chart | Dozens of public dashboards already cover it. |
 | 2026-10-28 | Never copy code or text from similar projects | Originality, and every line must be explainable in interviews. |
+| 2026-10-28 | Each finding gets a "why": clues from our data (by bank type and size), dated NPCI/RBI evidence, and possible reasons labelled not proven | The data shows what changed, not why. Interviewers test whether you overclaim causes; correlation is not causation. |
