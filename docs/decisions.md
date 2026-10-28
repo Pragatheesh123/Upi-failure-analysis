@@ -15,3 +15,4 @@ Every choice we make, and why. These double as interview answers.
 | 2026-10-28 | Added question 6: merchant (checkout) payments put at risk by system failures | Speaks to e-commerce and quick-commerce roles. It's an estimate (failed payments × P2M share) and is labelled as one. |
 | 2026-10-28 | Power BI practice starts Week 1, 30 min a day on the 2021 sample | Power BI is the weakest tool; Week 4 should be building, not learning. |
 | 2026-10-28 | Laptop: Windows | Power BI Desktop runs natively; no workaround needed. |
+| 2026-10-28 | Timeline shortened: Week 0 + 3 weeks, applying from the end of Week 2 | The pace is set by data collection on the laptop and by Pragatheesh understanding each step. |
