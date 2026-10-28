@@ -9,6 +9,11 @@
 - **Why provisional:** the page went through a summarising tool, not a direct download. Before any finding is published, re-download the archive page on a laptop (`python src/check_sample.py`) and compare. Replace this file if anything differs.
 - **Not included:** Feb 2021 and earlier (page text was cut off), beneficiary tables, app tables.
 
-## Still needed
+## npci_api/  (Jan 2022 → Sep 2026)
 
-- Jan 2022 → latest month: only on the live NPCI statistics page, which loads tables in a browser.
+- **What:** NPCI UPI ecosystem statistics, 4 tables, one JSON file per month per page (10 rows per page), saved exactly as received:
+  `remitter/` (Top 50 remitter banks), `member_vol_val/` (Top 50 member volume and value), `p2p_p2m/`, `apps/`.
+- **From:** `https://www.npci.org.in/api/ecosystem-statistics/get-statistics?product_name=UPI&tab_name=...&year=...&month=...`, the same feed the NPCI website uses. No login.
+- **When:** 28 Oct 2026. Every request (URL, time, HTTP status, saved file) is in `npci_api/manifest.csv`.
+- **Made by:** `python src/collect_npci_api.py` (rerunnable; skips files already saved).
+- **Checks passed:** all 57 months present in all 4 tables; each month has as many rows as NPCI's `totalCount`; the month inside every row matches the file name; remitter Approved + BD + TD = 100% (±0.05) on all 2,850 rows.
