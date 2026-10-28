@@ -16,3 +16,8 @@ Every choice we make, and why. These double as interview answers.
 | 2026-10-28 | Power BI practice starts Week 1, 30 min a day on the 2021 sample | Power BI is the weakest tool; Week 4 should be building, not learning. |
 | 2026-10-28 | Laptop: Windows | Power BI Desktop runs natively; no workaround needed. |
 | 2026-10-28 | Timeline shortened: Week 0 + 3 weeks, applying from the end of Week 2 | The pace is set by data collection on the laptop and by Pragatheesh understanding each step. |
+| 2026-10-28 | New headline: the shift from system failures (TD) to user failures (BD) since 2021 | Similar public projects already rank banks by TD; their reports suggest TD fell sharply while BD rose. A sharper, current insight. |
+| 2026-10-28 | Added refund question: debit reversal success % by bank | NPCI publishes it; none of the similar projects analyse it. Relatable: "is my money stuck?" |
+| 2026-10-28 | Rupee cost from real data: failed payments × average payment value (RBI-hosted NPCI files) | Others show ₹ only on synthetic data. Labelled as an estimate. |
+| 2026-10-28 | App market share reduced to one supporting chart | Dozens of public dashboards already cover it. |
+| 2026-10-28 | Never copy code or text from similar projects | Originality, and every line must be explainable in interviews. |

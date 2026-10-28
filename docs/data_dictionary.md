@@ -2,7 +2,7 @@
 
 Range: Aug 2021 → latest published month (~62 months). Totals are estimates until collection; exact counts go in the README.
 
-## data/clean/upi_bank_monthly.csv — one row per bank per month (~3,100 rows, 16 columns)
+## data/clean/upi_bank_monthly.csv — one row per bank per month (~3,100 rows, 18 columns)
 
 | # | Column | Type | Source | Meaning |
 |---|---|---|---|---|
@@ -22,8 +22,10 @@ Range: Aug 2021 → latest published month (~62 months). Totals are estimates un
 | 14 | td_failed_mn | float | Calculated | total_volume_mn × td_pct / 100 |
 | 15 | is_festival_month | bool | Added | Month is October or November |
 | 16 | above_npci_target | bool | Added | td_pct > 1.0 (NPCI circular OC 149A) |
+| 17 | avg_payment_value_inr | float | RBI-hosted NPCI files | Bank's value ÷ volume as remitter that month (estimate input) |
+| 18 | td_failed_value_cr | float | Calculated | td_failed_mn × avg_payment_value_inr ÷ 10 (₹ crore; an estimate) |
 
-Checks: approved + bd + td = 100 (±0.05); no duplicate (month, bank); missing months listed, never filled.
+Checks: approved + bd + td = 100 (±0.05), which also catches NPCI's reported Aug 2022 decimal error; no duplicate (month, bank); missing months listed, never filled; each month's source recorded.
 
 ## data/clean/upi_app_monthly.csv — one row per app per month (~3,500 rows, 5 columns)
 
@@ -48,4 +50,4 @@ Checks: approved + bd + td = 100 (±0.05); no duplicate (month, bank); missing m
 
 ## Totals (estimated)
 
-~6,660 rows, ~67,500 data points across the three tables.
+~6,660 rows, ~73,700 data points across the three tables.
