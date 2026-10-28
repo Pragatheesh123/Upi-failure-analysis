@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Secrets (database passwords etc.)
+.env
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Office lock files
+~$*
+
+# Raw downloads ARE committed on purpose (they prove where every number came from).
+# If a raw file is ever >50 MB, list it here and note its source URL in docs/.
