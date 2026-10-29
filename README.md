@@ -48,7 +48,7 @@ Python (pandas) · PostgreSQL (window functions) · Excel · Power BI (DAX)
 ## Run it
 
 ```bash
-python -m venv .venv && .venvScriptsctivate
+python -m venv .venv && .venv\Scripts\activate
 pip install -r requirements.txt
 python src/step1_get_raw_data.py     # download NPCI data (skips files already saved)
 python src/step2_clean_data.py       # build data/clean/, stops if any check fails
