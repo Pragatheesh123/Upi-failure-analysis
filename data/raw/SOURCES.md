@@ -15,5 +15,5 @@
   `remitter/` (Top 50 remitter banks), `member_vol_val/` (Top 50 member volume and value), `p2p_p2m/`, `apps/`.
 - **From:** `https://www.npci.org.in/api/ecosystem-statistics/get-statistics?product_name=UPI&tab_name=...&year=...&month=...`, the same feed the NPCI website uses. No login.
 - **When:** 28 Oct 2026. Every request (URL, time, HTTP status, saved file) is in `npci_api/manifest.csv`.
-- **Made by:** `python src/collect_npci_api.py` (rerunnable; skips files already saved).
+- **Made by:** `python src/step1_get_raw_data.py` (rerunnable; skips files already saved).
 - **Checks passed:** all 57 months present in all 4 tables; each month has as many rows as NPCI's `totalCount`; the month inside every row matches the file name; remitter Approved + BD + TD = 100% (±0.05) on all 2,850 rows.

@@ -1,17 +1,16 @@
-"""Download NPCI's monthly UPI tables from the website's own data feed.
-
-npci.org.in is a JavaScript app: the page itself has no tables, it asks
-/api/ecosystem-statistics/get-statistics for them. We call the same address.
-No login is needed. See docs/decisions.md (28 Oct 2026).
-
-Run from the project folder:
-    python src/collect_npci_api.py                     # Jan 2022 -> last month
-    python src/collect_npci_api.py 2026-09 2026-09     # only these months
-
-Every response is saved unchanged in data/raw/npci_api/<table>/<YYYY-MM>_p<page>.json,
-and one line per request goes into data/raw/npci_api/manifest.csv (URL, time, status).
-Files already saved are skipped, so the script can be rerun after an outage.
-"""
+# STEP 1: GET THE RAW DATA
+#
+# Downloads NPCI's monthly UPI tables (Jan 2022 to last month) into data/raw/npci_api/.
+# npci.org.in is a JavaScript app: the page has no tables, it asks
+# /api/ecosystem-statistics/get-statistics for them. We call that same address. No login needed.
+#
+# Run from the project folder:
+#   python src/step1_get_raw_data.py                     # Jan 2022 to last month
+#   python src/step1_get_raw_data.py 2026-09 2026-09     # only these months
+#
+# Every answer is saved exactly as received: data/raw/npci_api/<table>/<YYYY-MM>_p<page>.json
+# Every request is logged in data/raw/npci_api/manifest.csv (time, status, file, URL).
+# Files already saved are skipped, so it can be rerun after NPCI's server goes down.
 import csv
 import datetime
 import json

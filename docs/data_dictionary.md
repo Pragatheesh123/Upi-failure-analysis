@@ -1,7 +1,7 @@
 # Data dictionary
 
 Range: Aug 2021 → Sep 2026 for banks (62 months), Jan 2022 → Sep 2026 for apps and P2P/P2M (57 months).
-Built by `python src/clean_data.py` from `data/raw/`. Name lookups live in `data/reference/`.
+Built by `python src/step2_clean_data.py` from `data/raw/` and `data/bank_names.csv`. `data/clean/upi_clean_data.xlsx` holds the same tables plus a "Changes made" sheet.
 
 ## data/clean/upi_bank_monthly.csv — one row per bank per month (3,100 rows, 22 columns)
 
@@ -9,8 +9,8 @@ Built by `python src/clean_data.py` from `data/raw/`. Name lookups live in `data
 |---|---|---|---|---|
 | 1 | month | YYYY-MM | NPCI | Reporting month |
 | 2 | bank_raw | text | NPCI | Bank name exactly as NPCI wrote it (after the 2 logged corrections) |
-| 3 | bank | text | `bank_lookup.csv` | One standard name per bank (215 spellings → 68 banks) |
-| 4 | bank_type | text | `bank_lookup.csv` | Public, Private, Small finance, Payments bank, Gramin, Foreign, Co-operative, Payment company (PPI), Credit card issuer |
+| 3 | bank | text | `bank_names.csv` | One standard name per bank (215 spellings → 68 banks) |
+| 4 | bank_type | text | `bank_names.csv` | Public, Private, Small finance, Payments bank, Gramin, Foreign, Co-operative, Payment company (PPI), Credit card issuer |
 | 5 | rank_in_source | int | NPCI | Position in NPCI's table (by volume) |
 | 6 | total_volume_mn | float | NPCI | UPI payments started from this bank, millions |
 | 7 | approved_pct | float | NPCI | % approved |
@@ -28,7 +28,7 @@ Built by `python src/clean_data.py` from `data/raw/`. Name lookups live in `data
 | 19 | udir_auto_update_sr_pct | float | NPCI | % of failed payments resolved online through UDIR (recent months only) |
 | 20 | udir_refund_sr_pct | float | NPCI | % of refunds processed online through UDIR (recent months only) |
 | 21 | source | text | Added | `npci_api` (2022 on) or `npci_archive_2021_provisional` (Aug–Dec 2021) |
-| 22 | is_name_corrected | bool | `name_corrections.csv` | True on the 2 rows where NPCI printed the wrong bank name |
+| 22 | is_name_corrected | bool | Cleaning step 3 | True on the 2 rows where NPCI printed the wrong bank name |
 
 Checks (the script stops if any fails): approved + bd + td = 100 (±0.05); no duplicate (month, bank); no missing month; 50 banks every month.
 
@@ -54,9 +54,6 @@ Checks (the script stops if any fails): approved + bd + td = 100 (±0.05); no du
 | total_volume_mn | float | NPCI's monthly total (check: P2P + P2M = total within 1 Mn) |
 | p2m_share_pct | float | Calculated: P2M ÷ (P2P + P2M) × 100 (used for question 5, checkout payments at risk) |
 
-## Reference files (data/reference/)
+## data/bank_names.csv
 
-| File | What it holds |
-|---|---|
-| `bank_lookup.csv` | bank_raw → bank, bank_type. Every spelling NPCI used. A new spelling stops the script until it is added |
-| `name_corrections.csv` | Rows where NPCI printed the wrong bank name, with the evidence for each fix |
+bank_raw → bank, bank_type: every spelling NPCI used in the bank table and the vol & val table (218 spellings → 68 banks). A new spelling stops the cleaning script until it is added. The 2 NPCI name fixes are written inside `src/step2_clean_data.py` (step 3).

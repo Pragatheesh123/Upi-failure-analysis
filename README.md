@@ -34,28 +34,24 @@ See [`docs/week0_data_check.md`](docs/week0_data_check.md) for the data check an
 ## Repo layout
 
 ```
-data/raw/      files exactly as downloaded (HTML/PDF)
-data/clean/    tidy CSVs: one row per bank per month
-src/           Python: collect, parse, clean
-sql/           PostgreSQL schema and analysis queries
-notebooks/     statistics and charts
-excel/         cost-of-failure what-if model
-powerbi/       dashboard (.pbix) and screenshots
-docs/          data check, data dictionary, notes
-tests/         parser tests on real sample rows
+data/raw/            NPCI files exactly as downloaded (never edited)
+data/bank_names.csv  every bank spelling NPCI used -> one standard name and bank type
+data/clean/          clean tables (CSV) + upi_clean_data.xlsx with a "Changes made" sheet
+src/                 step1_get_raw_data.py, step2_clean_data.py
+docs/                decisions log, data dictionary, notes
 ```
 
 ## Tools
 
-Python (pandas, BeautifulSoup, pdfplumber, SciPy) · PostgreSQL (window functions) · Excel · Power BI (DAX)
+Python (pandas) · PostgreSQL (window functions) · Excel · Power BI (DAX)
 
 ## Run it
 
 ```bash
-python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\activate
+python -m venv .venv && .venvScriptsctivate
 pip install -r requirements.txt
-pytest                                  # parser tests
-python src/check_sample.py              # Week 0: what months does NPCI have?
+python src/step1_get_raw_data.py     # download NPCI data (skips files already saved)
+python src/step2_clean_data.py       # build data/clean/, stops if any check fails
 ```
 
 ## Findings
