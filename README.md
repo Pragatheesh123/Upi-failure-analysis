@@ -34,10 +34,13 @@ See [`docs/week0_data_check.md`](docs/week0_data_check.md) for the data check an
 ## Repo layout
 
 ```
-data/raw/            NPCI files exactly as downloaded (never edited)
+data/raw/            NPCI files exactly as downloaded, plus one raw CSV per table (values as text)
 data/bank_names.csv  every bank spelling NPCI used -> one standard name and bank type
-data/clean/          clean tables (CSV) + upi_clean_data.xlsx with a "Changes made" sheet
-src/                 step1_get_raw_data.py, step2_clean_data.py
+data/clean/          clean tables (CSV) used by SQL and Power BI
+python/              step1_get_raw_data.py, step2_clean_data.py
+sql/                 PostgreSQL tables and queries (next)
+excel/               upi_clean_data.xlsx (clean tables + "Changes made"), cost model later
+powerbi/             dashboard (later)
 docs/                decisions log, data dictionary, notes
 ```
 
@@ -50,8 +53,8 @@ Python (pandas) · PostgreSQL (window functions) · Excel · Power BI (DAX)
 ```bash
 python -m venv .venv && .venv\Scripts\activate
 pip install -r requirements.txt
-python src/step1_get_raw_data.py     # download NPCI data (skips files already saved)
-python src/step2_clean_data.py       # build data/clean/, stops if any check fails
+python python/step1_get_raw_data.py     # download NPCI data (skips files already saved)
+python python/step2_clean_data.py       # build data/clean/, stops if any check fails
 ```
 
 ## Findings

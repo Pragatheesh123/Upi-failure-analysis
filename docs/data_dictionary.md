@@ -1,7 +1,7 @@
 # Data dictionary
 
 Range: Aug 2021 → Sep 2026 for banks (62 months), Jan 2022 → Sep 2026 for apps and P2P/P2M (57 months).
-Built by `python src/step2_clean_data.py` from `data/raw/` and `data/bank_names.csv`. `data/clean/upi_clean_data.xlsx` holds the same tables plus a "Changes made" sheet.
+Built by `python python/step2_clean_data.py` from `data/raw/` and `data/bank_names.csv`. `excel/upi_clean_data.xlsx` holds the same tables plus a "Changes made" sheet.
 
 ## data/clean/upi_bank_monthly.csv — one row per bank per month (3,100 rows, 22 columns)
 
@@ -56,4 +56,4 @@ Checks (the script stops if any fails): approved + bd + td = 100 (±0.05); no du
 
 ## data/bank_names.csv
 
-bank_raw → bank, bank_type: every spelling NPCI used in the bank table and the vol & val table (218 spellings → 68 banks). A new spelling stops the cleaning script until it is added. The 2 NPCI name fixes are written inside `src/step2_clean_data.py` (step 3).
+bank_raw → bank, bank_type: every spelling NPCI used in the bank table and the vol & val table (218 spellings → 68 banks). A new spelling stops the cleaning script until it is added. The 2 NPCI name fixes are written inside `python/step2_clean_data.py` (step 3).

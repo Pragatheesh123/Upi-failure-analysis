@@ -10,9 +10,9 @@ Goal: every line can be explained in an interview. Simple, but nothing downgrade
 - Only standard tools: pandas, SQL window functions, basic DAX.
 
 ## Python
-- Plain functions and loops; no classes unless clearly needed.
+- Cleaning and analysis: plain pandas, top to bottom, a comment per step. No `def` functions; repeated work goes in a plain `for` loop. Read data with `pd.read_csv`.
 - No `pathlib`, type hints, `from __future__` or other extras. Paths are plain strings relative to the project folder (`"data/clean/upi_bank_monthly.csv"`); run scripts from the project folder.
-- Steps in order: load → clean → check → save, each its own function.
+- Steps in order: load → clean → check → save, each a commented block.
 - Every check that matters stays (percentages add to 100, no duplicate bank-months, missing months listed).
 
 ## SQL (PostgreSQL)

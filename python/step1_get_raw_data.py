@@ -5,8 +5,8 @@
 # /api/ecosystem-statistics/get-statistics for them. We call that same address. No login needed.
 #
 # Run from the project folder:
-#   python src/step1_get_raw_data.py                     # Jan 2022 to last month
-#   python src/step1_get_raw_data.py 2026-09 2026-09     # only these months
+#   python python/step1_get_raw_data.py                     # Jan 2022 to last month
+#   python python/step1_get_raw_data.py 2026-09 2026-09     # only these months
 #
 # Every answer is saved exactly as received: data/raw/npci_api/<table>/<YYYY-MM>_p<page>.json
 # Every request is logged in data/raw/npci_api/manifest.csv (time, status, file, URL).
@@ -133,6 +133,19 @@ def main():
         for month in months:
             collect_month(folder, tab_name, type_name, month)
     print(f"\nDone. Request log: {MANIFEST}")
+
+    # Put all pages of each table into one CSV (data/raw/npci_<table>.csv) so cleaning can
+    # just use pd.read_csv. Values are kept exactly as NPCI sent them, as text.
+    for folder, tab_name, type_name in TABLES:
+        rows = []
+        for file_name in sorted(os.listdir(f"{OUT_DIR}/{folder}")):
+            with open(f"{OUT_DIR}/{folder}/{file_name}", encoding="utf-8") as f:
+                results = json.load(f)["data"]["results"]
+            for row in results:
+                row["file_month"] = file_name[:7]  # file names start with the month, e.g. 2026-09_p1.json
+                rows.append(row)
+        pd.DataFrame(rows).to_csv(f"data/raw/npci_{folder}.csv", index=False)
+        print(f"Saved data/raw/npci_{folder}.csv ({len(rows)} rows)")
 
 
 main()
