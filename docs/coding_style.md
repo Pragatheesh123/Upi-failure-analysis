@@ -11,6 +11,7 @@ Goal: every line can be explained in an interview. Simple, but nothing downgrade
 
 ## Python
 - Plain functions and loops; no classes unless clearly needed.
+- No `pathlib`, type hints, `from __future__` or other extras. Paths are plain strings relative to the project folder (`"data/clean/upi_bank_monthly.csv"`); run scripts from the project folder.
 - Steps in order: load → clean → check → save, each its own function.
 - Every check that matters stays (percentages add to 100, no duplicate bank-months, missing months listed).
 

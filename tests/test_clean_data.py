@@ -1,12 +1,9 @@
-from pathlib import Path
 import sys
 
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+sys.path.insert(0, "src")
 from clean_data import name_key, to_number  # noqa: E402
-
-CLEAN_BANKS = Path(__file__).resolve().parents[1] / "data" / "clean" / "upi_bank_monthly.csv"
 
 
 def test_to_number_reads_npci_text():
@@ -23,9 +20,9 @@ def test_name_key_ignores_case_punctuation_and_ltd():
 
 
 def test_clean_bank_table_matches_source():
-    banks = pd.read_csv(CLEAN_BANKS)
-    sbi = banks[(banks.month == "2026-09") & (banks.bank == "State Bank of India")].iloc[0]
+    banks = pd.read_csv("data/clean/upi_bank_monthly.csv")
+    sbi = banks[(banks["month"] == "2026-09") & (banks["bank"] == "State Bank of India")].iloc[0]
     # Values as published by NPCI for Sep 2026
-    assert (sbi.approved_pct, sbi.bd_pct, sbi.td_pct) == (90.34, 9.28, 0.38)
-    assert sbi.bank_type == "Public"
+    assert (sbi["approved_pct"], sbi["bd_pct"], sbi["td_pct"]) == (90.34, 9.28, 0.38)
+    assert sbi["bank_type"] == "Public"
     assert not banks.duplicated(["month", "bank"]).any()
