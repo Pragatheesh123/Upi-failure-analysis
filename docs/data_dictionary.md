@@ -41,14 +41,13 @@ From NPCI's "Top 50 Member Vol & Val" table (Jan 2022 on), with standard bank na
 
 | Column | Meaning |
 |---|---|
+| year | First 4 characters of month |
 | approved_mn, bd_failed_mn, td_failed_mn | total_volume_mn × approved_pct / bd_pct / td_pct ÷ 100 |
 | is_festival_month | Month is October or November |
-| above_npci_target | td_pct > 1.0 (NPCI circular OC 149A) |
+| above_npci_target | td_pct > 1 (NPCI circular OC 149A) |
 | bank_group | bank_type for comparisons: Public, Private, Payments bank, Gramin, Small finance, Foreign, and Others (Co-operative + Payment company (PPI) + Credit card issuer) |
-| avg_payment_value_inr | value_cr × 10 ÷ approved_volume_mn, joined only where the value table's volume matches approved_mn within 2%; blank otherwise (and for 2021). Covers 94.7% of system-failed payments |
-| td_failed_value_cr | td_failed_mn × avg_payment_value_inr ÷ 10 (₹ crore; an estimate) |
 
-Checks (the script stops if any fails): approved + bd + td = 100 (±0.05); no duplicate (month, bank); no missing month; 50 banks every month.
+The ₹ value of failures (question 4) is worked out in that question's query: join `bank_value_monthly` on month and bank where its approved_volume_mn is within 2% of approved_mn; average payment = value_cr × 10 ÷ approved_volume_mn. This covers 94.7% of system-failed payments.
 
 ## data/clean/upi_app_monthly.csv — one row per app per month (4,349 rows, 5 columns)
 
