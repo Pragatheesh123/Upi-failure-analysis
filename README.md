@@ -39,7 +39,7 @@ data/bank_names.csv  every bank spelling NPCI used -> one standard name and bank
 data/clean/          clean tables (CSV) used by SQL and Power BI
 python/              step1_get_raw_data.py, step2_clean_data.py
 sql/                 PostgreSQL tables and queries (next)
-excel/               upi_clean_data.xlsx (clean tables + "Changes made"), cost model later
+excel/               upi_clean_data.xlsx (changes made, before vs after, clean tables), cost model later
 powerbi/             dashboard (later)
 docs/                decisions log, data dictionary, notes
 ```

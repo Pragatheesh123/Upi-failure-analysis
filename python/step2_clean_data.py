@@ -2,7 +2,7 @@
 #
 # Input:  the raw NPCI tables in data/raw/ and the bank name list data/bank_names.csv
 # Output: data/clean/upi_bank_monthly.csv, upi_app_monthly.csv, upi_p2p_p2m_monthly.csv
-#         excel/upi_clean_data.xlsx  (the same tables + a sheet listing every change made)
+#         excel/upi_clean_data.xlsx  (before vs after comparison, every change made, clean tables)
 #
 # Run from the project folder:  python python/step2_clean_data.py
 # Nothing is guessed or filled in. If a check fails, the script stops.
@@ -16,36 +16,38 @@ changes = []  # each step adds one line here; it becomes the "Changes made" shee
 # BANK TABLE
 # =====================================================================
 
-# Step 1: read the raw bank table (Jan 2022 to Sep 2026). dtype=str keeps every value as NPCI wrote it.
+# Step 1: read the raw bank table (Jan 2022 to Sep 2026), keep the columns we need, give them clear names.
+# dtype=str keeps every value exactly as NPCI wrote it.
 raw = pd.read_csv("data/raw/npci_remitter.csv", dtype=str)
-
-banks = pd.DataFrame()
-banks["month"] = raw["file_month"]
-banks["bank_raw"] = raw["upi_remitter_banks"].str.strip()   # some names had extra spaces or line breaks
-banks["rank_in_source"] = raw["sr_no"]
-banks["total_volume_mn"] = raw["total_volume_in_mn"]
-banks["approved_pct"] = raw["approved_percent"]
-banks["bd_pct"] = raw["bd_percent"]
-banks["td_pct"] = raw["td_percent"]
-banks["debit_reversal_count_mn"] = raw["total_debit_reversal_count_in_mn"]
-banks["debit_reversal_success_pct"] = raw["debit_reversal_success_percent"]
-banks["udir_auto_update_sr_pct"] = raw["udir_auto_update_sr_percent"]
-banks["udir_refund_sr_pct"] = raw["udir_refund_sr_percent"]
-banks["source"] = "npci_api"
-
-# NPCI writes numbers as text, like "7,47,792.52" or "90.34%": remove , and % and turn them into numbers.
-# Anything that still isn't a number (like "-") becomes blank, never a guess.
+# NPCI's own "month" column only says "Jan"; file_month ("2022-01") replaces it
+banks = raw.drop(columns="month").rename(columns={
+    "file_month": "month",
+    "upi_remitter_banks": "bank_raw",
+    "sr_no": "rank_in_source",
+    "total_volume_in_mn": "total_volume_mn",
+    "approved_percent": "approved_pct",
+    "bd_percent": "bd_pct",
+    "td_percent": "td_pct",
+    "total_debit_reversal_count_in_mn": "debit_reversal_count_mn",
+    "debit_reversal_success_percent": "debit_reversal_success_pct",
+    "udir_auto_update_sr_percent": "udir_auto_update_sr_pct",
+    "udir_refund_sr_percent": "udir_refund_sr_pct",
+})
 number_columns = ["rank_in_source", "total_volume_mn", "approved_pct", "bd_pct", "td_pct",
                   "debit_reversal_count_mn", "debit_reversal_success_pct",
                   "udir_auto_update_sr_pct", "udir_refund_sr_pct"]
-for column in number_columns:
-    text = banks[column].str.replace(",", "").str.replace("%", "").str.strip()
-    banks[column] = pd.to_numeric(text, errors="coerce")
+banks = banks[["month", "bank_raw"] + number_columns]
+banks["bank_raw"] = banks["bank_raw"].str.strip()   # some names had extra spaces or line breaks
+banks["source"] = "npci_api"
+banks["npci_row"] = range(len(banks))   # row number in the raw file, to line up before vs after in Excel
+
+# NPCI writes numbers as text, like "7,47,792.52" or "90.34%": remove , and % then turn them into numbers.
+# Anything that still isn't a number (like "-") becomes blank, never a guess.
+banks[number_columns] = banks[number_columns].replace({",": "", "%": ""}, regex=True).apply(pd.to_numeric, errors="coerce")
 
 print(f"Step 1: read {len(banks)} bank rows and turned text into numbers")
 changes.append({"Step": 1, "What we did": "Read the raw bank table and turned text into numbers",
-                "Why": "NPCI writes numbers as text, like 90.34%", "Rows": len(banks),
-                "Example": f'"{raw["approved_percent"][0]}" -> {banks["approved_pct"][0]}'})
+                "Why": 'NPCI writes numbers as text, like "90.34%"', "Rows": len(banks)})
 
 
 # Step 2: add Aug-Dec 2021 from the earlier archive copy (marked provisional)
@@ -57,31 +59,27 @@ banks = pd.concat([old, banks], ignore_index=True)
 
 print(f"Step 2: added {len(old)} rows for Aug-Dec 2021")
 changes.append({"Step": 2, "What we did": "Added Aug-Dec 2021 from the NPCI archive copy, marked provisional",
-                "Why": "The data feed starts in Jan 2022; 2021 adds one more festival season",
-                "Rows": len(old), "Example": "source = npci_archive_2021_provisional"})
+                "Why": "The data feed starts in Jan 2022; 2021 adds one more festival season", "Rows": len(old)})
 
 
 # Step 3: fix 2 rows where NPCI printed the wrong bank name.
 # In Mar and Jun 2026 "Slice" is listed twice and one bank is missing. The extra row's volume,
 # approval % and rank match the missing bank in the months before and after. Only the name changes.
+name_fixes = [
+    ("2026-03", 36, "Tamilnad Mercantile Bank Limited"),
+    ("2026-06", 38, "Ujjivan Small Finance Bank Limited"),
+]
 banks["is_name_corrected"] = False
-
-row = (banks["month"] == "2026-03") & (banks["rank_in_source"] == 36)
-if banks.loc[row, "bank_raw"].tolist() != ["Slice Small Finance Bank Limited"]:
-    raise SystemExit("Name fix for Mar 2026 rank 36 no longer matches the raw data")
-banks.loc[row, "bank_raw"] = "Tamilnad Mercantile Bank Limited"
-banks.loc[row, "is_name_corrected"] = True
-
-row = (banks["month"] == "2026-06") & (banks["rank_in_source"] == 38)
-if banks.loc[row, "bank_raw"].tolist() != ["Slice Small Finance Bank Limited"]:
-    raise SystemExit("Name fix for Jun 2026 rank 38 no longer matches the raw data")
-banks.loc[row, "bank_raw"] = "Ujjivan Small Finance Bank Limited"
-banks.loc[row, "is_name_corrected"] = True
+for month, rank, right_name in name_fixes:
+    row = (banks["month"] == month) & (banks["rank_in_source"] == rank)
+    if banks.loc[row, "bank_raw"].tolist() != ["Slice Small Finance Bank Limited"]:
+        raise SystemExit(f"Name fix for {month} rank {rank} no longer matches the raw data")
+    banks.loc[row, "bank_raw"] = right_name
+    banks.loc[row, "is_name_corrected"] = True
 
 print("Step 3: fixed 2 wrong bank names from NPCI")
 changes.append({"Step": 3, "What we did": "Fixed 2 rows where NPCI printed the wrong bank name",
-                "Why": "Slice was listed twice while TMB (Mar 2026) and Ujjivan (Jun 2026) were missing",
-                "Rows": 2, "Example": "Mar 2026 rank 36: Slice -> Tamilnad Mercantile Bank"})
+                "Why": "Slice was listed twice while TMB (Mar 2026) and Ujjivan (Jun 2026) were missing", "Rows": 2})
 
 
 # Step 4: one standard name and a bank type for every spelling, from data/bank_names.csv
@@ -92,12 +90,10 @@ unknown_names = banks[banks["bank"].isna()]["bank_raw"].unique()
 if len(unknown_names) > 0:
     raise SystemExit(f"New spelling(s), add them to data/bank_names.csv: {list(unknown_names)}")
 
-spellings = banks["bank_raw"].nunique()
-print(f"Step 4: {spellings} spellings -> {banks['bank'].nunique()} banks, each with a bank type")
-changes.append({"Step": 4, "What we did": f"Gave every bank one standard name and a type ({spellings} spellings -> {banks['bank'].nunique()} banks)",
-                "Why": "NPCI spells the same bank differently across months",
-                "Rows": int((banks["bank_raw"] != banks["bank"]).sum()),
-                "Example": '"HDFC BANK LTD." and "Hdfc Bank Ltd" -> "HDFC Bank", type Private'})
+print(f"Step 4: {banks['bank_raw'].nunique()} spellings -> {banks['bank'].nunique()} banks, each with a bank type")
+changes.append({"Step": 4, "What we did": f"Gave every bank one standard name and a type ({banks['bank_raw'].nunique()} spellings -> {banks['bank'].nunique()} banks)",
+                "Why": 'NPCI spells the same bank differently, e.g. "HDFC BANK LTD" and "Hdfc Bank Ltd"',
+                "Rows": int((banks["bank_raw"] != banks["bank"]).sum())})
 
 
 # Step 5: calculated columns
@@ -108,21 +104,19 @@ banks["is_festival_month"] = banks["month"].str[5:].isin(["10", "11"])   # Octob
 banks["above_npci_target"] = banks["td_pct"] > 1.0   # NPCI target: TD below 1% (circular OC 149A)
 
 print("Step 5: added failed-payment counts, festival month and above-target columns")
-changes.append({"Step": 5, "What we did": "Added approved_mn, bd_failed_mn, td_failed_mn, is_festival_month, above_npci_target",
-                "Why": "Counts (not just %) are needed to add banks up and to cost failures",
-                "Rows": len(banks), "Example": "td_failed_mn = total_volume_mn x td_pct / 100"})
+changes.append({"Step": 5, "What we did": "Added approved_mn, bd_failed_mn, td_failed_mn (= total_volume_mn x td_pct / 100), is_festival_month, above_npci_target",
+                "Why": "Counts (not just %) are needed to add banks up and to cost failures", "Rows": len(banks)})
 
 
 # Step 6: average payment value (Rs) per bank, from NPCI's "Top 50 Member Vol & Val" table.
 # That table counts approved payments only, so a bank's value is used only when its volume matches
 # our approved_mn within 2%. Some months in it have banks swapped (e.g. Axis and Yes, early 2023).
 raw_values = pd.read_csv("data/raw/npci_member_vol_val.csv", dtype=str)
-
-values = pd.DataFrame()
-values["month"] = raw_values["file_month"]
-values["bank_raw"] = raw_values["bank_name"].str.strip()
-values["vv_volume_mn"] = pd.to_numeric(raw_values["volume_mn"].str.replace(",", ""), errors="coerce")
-values["vv_value_cr"] = pd.to_numeric(raw_values["value_cr"].str.replace(",", ""), errors="coerce")
+values = raw_values.drop(columns="month").rename(columns={"file_month": "month", "bank_name": "bank_raw",
+                                    "volume_mn": "vv_volume_mn", "value_cr": "vv_value_cr"})
+values = values[["month", "bank_raw", "vv_volume_mn", "vv_value_cr"]]
+values["bank_raw"] = values["bank_raw"].str.strip()
+values[["vv_volume_mn", "vv_value_cr"]] = values[["vv_volume_mn", "vv_value_cr"]].replace(",", "", regex=True).apply(pd.to_numeric, errors="coerce")
 values = values.merge(bank_names[["bank_raw", "bank"]], on="bank_raw")   # also drops the "Total" and "Others" rows
 values["avg_payment_value_inr"] = values["vv_value_cr"] * 10 / values["vv_volume_mn"]   # 1 crore = 10 million
 values = values[["month", "bank", "vv_volume_mn", "avg_payment_value_inr"]]
@@ -136,9 +130,24 @@ banks["td_failed_value_cr"] = banks["td_failed_mn"] * banks["avg_payment_value_i
 
 with_value = int(banks["avg_payment_value_inr"].notna().sum())
 print(f"Step 6: added average payment value for {with_value} bank-months")
-changes.append({"Step": 6, "What we did": "Added average payment value (Rs) and Rs crore value of system-failed payments",
-                "Why": "Question 4: cost of failures. Used only where both NPCI tables agree",
-                "Rows": with_value, "Example": "avg_payment_value_inr = value_cr x 10 / volume_mn"})
+changes.append({"Step": 6, "What we did": "Added average payment value (Rs) = value_cr x 10 / volume_mn, and the Rs crore value of system-failed payments",
+                "Why": "Question 4: cost of failures. Used only where both NPCI tables agree", "Rows": with_value})
+
+
+# Before vs after (for the Excel file): each raw NPCI row, as text, next to the same row after cleaning
+before = raw[["upi_remitter_banks", "approved_percent", "bd_percent", "td_percent"]].rename(columns={
+    "upi_remitter_banks": "Bank (NPCI)", "approved_percent": "Approved % (NPCI)",
+    "bd_percent": "BD % (NPCI)", "td_percent": "TD % (NPCI)"})
+before["npci_row"] = range(len(before))
+after = banks[["npci_row", "month", "rank_in_source", "bank", "bank_type", "is_name_corrected",
+               "approved_pct", "bd_pct", "td_pct"]].rename(columns={
+    "month": "Month", "rank_in_source": "Rank", "bank": "Bank (clean)", "bank_type": "Bank type",
+    "is_name_corrected": "Name fixed by us", "approved_pct": "Approved % (clean)",
+    "bd_pct": "BD % (clean)", "td_pct": "TD % (clean)"})
+compare = before.merge(after, on="npci_row").sort_values("npci_row")
+compare["Name changed"] = compare["Bank (NPCI)"].str.strip() != compare["Bank (clean)"]
+compare = compare[["Month", "Rank", "Bank (NPCI)", "Bank (clean)", "Name changed", "Name fixed by us", "Bank type",
+                   "Approved % (NPCI)", "Approved % (clean)", "BD % (NPCI)", "BD % (clean)", "TD % (NPCI)", "TD % (clean)"]]
 
 
 # Fixed column order, sorted by month and rank
@@ -158,14 +167,11 @@ banks = banks.sort_values(["month", "rank_in_source"]).reset_index(drop=True)
 
 # Step 7: one row per app per month, with its share of all app payments
 raw_apps = pd.read_csv("data/raw/npci_apps.csv", dtype=str)
-
-apps = pd.DataFrame()
-apps["month"] = raw_apps["file_month"]
-# NPCI renamed the column in later months, so take whichever one has the name
-apps["app_raw"] = raw_apps["application_name"].fillna(raw_apps["upi_application_name"])
+apps = raw_apps.drop(columns="month").rename(columns={"file_month": "month", "total_volume_mn": "volume_mn", "total_value_cr": "value_cr"})
+# NPCI renamed the name column in later months, so take whichever one has the name
+apps["app_raw"] = apps["application_name"].fillna(apps["upi_application_name"])
 apps["app_raw"] = apps["app_raw"].str.replace("#", "").str.strip()   # "#" is a footnote mark, not part of the name
-apps["volume_mn"] = pd.to_numeric(raw_apps["total_volume_mn"].str.replace(",", ""), errors="coerce")
-apps["value_cr"] = pd.to_numeric(raw_apps["total_value_cr"].str.replace(",", ""), errors="coerce")
+apps[["volume_mn", "value_cr"]] = apps[["volume_mn", "value_cr"]].replace(",", "", regex=True).apply(pd.to_numeric, errors="coerce")
 
 # Same app, different spelling ("PhonePe" / "Phone Pe", "... Digital" / "... Digital Limited"):
 # compare names without case, spaces, dots or "limited", then use the spelling NPCI used most recently
@@ -175,12 +181,12 @@ apps["app"] = apps["app_key"].map(latest_spelling)
 
 apps["app_share_pct"] = apps["volume_mn"] / apps.groupby("month")["volume_mn"].transform("sum") * 100
 apps = apps.sort_values(["month", "volume_mn"], ascending=[True, False])
+app_names = apps.groupby(["app_raw", "app"]).size().reset_index(name="rows")   # for the comparison sheet
 apps = apps[["month", "app", "volume_mn", "value_cr", "app_share_pct"]].reset_index(drop=True)
 
 print(f"Step 7: apps cleaned, {apps['app'].nunique()} apps")
 changes.append({"Step": 7, "What we did": f"Apps: removed footnote marks, one name per app ({apps['app'].nunique()} apps), added share %",
-                "Why": "Supporting chart on app market share", "Rows": len(apps),
-                "Example": '"Phone Pe #" -> "Phone Pe"'})
+                "Why": "Supporting chart on app market share", "Rows": len(apps)})
 
 
 # =====================================================================
@@ -189,23 +195,18 @@ changes.append({"Step": 7, "What we did": f"Apps: removed footnote marks, one na
 
 # Step 8: person-to-person (P2P) vs person-to-merchant (P2M = shop/checkout) payments per month
 raw_p2p = pd.read_csv("data/raw/npci_p2p_p2m.csv", dtype=str)
-
-p2p = pd.DataFrame()
-p2p["month"] = raw_p2p["file_month"]
-p2p["p2p_volume_mn"] = raw_p2p["p_2_p_volume_mn"]
-p2p["p2p_value_cr"] = raw_p2p["p_2_p_value_cr"]
-p2p["p2m_volume_mn"] = raw_p2p["p_2_m_volume_mn"]
-p2p["p2m_value_cr"] = raw_p2p["p_2_m_value_cr"]
-p2p["total_volume_mn"] = raw_p2p["total_volume_mn"]
-for column in ["p2p_volume_mn", "p2p_value_cr", "p2m_volume_mn", "p2m_value_cr", "total_volume_mn"]:
-    p2p[column] = pd.to_numeric(p2p[column].str.replace(",", ""), errors="coerce")
+p2p = raw_p2p.drop(columns="month").rename(columns={"file_month": "month",
+                              "p_2_p_volume_mn": "p2p_volume_mn", "p_2_p_value_cr": "p2p_value_cr",
+                              "p_2_m_volume_mn": "p2m_volume_mn", "p_2_m_value_cr": "p2m_value_cr"})
+p2p_numbers = ["p2p_volume_mn", "p2p_value_cr", "p2m_volume_mn", "p2m_value_cr", "total_volume_mn"]
+p2p = p2p[["month"] + p2p_numbers]
+p2p[p2p_numbers] = p2p[p2p_numbers].replace(",", "", regex=True).apply(pd.to_numeric, errors="coerce")
 p2p["p2m_share_pct"] = p2p["p2m_volume_mn"] / (p2p["p2p_volume_mn"] + p2p["p2m_volume_mn"]) * 100
 p2p = p2p.sort_values("month").reset_index(drop=True)
 
 print("Step 8: P2P/P2M cleaned, added the merchant (P2M) share %")
 changes.append({"Step": 8, "What we did": "P2P/P2M: turned text into numbers and added the merchant (P2M) share %",
-                "Why": "Question 5: how many checkout payments were put at risk", "Rows": len(p2p),
-                "Example": f'"{raw_p2p["p_2_m_volume_mn"].iloc[-1]}" -> {p2p["p2m_volume_mn"].iloc[-1]}'})
+                "Why": "Question 5: how many checkout payments were put at risk", "Rows": len(p2p)})
 
 
 # =====================================================================
@@ -222,10 +223,10 @@ if banks.duplicated(["month", "bank"]).any():
     raise SystemExit(f"Bank listed twice in a month:\n{banks[banks.duplicated(['month', 'bank'], keep=False)]}")
 
 # Check 3: no month missing, and exactly 50 banks in every month
-all_months = pd.period_range("2021-08", banks["month"].max(), freq="M").astype(str)
-missing_months = sorted(set(all_months) - set(banks["month"]))
-if missing_months:
-    raise SystemExit(f"Missing months: {missing_months}")
+all_months = pd.Series(pd.period_range("2021-08", banks["month"].max(), freq="M").astype(str))
+missing_months = all_months[~all_months.isin(banks["month"])]
+if len(missing_months) > 0:
+    raise SystemExit(f"Missing months: {list(missing_months)}")
 banks_per_month = banks.groupby("month").size()
 if (banks_per_month != 50).any():
     raise SystemExit(f"Months without 50 banks:\n{banks_per_month[banks_per_month != 50]}")
@@ -246,18 +247,25 @@ banks.to_csv("data/clean/upi_bank_monthly.csv", index=False)
 apps.to_csv("data/clean/upi_app_monthly.csv", index=False)
 p2p.to_csv("data/clean/upi_p2p_p2m_monthly.csv", index=False)
 
-# Excel copy to look at: the changes first, then the bank-name list, then the clean tables
-names_used = banks.groupby(["bank_raw", "bank", "bank_type"]).size().reset_index(name="rows")
+# Excel copy to look at: before vs after first, then the clean tables
+bank_name_changes = banks.groupby(["bank_raw", "bank", "bank_type"]).size().reset_index(name="rows")
+bank_name_changes.columns = ["Bank (NPCI spelling)", "Bank (clean)", "Bank type", "Rows"]
+app_names.columns = ["App (NPCI spelling)", "App (clean)", "Rows"]
+
 with pd.ExcelWriter("excel/upi_clean_data.xlsx") as excel:
     pd.DataFrame(changes).to_excel(excel, sheet_name="Changes made", index=False)
-    names_used.to_excel(excel, sheet_name="Bank names", index=False)
-    banks.to_excel(excel, sheet_name="Banks", index=False)
-    apps.to_excel(excel, sheet_name="Apps", index=False)
-    p2p.to_excel(excel, sheet_name="P2P P2M", index=False)
-    # Make the columns wide enough to read
+    compare.to_excel(excel, sheet_name="Banks before vs after", index=False)
+    bank_name_changes.to_excel(excel, sheet_name="Bank names before vs after", index=False)
+    app_names.to_excel(excel, sheet_name="App names before vs after", index=False)
+    banks.to_excel(excel, sheet_name="Clean banks", index=False)
+    apps.to_excel(excel, sheet_name="Clean apps", index=False)
+    p2p.to_excel(excel, sheet_name="Clean P2P P2M", index=False)
+    # Wider columns and a frozen header row, so the sheets are easy to read
     for sheet in excel.sheets.values():
+        sheet.freeze_panes = "A2"
         for column in sheet.columns:
-            width = max(len(str(cell.value or "")) for cell in column[:200])
-            sheet.column_dimensions[column[0].column_letter].width = min(width + 2, 60)
+            sheet.column_dimensions[column[0].column_letter].width = 20
+    excel.sheets["Changes made"].column_dimensions["B"].width = 100   # long sentences
+    excel.sheets["Changes made"].column_dimensions["C"].width = 80
 
 print(f"Saved data/clean/ (banks {len(banks)}, apps {len(apps)}, P2P/P2M {len(p2p)} rows) and excel/upi_clean_data.xlsx")
