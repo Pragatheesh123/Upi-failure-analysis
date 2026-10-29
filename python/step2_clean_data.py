@@ -1,5 +1,6 @@
 # STEP 2: CLEAN THE DATA
 # Takes the raw NPCI files in data/raw/ and saves clean files in data/clean/ and excel/.
+# Only cleaning here. Calculations (failed payments, Rs value) are done in SQL: sql/02_bank_monthly_calc.sql
 # Run: python python/step2_clean_data.py
 # If anything looks wrong, the script stops with a message.
 
@@ -79,42 +80,22 @@ if len(unknown_names) > 0:
 print("4.", banks["bank_raw"].nunique(), "spellings ->", banks["bank"].nunique(), "banks")
 
 
-# ---------- 5. New columns ----------
-# Number of payments (in millions) = total payments x percentage / 100
-banks["approved_mn"] = banks["total_volume_mn"] * banks["approved_pct"] / 100
-banks["bd_failed_mn"] = banks["total_volume_mn"] * banks["bd_pct"] / 100   # failed because of the user
-banks["td_failed_mn"] = banks["total_volume_mn"] * banks["td_pct"] / 100   # failed because of the system
-banks["is_festival_month"] = banks["month"].str[5:].isin(["10", "11"])      # October or November
-banks["above_npci_target"] = banks["td_pct"] > 1.0                          # NPCI wants TD below 1%
-print("5. Added failed payment counts")
-
-
-# ---------- 6. Average payment value in Rs ----------
-# A second NPCI table gives each bank's approved payments and their value in Rs crore.
-# Average payment = value / number of payments.
+# ---------- 5. Bank payment values ----------
+# A second NPCI table: each bank's approved payments (in millions) and their value (in Rs crore).
+# SQL uses it later to work out the average payment in Rs.
 raw_values = pd.read_csv("data/raw/npci_member_vol_val.csv", dtype=str)
 values = raw_values.drop(columns="month").rename(columns={"file_month": "month", "bank_name": "bank_raw",
-                                                          "volume_mn": "vv_volume_mn", "value_cr": "vv_value_cr"})
-values = values[["month", "bank_raw", "vv_volume_mn", "vv_value_cr"]]
+                                                          "volume_mn": "approved_volume_mn"})
+values = values[["month", "bank_raw", "approved_volume_mn", "value_cr"]]
 values["bank_raw"] = values["bank_raw"].str.strip()
-for column in ["vv_volume_mn", "vv_value_cr"]:
+for column in ["approved_volume_mn", "value_cr"]:
     values[column] = pd.to_numeric(values[column].str.replace(",", ""), errors="coerce")
 values = values.merge(bank_names[["bank_raw", "bank"]], on="bank_raw")   # standard names (also drops "Total" rows)
-values["avg_payment_value_inr"] = values["vv_value_cr"] * 10 / values["vv_volume_mn"]   # 1 crore = 10 million
-values = values[["month", "bank", "vv_volume_mn", "avg_payment_value_inr"]]
-
-banks = banks.merge(values, on=["month", "bank"], how="left")
-# Use the value only if both tables agree on the number of approved payments (within 2%)
-tables_agree = (banks["vv_volume_mn"] / banks["approved_mn"] - 1).abs() <= 0.02
-banks.loc[~tables_agree, "avg_payment_value_inr"] = None
-# If a name appears twice in the second table we get 2 rows: keep the one that agreed
-banks = banks.sort_values("avg_payment_value_inr").drop_duplicates(["month", "bank", "rank_in_source"])
-# Value of payments that failed because of the system, in Rs crore
-banks["td_failed_value_cr"] = banks["td_failed_mn"] * banks["avg_payment_value_inr"] / 10
-print("6. Added average payment value for", banks["avg_payment_value_inr"].notna().sum(), "rows")
+values = values[["month", "bank_raw", "bank", "approved_volume_mn", "value_cr"]].sort_values(["month", "bank"])
+print("5.", len(values), "bank value rows")
 
 
-# ---------- 7. Before vs after (for Excel) ----------
+# ---------- 6. Before vs after (for Excel) ----------
 # NPCI's original value and our clean value side by side. Red = we changed it.
 after = banks[banks["source"] == "npci_api"].sort_values("npci_row").reset_index(drop=True)   # same order as raw
 compare = pd.DataFrame()
@@ -140,18 +121,16 @@ red_cells["Debit reversals (clean)"] = compare["Debit reversals (NPCI)"].notna()
 red_cells["Refund success % (clean)"] = compare["Refund success % (NPCI)"].notna() & compare["Refund success % (clean)"].isna()
 
 
-# ---------- 8. Final bank table ----------
+# ---------- 7. Final bank table ----------
 banks["rank_in_source"] = banks["rank_in_source"].astype(int)
 banks = banks[["month", "bank_raw", "bank", "bank_type", "rank_in_source", "total_volume_mn",
                "approved_pct", "bd_pct", "td_pct", "debit_reversal_count_mn",
-               "debit_reversal_success_pct", "approved_mn", "bd_failed_mn", "td_failed_mn",
-               "is_festival_month", "above_npci_target", "avg_payment_value_inr",
-               "td_failed_value_cr", "udir_auto_update_sr_pct", "udir_refund_sr_pct",
+               "debit_reversal_success_pct", "udir_auto_update_sr_pct", "udir_refund_sr_pct",
                "source", "is_name_corrected"]]
 banks = banks.sort_values(["month", "rank_in_source"]).reset_index(drop=True)
 
 
-# ---------- 9. Apps ----------
+# ---------- 8. Apps ----------
 raw_apps = pd.read_csv("data/raw/npci_apps.csv", dtype=str)
 apps = raw_apps.drop(columns="month").rename(columns={"file_month": "month", "total_volume_mn": "volume_mn", "total_value_cr": "value_cr"})
 apps["app_raw"] = apps["application_name"].fillna(apps["upi_application_name"])   # NPCI renamed this column later
@@ -170,10 +149,10 @@ if len(unknown_apps) > 0:
 apps["app_share_pct"] = apps["volume_mn"] / apps.groupby("month")["volume_mn"].transform("sum") * 100
 apps = apps.sort_values(["month", "volume_mn"], ascending=[True, False])
 apps = apps[["month", "app", "volume_mn", "value_cr", "app_share_pct"]].reset_index(drop=True)
-print("9.", apps["app"].nunique(), "apps")
+print("8.", apps["app"].nunique(), "apps")
 
 
-# ---------- 10. P2P and P2M ----------
+# ---------- 9. P2P and P2M ----------
 # P2P = person to person, P2M = person to merchant (shop or checkout payments)
 raw_p2p = pd.read_csv("data/raw/npci_p2p_p2m.csv", dtype=str)
 p2p = raw_p2p.drop(columns="month").rename(columns={"file_month": "month",
@@ -185,10 +164,10 @@ for column in p2p_numbers:
     p2p[column] = pd.to_numeric(p2p[column].str.replace(",", ""), errors="coerce")
 p2p["p2m_share_pct"] = p2p["p2m_volume_mn"] / (p2p["p2p_volume_mn"] + p2p["p2m_volume_mn"]) * 100
 p2p = p2p.sort_values("month").reset_index(drop=True)
-print("10. P2P/P2M done")
+print("9. P2P/P2M done")
 
 
-# ---------- 11. Checks (the script stops if one fails) ----------
+# ---------- 10. Checks (the script stops if one fails) ----------
 # Approved + BD + TD should be 100% (we allow 0.05 for rounding)
 total_pct = banks["approved_pct"] + banks["bd_pct"] + banks["td_pct"]
 if ((total_pct - 100).abs() > 0.05).any():
@@ -213,11 +192,12 @@ if (banks_per_month != 50).any():
 gap = (p2p["p2p_volume_mn"] + p2p["p2m_volume_mn"] - p2p["total_volume_mn"]).abs()
 if (gap > 1).any():
     raise SystemExit(f"P2P + P2M is not equal to the total:\n{p2p[gap > 1]}")
-print("11. All checks passed")
+print("10. All checks passed")
 
 
-# ---------- 12. Save ----------
+# ---------- 11. Save ----------
 banks.to_csv("data/clean/upi_bank_monthly.csv", index=False)
+values.to_csv("data/clean/upi_bank_value_monthly.csv", index=False)
 apps.to_csv("data/clean/upi_app_monthly.csv", index=False)
 p2p.to_csv("data/clean/upi_p2p_p2m_monthly.csv", index=False)
 
@@ -226,6 +206,7 @@ with pd.ExcelWriter("excel/upi_clean_data.xlsx") as excel:
     bank_names.to_excel(excel, sheet_name="Bank names", index=False)
     app_names.to_excel(excel, sheet_name="App names", index=False)
     banks.to_excel(excel, sheet_name="Clean banks", index=False)
+    values.to_excel(excel, sheet_name="Clean bank values", index=False)
     apps.to_excel(excel, sheet_name="Clean apps", index=False)
     p2p.to_excel(excel, sheet_name="Clean P2P P2M", index=False)
 
@@ -241,4 +222,4 @@ with pd.ExcelWriter("excel/upi_clean_data.xlsx") as excel:
     for sheet in excel.sheets.values():
         for column in sheet.columns:
             sheet.column_dimensions[column[0].column_letter].width = 30
-print("12. Saved data/clean/ and excel/upi_clean_data.xlsx")
+print("11. Saved data/clean/ and excel/upi_clean_data.xlsx")

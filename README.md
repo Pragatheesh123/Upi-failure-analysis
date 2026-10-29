@@ -39,7 +39,7 @@ data/bank_names.csv  every bank spelling NPCI used -> one standard name and bank
 data/app_names.csv   every app spelling NPCI used -> one standard app name
 data/clean/          clean tables (CSV) used by SQL and Power BI
 python/              step1_get_raw_data.py, step2_clean_data.py
-sql/                 PostgreSQL tables and queries (next)
+sql/                 01_create_tables.sql (load clean CSVs), 02_bank_monthly_calc.sql (calculated columns), queries next
 excel/               upi_clean_data.xlsx (changes made, before vs after, clean tables), cost model later
 powerbi/             dashboard (later)
 docs/                decisions log, data dictionary, notes
@@ -56,6 +56,8 @@ python -m venv .venv && .venv\Scripts\activate
 pip install -r requirements.txt
 python python/step1_get_raw_data.py     # download NPCI data (skips files already saved)
 python python/step2_clean_data.py       # build data/clean/, stops if any check fails
+& "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -d upi_failure -f sql/01_create_tables.sql   # load into PostgreSQL (asks for the password)
+& "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -d upi_failure -f sql/02_bank_monthly_calc.sql  # calculated columns
 ```
 
 ## Findings
