@@ -60,8 +60,8 @@ CREATE TABLE p2p_p2m_monthly (
 );
 \copy p2p_p2m_monthly FROM 'data/clean/upi_p2p_p2m_monthly.csv' WITH (FORMAT csv, HEADER true)
 
--- How many rows each table got
-SELECT 'bank_monthly' AS table_name, COUNT(*) AS rows FROM bank_monthly
-UNION ALL SELECT 'bank_value_monthly', COUNT(*) FROM bank_value_monthly
-UNION ALL SELECT 'app_monthly', COUNT(*) FROM app_monthly
-UNION ALL SELECT 'p2p_p2m_monthly', COUNT(*) FROM p2p_p2m_monthly;
+-- Check: how many rows each table got (should be 3100, 2814, 4349, 57)
+SELECT COUNT(*) AS bank_rows FROM bank_monthly;
+SELECT COUNT(*) AS bank_value_rows FROM bank_value_monthly;
+SELECT COUNT(*) AS app_rows FROM app_monthly;
+SELECT COUNT(*) AS p2p_rows FROM p2p_p2m_monthly;

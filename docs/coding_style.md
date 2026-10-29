@@ -16,9 +16,11 @@ Goal: every line can be explained in an interview. Simple, but nothing downgrade
 - Every check that matters stays (percentages add to 100, no duplicate bank-months, missing months listed).
 
 ## SQL (PostgreSQL)
-- One file per business question, with a one-line comment saying which question it answers.
-- CTEs (`WITH ... AS`) in readable steps instead of nested subqueries.
-- Volume-weighted averages, never a simple average of percentages.
+- Simple queries: `SELECT ... FROM ... WHERE ... GROUP BY ... ORDER BY`, plain `JOIN`, `CASE`, `BETWEEN`. No stacked `WITH` blocks.
+- Calculations are written once in the view `bank_monthly_calc`; question files just read from it.
+- Window functions (`RANK`, `LAG`) only when a question needs them, one simple one per query.
+- One file per business question, starting with a one-line comment saying which question it answers.
+- Volume-weighted %: `SUM(failed) / SUM(total)`, never `AVG` of percentages.
 
 ## DAX (Power BI)
 - One measure per idea, named the way a manager would say it: `TD %`, `TD % vs Industry`.
