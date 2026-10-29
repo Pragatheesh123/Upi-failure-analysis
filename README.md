@@ -36,6 +36,7 @@ See [`docs/week0_data_check.md`](docs/week0_data_check.md) for the data check an
 ```
 data/raw/            NPCI files exactly as downloaded, plus one raw CSV per table (values as text)
 data/bank_names.csv  every bank spelling NPCI used -> one standard name and bank type
+data/app_names.csv   every app spelling NPCI used -> one standard app name
 data/clean/          clean tables (CSV) used by SQL and Power BI
 python/              step1_get_raw_data.py, step2_clean_data.py
 sql/                 PostgreSQL tables and queries (next)

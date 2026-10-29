@@ -1,7 +1,7 @@
 # Data dictionary
 
 Range: Aug 2021 → Sep 2026 for banks (62 months), Jan 2022 → Sep 2026 for apps and P2P/P2M (57 months).
-Built by `python python/step2_clean_data.py` from `data/raw/` and `data/bank_names.csv`. `excel/upi_clean_data.xlsx` holds the same tables plus "Changes made" and before-vs-after sheets (raw NPCI text next to the clean values).
+Built by `python python/step2_clean_data.py` from `data/raw/` and `data/bank_names.csv`. `excel/upi_clean_data.xlsx` holds the same tables plus a "Before vs after" sheet (NPCI value next to clean value, changed cells red) and the name lists. App spellings are mapped with `data/app_names.csv` (app_raw, app), built the same way as `data/bank_names.csv`.
 
 ## data/clean/upi_bank_monthly.csv — one row per bank per month (3,100 rows, 22 columns)
 
