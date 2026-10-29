@@ -13,7 +13,12 @@ WITH counts AS (
         total_volume_mn * bd_pct / 100        AS bd_failed_mn,   -- failed because of the user
         total_volume_mn * td_pct / 100        AS td_failed_mn,   -- failed because of the system
         RIGHT(month, 2) IN ('10', '11')       AS is_festival_month,
-        td_pct > 1.0                          AS above_npci_target   -- NPCI wants TD below 1%
+        td_pct > 1.0                          AS above_npci_target,  -- NPCI wants TD below 1%
+        -- Group for comparing bank types: very small types go together in "Others"
+        CASE
+            WHEN bank_type IN ('Co-operative', 'Payment company (PPI)', 'Credit card issuer') THEN 'Others'
+            ELSE bank_type
+        END                                   AS bank_group
     FROM bank_monthly
 ),
 
