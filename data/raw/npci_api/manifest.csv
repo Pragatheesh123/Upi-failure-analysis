@@ -1189,3 +1189,4 @@ fetched_at,http_status,file,url
 2026-10-28T21:54:48,200,data\raw\npci_api\apps\2026-08_p8.json,https://www.npci.org.in/api/ecosystem-statistics/get-statistics?product_name=UPI&tab_name=upi-apps&year=2026&month=Aug&page_no=8&size=10
 2026-10-28T21:54:49,200,data\raw\npci_api\apps\2026-08_p9.json,https://www.npci.org.in/api/ecosystem-statistics/get-statistics?product_name=UPI&tab_name=upi-apps&year=2026&month=Aug&page_no=9&size=10
 2026-10-28T21:54:51,200,data\raw\npci_api\apps\2026-08_p10.json,https://www.npci.org.in/api/ecosystem-statistics/get-statistics?product_name=UPI&tab_name=upi-apps&year=2026&month=Aug&page_no=10&size=10
+2026-10-29T22:56:47,200,data/raw/npci_api/remitter/2026-09_p5.json,https://www.npci.org.in/api/ecosystem-statistics/get-statistics?product_name=UPI&tab_name=top50-member&year=2026&month=Sep&page_no=5&size=10&type_name=remitter
