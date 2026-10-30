@@ -1,6 +1,6 @@
 # STEP 2: CLEAN THE DATA
 # Takes the raw NPCI files in data/raw/ and saves clean files in data/clean/ and excel/.
-# Only cleaning here. Calculations (failed payments, Rs value) are done in SQL: sql/02_bank_monthly_calc.sql
+# Only cleaning here. Calculations (failed payments, Rs value) are done in SQL: sql/02_extra_columns.sql
 # Run: python python/step2_clean_data.py
 # If anything looks wrong, the script stops with a message.
 
