@@ -599,56 +599,56 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2022-07,RBL Bank,RBL Bank,Private,48,7.99,89.82,8.06,2.12,0.01,0.0,,,npci_api,False
 2022-07,Telangana Grameena bank,Telangana Grameena Bank,Gramin,49,7.27,64.67,20.32,15.0,0.0,0.0,,,npci_api,False
 2022-07,Karnataka Vikas Grameena Bank,Karnataka Vikas Grameena Bank,Gramin,50,6.78,83.41,14.24,2.34,0.01,0.0,,,npci_api,False
-2022-08,State Bank Of India,State Bank of India,Public,1,1793.55,91.26,7.23,1.51,8.02,9123.0,,,npci_api,False
-2022-08,HDFC Bank Ltd,HDFC Bank,Private,2,594.28,93.45,5.47,1.07,3.44,9410.0,,,npci_api,False
-2022-08,Bank of Baroda,Bank of Baroda,Public,3,432.55,93.04,6.82,0.13,1.68,9878.0,,,npci_api,False
-2022-08,Union Bank of India,Union Bank of India,Public,4,406.68,91.35,7.55,1.1,1.8,6994.0,,,npci_api,False
-2022-08,ICICI Bank,ICICI Bank,Private,5,379.89,93.84,4.53,1.63,1.75,8420.0,,,npci_api,False
-2022-08,Axis Bank Ltd,Axis Bank,Private,6,339.15,92.64,6.57,0.79,0.89,5796.0,,,npci_api,False
-2022-08,Paytm Payments Bank,Paytm Payments Bank,Payments bank,7,322.02,95.64,4.34,0.02,0.82,9868.0,,,npci_api,False
-2022-08,Punjab National Bank,Punjab National Bank,Public,8,305.33,92.51,5.88,1.61,2.37,8424.0,,,npci_api,False
-2022-08,Canara Bank,Canara Bank,Public,9,297.1,91.49,7.64,0.87,1.47,8429.0,,,npci_api,False
-2022-08,Kotak Mahindra Bank,Kotak Mahindra Bank,Private,10,286.52,92.74,5.64,1.61,1.17,9529.0,,,npci_api,False
-2022-08,Bank of India,Bank of India,Public,11,230.16,94.17,5.3,0.53,0.95,8395.0,,,npci_api,False
-2022-08,Indian Bank,Indian Bank,Public,12,170.2,92.6,6.32,1.09,0.79,8580.0,,,npci_api,False
-2022-08,Airtel Payments Bank,Airtel Payments Bank,Payments bank,13,118.87,85.62,12.63,1.75,0.87,7387.0,,,npci_api,False
-2022-08,Central Bank Of India,Central Bank of India,Public,14,113.76,81.96,10.89,7.15,1.22,3667.0,,,npci_api,False
-2022-08,Federal Bank,Federal Bank,Private,15,109.19,93.62,6.12,0.25,0.41,9597.0,,,npci_api,False
-2022-08,India Post Payment Bank,India Post Payments Bank,Payments bank,16,97.79,79.57,18.5,1.93,0.43,6532.0,,,npci_api,False
+2022-08,State Bank Of India,State Bank of India,Public,1,1793.55,91.26,7.23,1.51,8.02,91.23,,,npci_api,False
+2022-08,HDFC Bank Ltd,HDFC Bank,Private,2,594.28,93.45,5.47,1.07,3.44,94.1,,,npci_api,False
+2022-08,Bank of Baroda,Bank of Baroda,Public,3,432.55,93.04,6.82,0.13,1.68,98.78,,,npci_api,False
+2022-08,Union Bank of India,Union Bank of India,Public,4,406.68,91.35,7.55,1.1,1.8,69.94,,,npci_api,False
+2022-08,ICICI Bank,ICICI Bank,Private,5,379.89,93.84,4.53,1.63,1.75,84.2,,,npci_api,False
+2022-08,Axis Bank Ltd,Axis Bank,Private,6,339.15,92.64,6.57,0.79,0.89,57.96,,,npci_api,False
+2022-08,Paytm Payments Bank,Paytm Payments Bank,Payments bank,7,322.02,95.64,4.34,0.02,0.82,98.68,,,npci_api,False
+2022-08,Punjab National Bank,Punjab National Bank,Public,8,305.33,92.51,5.88,1.61,2.37,84.24,,,npci_api,False
+2022-08,Canara Bank,Canara Bank,Public,9,297.1,91.49,7.64,0.87,1.47,84.29,,,npci_api,False
+2022-08,Kotak Mahindra Bank,Kotak Mahindra Bank,Private,10,286.52,92.74,5.64,1.61,1.17,95.29,,,npci_api,False
+2022-08,Bank of India,Bank of India,Public,11,230.16,94.17,5.3,0.53,0.95,83.95,,,npci_api,False
+2022-08,Indian Bank,Indian Bank,Public,12,170.2,92.6,6.32,1.09,0.79,85.8,,,npci_api,False
+2022-08,Airtel Payments Bank,Airtel Payments Bank,Payments bank,13,118.87,85.62,12.63,1.75,0.87,73.87,,,npci_api,False
+2022-08,Central Bank Of India,Central Bank of India,Public,14,113.76,81.96,10.89,7.15,1.22,36.67,,,npci_api,False
+2022-08,Federal Bank,Federal Bank,Private,15,109.19,93.62,6.12,0.25,0.41,95.97,,,npci_api,False
+2022-08,India Post Payment Bank,India Post Payments Bank,Payments bank,16,97.79,79.57,18.5,1.93,0.43,65.32,,,npci_api,False
 2022-08,Yes Bank Ltd,Yes Bank,Private,17,91.23,94.4,5.46,0.14,0.0,0.0,,,npci_api,False
-2022-08,IDBI Bank Limited,IDBI Bank,Private,18,89.05,94.88,4.39,0.73,0.47,8625.0,,,npci_api,False
-2022-08,Indian Overseas Bank,Indian Overseas Bank,Public,19,86.15,93.59,5.74,0.68,0.44,9505.0,,,npci_api,False
-2022-08,Bank of Maharashtra,Bank of Maharashtra,Public,20,79.97,92.55,5.41,2.04,0.33,6210.0,,,npci_api,False
-2022-08,UCO Bank,UCO Bank,Public,21,75.13,92.71,6.14,1.15,0.36,7155.0,,,npci_api,False
-2022-08,IndusInd Bank,IndusInd Bank,Private,22,59.38,93.05,6.75,0.2,0.26,9689.0,,,npci_api,False
-2022-08,Karnataka Bank,Karnataka Bank,Private,23,58.99,86.01,7.37,6.62,0.2,1773.0,,,npci_api,False
-2022-08,IDFC FIRST Bank,IDFC First Bank,Private,24,47.41,92.31,5.84,1.85,0.19,6157.0,,,npci_api,False
-2022-08,Fino Payments Bank,Fino Payments Bank,Payments bank,25,46.31,78.41,15.59,6.0,0.58,6629.0,,,npci_api,False
-2022-08,Karur Vysya Bank,Karur Vysya Bank,Private,26,38.25,90.97,7.46,1.57,0.2,7890.0,,,npci_api,False
-2022-08,Bandhan Bank,Bandhan Bank,Private,27,29.21,85.22,10.95,3.82,0.28,8036.0,,,npci_api,False
-2022-08,South Indian Bank,South Indian Bank,Private,28,27.96,93.53,6.09,0.38,0.1,9648.0,,,npci_api,False
-2022-08,Equitas Small Finance Bank,Equitas Small Finance Bank,Small finance,29,21.68,81.32,15.91,2.78,0.11,5795.0,,,npci_api,False
-2022-08,City Union Bank,City Union Bank,Private,30,20.53,91.55,7.38,1.06,0.08,8435.0,,,npci_api,False
-2022-08,Ujjivan Small Finance Bank,Ujjivan Small Finance Bank,Small finance,31,17.83,89.89,7.46,2.65,0.09,5923.0,,,npci_api,False
-2022-08,AU small Finance Bank,AU Small Finance Bank,Small finance,32,17.57,91.98,6.33,1.69,0.0,7.0,,,npci_api,False
-2022-08,Citibank,Citibank,Foreign,33,17.51,94.45,4.32,1.24,0.07,9268.0,,,npci_api,False
-2022-08,Punjab and Sind Bank,Punjab & Sind Bank,Public,34,17.27,88.81,10.33,0.86,0.1,7605.0,,,npci_api,False
-2022-08,Tamilnad Mercantile Bank,Tamilnad Mercantile Bank,Private,35,17.12,88.0,8.69,3.31,0.07,4973.0,,,npci_api,False
-2022-08,Standard Chartered,Standard Chartered Bank,Foreign,36,16.91,95.44,3.04,1.52,0.08,7417.0,,,npci_api,False
-2022-08,DBS Bank Ltd,DBS Bank India,Foreign,37,16.88,95.16,4.68,0.15,0.06,9579.0,,,npci_api,False
-2022-08,Jammu and Kashmir Bank,Jammu & Kashmir Bank,Private,38,16.21,88.51,7.03,4.46,0.09,7055.0,,,npci_api,False
-2022-08,Pragathi Krishna Gramin Bank,Pragathi Krishna Gramin Bank,Gramin,39,14.98,85.97,11.15,2.88,0.11,5844.0,,,npci_api,False
-2022-08,Andhra Pradesh Grameena Vikas Bank,Andhra Pradesh Grameena Vikas Bank,Gramin,40,14.67,72.5,17.13,10.37,0.06,1092.0,,,npci_api,False
-2022-08,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,41,14.43,71.27,17.87,10.86,0.05,1510.0,,,npci_api,False
-2022-08,Saraswat Bank,Saraswat Co-operative Bank,Co-operative,42,13.33,95.67,3.85,0.48,0.05,9143.0,,,npci_api,False
-2022-08,ESAF Small Finance Bank Ltd.,ESAF Small Finance Bank,Small finance,43,10.54,83.48,14.05,2.48,0.05,6349.0,,,npci_api,False
-2022-08,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,44,10.48,79.27,13.28,7.44,0.04,1622.0,,,npci_api,False
-2022-08,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,45,10.22,87.57,11.15,1.27,0.04,6983.0,,,npci_api,False
-2022-08,Andhra Pragathi Grameena Bank,Andhra Pragathi Grameena Bank,Gramin,46,9.05,79.41,15.55,5.04,0.14,8174.0,,,npci_api,False
-2022-08,Sarva Haryana Gramin Bank,Sarva Haryana Gramin Bank,Gramin,47,8.89,86.62,10.36,3.02,0.09,7588.0,,,npci_api,False
-2022-08,RBL Bank,RBL Bank,Private,48,8.63,89.57,8.1,2.33,0.06,8208.0,,,npci_api,False
-2022-08,Baroda Rajasthan Kshetriya Gramin Bank,Baroda Rajasthan Kshetriya Gramin Bank,Gramin,49,7.52,79.06,7.83,13.11,0.06,2406.0,,,npci_api,False
-2022-08,Baroda UP Gramin Bank,Baroda U.P. Bank,Gramin,50,7.19,74.76,10.31,14.94,0.07,2336.0,,,npci_api,False
+2022-08,IDBI Bank Limited,IDBI Bank,Private,18,89.05,94.88,4.39,0.73,0.47,86.25,,,npci_api,False
+2022-08,Indian Overseas Bank,Indian Overseas Bank,Public,19,86.15,93.59,5.74,0.68,0.44,95.05,,,npci_api,False
+2022-08,Bank of Maharashtra,Bank of Maharashtra,Public,20,79.97,92.55,5.41,2.04,0.33,62.1,,,npci_api,False
+2022-08,UCO Bank,UCO Bank,Public,21,75.13,92.71,6.14,1.15,0.36,71.55,,,npci_api,False
+2022-08,IndusInd Bank,IndusInd Bank,Private,22,59.38,93.05,6.75,0.2,0.26,96.89,,,npci_api,False
+2022-08,Karnataka Bank,Karnataka Bank,Private,23,58.99,86.01,7.37,6.62,0.2,17.73,,,npci_api,False
+2022-08,IDFC FIRST Bank,IDFC First Bank,Private,24,47.41,92.31,5.84,1.85,0.19,61.57,,,npci_api,False
+2022-08,Fino Payments Bank,Fino Payments Bank,Payments bank,25,46.31,78.41,15.59,6.0,0.58,66.29,,,npci_api,False
+2022-08,Karur Vysya Bank,Karur Vysya Bank,Private,26,38.25,90.97,7.46,1.57,0.2,78.9,,,npci_api,False
+2022-08,Bandhan Bank,Bandhan Bank,Private,27,29.21,85.22,10.95,3.82,0.28,80.36,,,npci_api,False
+2022-08,South Indian Bank,South Indian Bank,Private,28,27.96,93.53,6.09,0.38,0.1,96.48,,,npci_api,False
+2022-08,Equitas Small Finance Bank,Equitas Small Finance Bank,Small finance,29,21.68,81.32,15.91,2.78,0.11,57.95,,,npci_api,False
+2022-08,City Union Bank,City Union Bank,Private,30,20.53,91.55,7.38,1.06,0.08,84.35,,,npci_api,False
+2022-08,Ujjivan Small Finance Bank,Ujjivan Small Finance Bank,Small finance,31,17.83,89.89,7.46,2.65,0.09,59.23,,,npci_api,False
+2022-08,AU small Finance Bank,AU Small Finance Bank,Small finance,32,17.57,91.98,6.33,1.69,0.0,0.07,,,npci_api,False
+2022-08,Citibank,Citibank,Foreign,33,17.51,94.45,4.32,1.24,0.07,92.68,,,npci_api,False
+2022-08,Punjab and Sind Bank,Punjab & Sind Bank,Public,34,17.27,88.81,10.33,0.86,0.1,76.05,,,npci_api,False
+2022-08,Tamilnad Mercantile Bank,Tamilnad Mercantile Bank,Private,35,17.12,88.0,8.69,3.31,0.07,49.73,,,npci_api,False
+2022-08,Standard Chartered,Standard Chartered Bank,Foreign,36,16.91,95.44,3.04,1.52,0.08,74.17,,,npci_api,False
+2022-08,DBS Bank Ltd,DBS Bank India,Foreign,37,16.88,95.16,4.68,0.15,0.06,95.79,,,npci_api,False
+2022-08,Jammu and Kashmir Bank,Jammu & Kashmir Bank,Private,38,16.21,88.51,7.03,4.46,0.09,70.55,,,npci_api,False
+2022-08,Pragathi Krishna Gramin Bank,Pragathi Krishna Gramin Bank,Gramin,39,14.98,85.97,11.15,2.88,0.11,58.44,,,npci_api,False
+2022-08,Andhra Pradesh Grameena Vikas Bank,Andhra Pradesh Grameena Vikas Bank,Gramin,40,14.67,72.5,17.13,10.37,0.06,10.92,,,npci_api,False
+2022-08,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,41,14.43,71.27,17.87,10.86,0.05,15.1,,,npci_api,False
+2022-08,Saraswat Bank,Saraswat Co-operative Bank,Co-operative,42,13.33,95.67,3.85,0.48,0.05,91.43,,,npci_api,False
+2022-08,ESAF Small Finance Bank Ltd.,ESAF Small Finance Bank,Small finance,43,10.54,83.48,14.05,2.48,0.05,63.49,,,npci_api,False
+2022-08,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,44,10.48,79.27,13.28,7.44,0.04,16.22,,,npci_api,False
+2022-08,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,45,10.22,87.57,11.15,1.27,0.04,69.83,,,npci_api,False
+2022-08,Andhra Pragathi Grameena Bank,Andhra Pragathi Grameena Bank,Gramin,46,9.05,79.41,15.55,5.04,0.14,81.74,,,npci_api,False
+2022-08,Sarva Haryana Gramin Bank,Sarva Haryana Gramin Bank,Gramin,47,8.89,86.62,10.36,3.02,0.09,75.88,,,npci_api,False
+2022-08,RBL Bank,RBL Bank,Private,48,8.63,89.57,8.1,2.33,0.06,82.08,,,npci_api,False
+2022-08,Baroda Rajasthan Kshetriya Gramin Bank,Baroda Rajasthan Kshetriya Gramin Bank,Gramin,49,7.52,79.06,7.83,13.11,0.06,24.06,,,npci_api,False
+2022-08,Baroda UP Gramin Bank,Baroda U.P. Bank,Gramin,50,7.19,74.76,10.31,14.94,0.07,23.36,,,npci_api,False
 2022-09,State Bank Of India,State Bank of India,Public,1,1865.75,90.39,6.77,2.84,11.29,84.7,,,npci_api,False
 2022-09,HDFC Bank Ltd,HDFC Bank,Private,2,610.12,94.46,5.41,0.13,2.39,98.02,,,npci_api,False
 2022-09,Bank of Baroda,Bank of Baroda,Public,3,450.27,92.95,6.8,0.24,1.69,97.38,,,npci_api,False

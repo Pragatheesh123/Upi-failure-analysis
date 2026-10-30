@@ -19,7 +19,7 @@ Cleaning only. The calculated columns are added in SQL (see the view `bank_month
 | 8 | bd_pct | float | NPCI | % business decline (user side) |
 | 9 | td_pct | float | NPCI | % technical decline (bank or NPCI systems) |
 | 10 | debit_reversal_count_mn | float | NPCI | Debited-then-failed payments needing a refund, millions ("-" in NPCI → blank) |
-| 11 | debit_reversal_success_pct | float | NPCI | % of those refunds that succeeded ("NaN%" in NPCI → blank) |
+| 11 | debit_reversal_success_pct | float | NPCI | % of those refunds that succeeded ("NaN%" in NPCI → blank; Aug 2022 divided by 100 because NPCI dropped the decimal point, e.g. "9123.00%" → 91.23) |
 | 12 | udir_auto_update_sr_pct | float | NPCI | % of failed payments resolved online through UDIR (recent months only) |
 | 13 | udir_refund_sr_pct | float | NPCI | % of refunds processed online through UDIR (recent months only) |
 | 14 | source | text | Added | `npci_api` (2022 on) or `npci_archive_2021_provisional` (Aug–Dec 2021) |

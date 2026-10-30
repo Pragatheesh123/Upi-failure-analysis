@@ -67,6 +67,11 @@ for month, rank, right_name in name_fixes:
     banks.loc[row, "is_name_corrected"] = True
 print("3. Fixed 2 wrong bank names")
 
+# NPCI left out the decimal point in Aug 2022 refund success % ("9123.00%" should be 91.23%)
+aug_2022 = banks["month"] == "2022-08"
+banks.loc[aug_2022, "debit_reversal_success_pct"] = banks.loc[aug_2022, "debit_reversal_success_pct"] / 100
+print("3. Fixed Aug 2022 refund success % (divided by 100)")
+
 
 # ---------- 4. One name per bank ----------
 # NPCI spells banks differently ("HDFC BANK LTD", "Hdfc Bank Ltd").
@@ -119,6 +124,7 @@ red_cells = pd.DataFrame()
 red_cells["Bank (clean)"] = compare["Bank (NPCI)"] != compare["Bank (clean)"]
 red_cells["Debit reversals (clean)"] = compare["Debit reversals (NPCI)"].notna() & compare["Debit reversals (clean)"].isna()
 red_cells["Refund success % (clean)"] = compare["Refund success % (NPCI)"].notna() & compare["Refund success % (clean)"].isna()
+red_cells["Refund success % (clean)"] = red_cells["Refund success % (clean)"] | (compare["Month"] == "2022-08")   # decimal fix
 
 
 # ---------- 7. Final bank table ----------
@@ -187,6 +193,10 @@ if len(missing_months) > 0:
 banks_per_month = banks.groupby("month").size()
 if (banks_per_month != 50).any():
     raise SystemExit(f"Months without 50 banks:\n{banks_per_month[banks_per_month != 50]}")
+
+# Refund success can't be more than 100%
+if (banks["debit_reversal_success_pct"] > 100).any():
+    raise SystemExit(f"Refund success above 100%:\n{banks[banks['debit_reversal_success_pct'] > 100]}")
 
 # P2P + P2M should equal NPCI's total (within 1 million)
 gap = (p2p["p2p_volume_mn"] + p2p["p2m_volume_mn"] - p2p["total_volume_mn"]).abs()
