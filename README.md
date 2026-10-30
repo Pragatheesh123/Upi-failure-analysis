@@ -38,7 +38,7 @@ data/raw/            NPCI files exactly as downloaded, plus one raw CSV per tabl
 data/bank_names.csv  every bank spelling NPCI used -> one standard name and bank type
 data/app_names.csv   every app spelling NPCI used -> one standard app name
 data/clean/          clean tables (CSV) used by SQL and Power BI
-python/              step1_get_raw_data.py, step2_clean_data.py, step3_festival_test.py
+python/              step1_get_raw_data.py, step2_clean_data.py, step3_festival_test.py, step4_build_cost_model.py
 images/              charts for the README
 sql/                 01_load_tables.sql, 02_extra_columns.sql, then one file per question (03-09)
 excel/               upi_clean_data.xlsx (changes made, before vs after, clean tables), cost model later
@@ -58,6 +58,7 @@ pip install -r requirements.txt
 python python/step1_get_raw_data.py     # download NPCI data (skips files already saved)
 python python/step2_clean_data.py       # build data/clean/, stops if any check fails
 python python/step3_festival_test.py    # Q7 festival test + chart (after the SQL)
+python python/step4_build_cost_model.py # Excel what-if cost model (after sql/10 with psql)
 & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -d upi_failure -f sql/01_load_tables.sql   # load into PostgreSQL (asks for the password)
 & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -d upi_failure -f sql/02_extra_columns.sql  # calculated columns
 ```
