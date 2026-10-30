@@ -1,6 +1,7 @@
--- load the clean CSV files into PostgreSQL
--- run from the project folder:
--- & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -d upi_failure -f sql/01_create_tables.sql
+-- Makes 4 tables in PostgreSQL and fills them from the clean CSV files.
+-- Run from the project folder:
+-- & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -d upi_failure -f sql/01_load_tables.sql
+-- Then run 02_extra_columns.sql, then any question file (03 to 09).
 
 DROP TABLE IF EXISTS bank_monthly CASCADE;
 CREATE TABLE bank_monthly (

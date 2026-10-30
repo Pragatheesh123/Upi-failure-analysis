@@ -5,7 +5,7 @@ Built by `python python/step2_clean_data.py` from `data/raw/` and `data/bank_nam
 
 ## data/clean/upi_bank_monthly.csv — one row per bank per month (3,100 rows, 15 columns)
 
-Cleaning only. The calculated columns are added in SQL (see the view `bank_monthly_calc` below).
+Cleaning only. The calculated columns are added in SQL (see the view `bank_details` below).
 
 | # | Column | Type | Source | Meaning |
 |---|---|---|---|---|
@@ -37,12 +37,14 @@ From NPCI's "Top 50 Member Vol & Val" table (Jan 2022 on), with standard bank na
 | approved_volume_mn | float | Approved payments, millions (this table counts approved payments only) |
 | value_cr | float | Value of those payments, ₹ crore |
 
-## SQL view bank_monthly_calc (sql/02_bank_monthly_calc.sql) — all 15 bank columns plus
+## SQL view bank_details (sql/02_extra_columns.sql) — all 15 bank columns plus
 
 | Column | Meaning |
 |---|---|
 | year | First 4 characters of month |
-| approved_mn, bd_failed_mn, td_failed_mn | total_volume_mn × approved_pct / bd_pct / td_pct ÷ 100 |
+| approved_mn | total_volume_mn × approved_pct ÷ 100 |
+| user_failed_mn | total_volume_mn × bd_pct ÷ 100 (BD = user failures) |
+| system_failed_mn | total_volume_mn × td_pct ÷ 100 (TD = system failures) |
 | is_festival_month | Month is October or November |
 | above_npci_target | td_pct > 1 (NPCI circular OC 149A) |
 | bank_group | bank_type for comparisons: Public, Private, Payments bank, Gramin, Small finance, Foreign, and Others (Co-operative + Payment company (PPI) + Credit card issuer) |
