@@ -9,8 +9,14 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill
 from openpyxl.formatting.rule import CellIsRule
 
-yearly = pd.read_csv("excel/cost_model_yearly.csv")
-banks = pd.read_csv("excel/cost_model_banks.csv")
+# put the SQL results side by side (merge works like VLOOKUP)
+# how="left" keeps every row of the first table, even if the second table has no match (cell stays blank)
+folder = "excel/cost_model_inputs/"
+yearly = pd.read_csv(folder + "yearly_failures.csv")
+yearly = yearly.merge(pd.read_csv(folder + "yearly_avg_payment.csv"), on="year", how="left")
+yearly = yearly.merge(pd.read_csv(folder + "yearly_checkout_share.csv"), on="year", how="left")
+banks = pd.read_csv(folder + "bank_failures.csv")
+banks = banks.merge(pd.read_csv(folder + "bank_avg_payment.csv"), on="bank", how="left")
 
 yellow = PatternFill("solid", fgColor="FFF2CC")   # cell you can change
 red = PatternFill("solid", fgColor="FFC7CE")      # above the target
@@ -31,10 +37,10 @@ sheet["B2"] = 1                      # NPCI target: TD below 1%
 sheet["B2"].fill = yellow
 sheet["C2"] = "<- change this yellow cell (NPCI target = 1). Everything else is a formula."
 
-headers = ["Year", "Payments (mn)", "System-failed payments (mn)", "Avg payment (Rs)", "Checkout share of failures %",
+headers = ["Year", "Payments (mn)", "System-failed payments (mn)", "Avg payment (Rs)", "Checkout share %",
            "System fail %", "Value of failed payments (Rs crore)", "Failed at target (mn)",
            "Payments saved (mn)", "Value saved (Rs crore)", "Checkout payments saved (mn)"]
-how = ["", "NPCI data", "NPCI data", "NPCI data (Q6)", "NPCI data (Q6)",
+how = ["", "NPCI data", "NPCI data", "NPCI data", "NPCI data",
        "= failed / payments x 100", "= failed x avg Rs / 10", "= payments x lower of (fail %, target) / 100",
        "= failed - failed at target", "= saved x avg Rs / 10", "= saved x checkout share / 100"]
 for col in range(len(headers)):
@@ -117,9 +123,9 @@ lines = [
     "Where the numbers come from",
     "All numbers come from NPCI's monthly UPI tables (top 50 remitter banks), via data/clean/ and sql/10_cost_model_inputs.sql.",
     "System failure = Technical Decline (TD): the bank's or NPCI's systems failed. Not the user's fault.",
-    "Avg payment (Rs) = NPCI value / approved payments, only in months where NPCI's 2 tables agree within 2% (same as Q6).",
-    "Checkout share = share of shop (P2M) payments that month, weighted by failures. It is an estimate.",
-    "Yearly value uses the average Rs size for ALL failed payments, so it is a bit higher than Q6 (Q6 counts only matched banks).",
+    "Avg payment (Rs) = NPCI's Rs value / approved payments, from NPCI's volume & value table (blank = bank not in that table).",
+    "Checkout share = shop (P2M) payments / all payments that year. Using it for failed payments is an estimate.",
+    "This model uses a simple average payment size, so its Rs values differ a little from Q6 (sql/08), which matches bank by bank.",
     "",
     "What the model does NOT say",
     "Value of failed payments is the Rs size of failed attempts, not money lost: most people retry, and the money is never taken.",
