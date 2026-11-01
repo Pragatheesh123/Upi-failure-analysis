@@ -6,7 +6,7 @@
     "y": 5,
     "z": 0,
     "width": 1240,
-    "height": 45,
+    "height": 50,
     "tabOrder": 0
   },
   "visual": {
@@ -19,11 +19,22 @@
               {
                 "textRuns": [
                   {
-                    "value": "Where does UPI fail? Top 50 banks, Aug 2021 - Sep 2026",
+                    "value": "System failures fell 82% since 2022; user failures rose to 10% and now drive UPI failures",
                     "textStyle": {
                       "fontSize": "18pt",
                       "color": "#1F3A5F",
                       "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "NPCI data, top 50 banks, Aug 2021 - Sep 2026",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#5F6B7A"
                     }
                   }
                 ]

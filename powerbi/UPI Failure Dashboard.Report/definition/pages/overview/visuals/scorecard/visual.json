@@ -5,7 +5,7 @@
     "x": 20,
     "y": 405,
     "z": 0,
-    "width": 1240,
+    "width": 780,
     "height": 305,
     "tabOrder": 0
   },
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "bank_details.bank",
-              "nativeQueryRef": "bank"
+              "nativeQueryRef": "bank",
+              "displayName": "Bank"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "bank_details.bank_group",
-              "nativeQueryRef": "bank_group"
+              "nativeQueryRef": "bank_group",
+              "displayName": "Bank group"
             },
             {
               "field": {
@@ -56,6 +58,20 @@
               },
               "queryRef": "bank_details.Payments (mn)",
               "nativeQueryRef": "Payments (mn)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_details"
+                    }
+                  },
+                  "Property": "System failed (mn)"
+                }
+              },
+              "queryRef": "bank_details.System failed (mn)",
+              "nativeQueryRef": "System failed (mn)"
             },
             {
               "field": {
@@ -126,7 +142,7 @@
                     "Entity": "bank_details"
                   }
                 },
-                "Property": "System fail %"
+                "Property": "System failed (mn)"
               }
             },
             "direction": "Descending"
@@ -184,7 +200,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Bank scorecard (red = above the 1% target)'"
+                  "Value": "'Bank scorecard, most system-failed payments first (red = above the 1% target)'"
                 }
               }
             }

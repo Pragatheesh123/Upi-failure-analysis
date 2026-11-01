@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "bank_details.bank_group",
-              "nativeQueryRef": "bank_group"
+              "nativeQueryRef": "bank_group",
+              "displayName": "Bank group"
             }
           ]
         }

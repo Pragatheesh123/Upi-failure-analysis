@@ -5,8 +5,8 @@
     "x": 20,
     "y": 365,
     "z": 0,
-    "width": 820,
-    "height": 345,
+    "width": 1240,
+    "height": 225,
     "tabOrder": 0
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "bank_details.bank_group",
-              "nativeQueryRef": "bank_group"
+              "nativeQueryRef": "bank_group",
+              "displayName": "Bank group"
             }
           ]
         },
@@ -45,7 +46,8 @@
                 }
               },
               "queryRef": "bank_details.year",
-              "nativeQueryRef": "year"
+              "nativeQueryRef": "year",
+              "displayName": "Year"
             }
           ]
         },

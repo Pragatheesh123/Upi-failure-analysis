@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "bank_details.year",
-              "nativeQueryRef": "year"
+              "nativeQueryRef": "year",
+              "displayName": "Year"
             }
           ]
         }

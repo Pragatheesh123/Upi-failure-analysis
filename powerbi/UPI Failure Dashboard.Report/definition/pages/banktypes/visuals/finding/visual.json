@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
   "name": "finding",
   "position": {
-    "x": 860,
-    "y": 365,
+    "x": 20,
+    "y": 600,
     "z": 0,
-    "width": 400,
-    "height": 345,
+    "width": 1240,
+    "height": 110,
     "tabOrder": 0
   },
   "visual": {
@@ -22,7 +22,8 @@
                     "value": "Gramin banks are hit twice",
                     "textStyle": {
                       "fontSize": "12pt",
-                      "color": "#1F3A5F"
+                      "color": "#1F3A5F",
+                      "fontWeight": "bold"
                     }
                   }
                 ]
@@ -30,64 +31,9 @@
               {
                 "textRuns": [
                   {
-                    "value": "",
+                    "value": "Most system failures: 1.95% in the last 12 months, more than 4x the next group (payments banks, 0.42%). Worst refunds: when money is taken and the payment fails, only 57% of refunds succeed, against 85-92% at other groups. Yet Gramin banks carry only about 1.5% of UPI payments.",
                     "textStyle": {
-                      "fontSize": "12pt",
-                      "color": "#1F3A5F"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Most system failures: 1.95% in the last 12 months, more than 4x the next group (payments banks, 0.42%).",
-                    "textStyle": {
-                      "fontSize": "12pt",
-                      "color": "#1F3A5F"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "",
-                    "textStyle": {
-                      "fontSize": "12pt",
-                      "color": "#1F3A5F"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Worst refunds: when money is taken and the payment fails, only 57% of refunds succeed, against 85-92% at other groups.",
-                    "textStyle": {
-                      "fontSize": "12pt",
-                      "color": "#1F3A5F"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "",
-                    "textStyle": {
-                      "fontSize": "12pt",
-                      "color": "#1F3A5F"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Gramin banks carry about 1.5% of UPI payments.",
-                    "textStyle": {
-                      "fontSize": "12pt",
+                      "fontSize": "11pt",
                       "color": "#1F3A5F"
                     }
                   }
