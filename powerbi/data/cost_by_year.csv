@@ -1,6 +1,6 @@
-year,system_failed_mn,checkout_payments_hit_mn
-2022,1145,545
-2023,1241,710
-2024,1048,650
-2025,954,601
-2026,579,366
+year,year_label,system_failed_mn,checkout_payments_hit_mn
+2022,2022,1145,545
+2023,2023,1241,710
+2024,2024,1048,650
+2025,2025,954,601
+2026,2026 (Jan-Sep),579,366

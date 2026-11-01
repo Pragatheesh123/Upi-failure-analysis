@@ -1,0 +1,295 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "tableEx_15",
+  "position": {
+    "x": 20,
+    "y": 392,
+    "z": 1500,
+    "width": 800,
+    "height": 276,
+    "tabOrder": 15
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_details"
+                    }
+                  },
+                  "Property": "bank"
+                }
+              },
+              "queryRef": "bank_details.bank",
+              "nativeQueryRef": "bank",
+              "displayName": "Bank"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_details"
+                    }
+                  },
+                  "Property": "bank_group"
+                }
+              },
+              "queryRef": "bank_details.bank_group",
+              "nativeQueryRef": "bank_group",
+              "displayName": "Bank group"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_details"
+                    }
+                  },
+                  "Property": "Payments (mn, last 12 months)"
+                }
+              },
+              "queryRef": "bank_details.Payments (mn, last 12 months)",
+              "nativeQueryRef": "Payments (mn, last 12 months)",
+              "displayName": "Payments (mn)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_details"
+                    }
+                  },
+                  "Property": "System failed (mn, last 12 months)"
+                }
+              },
+              "queryRef": "bank_details.System failed (mn, last 12 months)",
+              "nativeQueryRef": "System failed (mn, last 12 months)",
+              "displayName": "System failed (mn)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_details"
+                    }
+                  },
+                  "Property": "System fail % (last 12 months)"
+                }
+              },
+              "queryRef": "bank_details.System fail % (last 12 months)",
+              "nativeQueryRef": "System fail % (last 12 months)",
+              "displayName": "System failure %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_details"
+                    }
+                  },
+                  "Property": "User fail % (last 12 months)"
+                }
+              },
+              "queryRef": "bank_details.User fail % (last 12 months)",
+              "nativeQueryRef": "User fail % (last 12 months)",
+              "displayName": "Decline %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_details"
+                    }
+                  },
+                  "Property": "Refund success % (last 12 months)"
+                }
+              },
+              "queryRef": "bank_details.Refund success % (last 12 months)",
+              "nativeQueryRef": "Refund success % (last 12 months)",
+              "displayName": "Automatic refund %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bank_details"
+                  }
+                },
+                "Property": "System failed (mn, last 12 months)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bank_details"
+                        }
+                      },
+                      "Property": "Last 12 months colour"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "bank_details.System fail % (last 12 months)"
+          }
+        },
+        {
+          "properties": {
+            "dataBars": {
+              "positiveColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#A3B6CC'"
+                      }
+                    }
+                  }
+                }
+              },
+              "negativeColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#A3B6CC'"
+                      }
+                    }
+                  }
+                }
+              },
+              "axisColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#FFFFFF'"
+                      }
+                    }
+                  }
+                }
+              },
+              "reverseDirection": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "hideText": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "bank_details.System failed (mn, last 12 months)"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Biggest contributors: banks with the most system-failed payments, last 12 months (red = above the 1% target)'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3A5F'"
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

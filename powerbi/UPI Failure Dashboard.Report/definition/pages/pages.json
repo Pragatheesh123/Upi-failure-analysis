@@ -1,9 +1,10 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
   "pageOrder": [
-    "overview",
-    "banktypes",
-    "whycost"
+    "p1_what",
+    "p2_why",
+    "p3_where",
+    "p4_cost"
   ],
-  "activePageName": "overview"
+  "activePageName": "p1_what"
 }

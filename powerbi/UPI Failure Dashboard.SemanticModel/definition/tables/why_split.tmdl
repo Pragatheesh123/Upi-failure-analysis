@@ -1,5 +1,20 @@
 table why_split
 
+	measure 'Rate effect, system failure 2022-2025 (pts)' = CALCULATE(SUM(why_split[from_banks_themselves]), why_split[step] = 1)
+		formatString: +0.00\ \p\t\s;-0.00\ \p\t\s
+
+	measure 'Mix effect, decline 2022-2025 (pts)' = CALCULATE(SUM(why_split[from_payments_moving]), why_split[step] = 2)
+		formatString: +0.00\ \p\t\s;-0.00\ \p\t\s
+
+	measure 'Rate effect, decline 2025-2026 (pts)' = CALCULATE(SUM(why_split[from_banks_themselves]), why_split[step] = 3)
+		formatString: +0.00\ \p\t\s;-0.00\ \p\t\s
+
+	measure 'Why note 1' = "from rates at the banks themselves (total " & FORMAT(CALCULATE(SUM(why_split[total_change]), why_split[step] = 1), "+0.00;-0.00") & ")"
+
+	measure 'Why note 2' = "from payments moving between banks (total " & FORMAT(CALCULATE(SUM(why_split[total_change]), why_split[step] = 2), "+0.00;-0.00") & ")"
+
+	measure 'Why note 3' = "from rates at the banks themselves (total " & FORMAT(CALCULATE(SUM(why_split[total_change]), why_split[step] = 3), "+0.00;-0.00") & ")"
+
 	column step
 		dataType: int64
 		summarizeBy: none
@@ -7,27 +22,27 @@ table why_split
 
 	column change
 		dataType: string
+		sortByColumn: step
 		summarizeBy: none
 		sourceColumn: change
-		sortByColumn: step
 
 	column from_banks_themselves
 		dataType: double
+		formatString: +0.00;-0.00
 		summarizeBy: sum
 		sourceColumn: from_banks_themselves
-		formatString: 0.00
 
 	column from_payments_moving
 		dataType: double
+		formatString: +0.00;-0.00
 		summarizeBy: sum
 		sourceColumn: from_payments_moving
-		formatString: 0.00
 
 	column total_change
 		dataType: double
+		formatString: +0.00;-0.00
 		summarizeBy: sum
 		sourceColumn: total_change
-		formatString: 0.00
 
 	partition why_split = m
 		mode: import
@@ -35,7 +50,8 @@ table why_split
 				let
 				    Source = Csv.Document(File.Contents("D:\upi failure\powerbi\data\why_split.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
 				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				    Typed = Table.TransformColumnTypes(Promoted, {{"step", Int64.Type}, {"change", type text}, {"from_banks_themselves", type number}, {"from_payments_moving", type number}, {"total_change", type number}}, "en-US")
+				    Kept = Table.SelectColumns(Promoted, {"step", "change", "from_banks_themselves", "from_payments_moving", "total_change"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"step", Int64.Type}, {"change", type text}, {"from_banks_themselves", type number}, {"from_payments_moving", type number}, {"total_change", type number}}, "en-US")
 				in
 				    Typed
 

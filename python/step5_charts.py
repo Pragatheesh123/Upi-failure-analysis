@@ -20,10 +20,10 @@ years["user_fail_pct"] = years["user_failed_mn"] / years["total_volume_mn"] * 10
 fig, (left, right) = plt.subplots(1, 2, figsize=(10, 4))
 left.bar(years.index, years["system_fail_pct"], color=navy)
 left.axhline(1, color="grey", linestyle="--", linewidth=1)
-left.set_title("System failures (TD) %: target below 1%")
+left.set_title("System failure % (TD): target below 1%")
 right.bar(years.index, years["user_fail_pct"], color=red)
 right.axhline(5, color="grey", linestyle="--", linewidth=1)
-right.set_title("User failures (BD) %: target below 5%")
+right.set_title("Decline % (BD): target below 5%")
 for ax, column in [(left, "system_fail_pct"), (right, "user_fail_pct")]:
     for year, value in years[column].items():
         ax.text(year, value, f"{value:.2f}", ha="center", va="bottom")   # number on top of each bar
@@ -50,7 +50,7 @@ left.axvline(1, color="grey", linestyle="--", linewidth=1)
 left.set_title("System failure %")
 left.set_xlim(0, groups["system_fail_pct"].max() * 1.2)   # room for the number after the longest bar
 right.barh(groups.index, groups["refund_success_pct"], color=colours)
-right.set_title("Refund success % (money taken, then failed)", fontsize=10)
+right.set_title("Automatic refund % (money taken, then failed)", fontsize=10)
 right.set_xlim(0, 110)
 for ax, column in [(left, "system_fail_pct"), (right, "refund_success_pct")]:
     for group, value in groups[column].items():

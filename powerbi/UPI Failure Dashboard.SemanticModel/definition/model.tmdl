@@ -7,9 +7,10 @@ model Model
 		returnErrorValuesAsNull
 
 ref table bank_details
-ref table bank_last_12_months
-ref table cost_by_year
+ref table events
 ref table why_split
+ref table cost_by_year
+ref table bank_last_12_months
+ref table 'Target TD %'
 
 ref cultureInfo en-US
-

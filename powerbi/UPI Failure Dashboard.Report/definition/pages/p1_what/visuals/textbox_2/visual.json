@@ -1,0 +1,108 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "textbox_2",
+  "position": {
+    "x": 14,
+    "y": 30,
+    "z": 200,
+    "width": 860,
+    "height": 46,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "In the last 12 months, about ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "1 in 10",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " payments at the top 50 banks failed. Nearly all were ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "declines",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " (a wrong PIN, low balance, or a limit set by the bank), not system failures.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

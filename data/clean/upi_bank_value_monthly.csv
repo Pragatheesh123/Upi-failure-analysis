@@ -2365,15 +2365,14 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2025-12,Slice Small Finance Bank Ltd,slice Small Finance Bank,46.15,4259.3
 2026-01,AU small Finance Bank,AU Small Finance Bank,76.12,11625.3
 2026-01,Airtel Payments Bank Limited,Airtel Payments Bank,582.63,30264.01
+2026-01,CHAITANYA GODAVARI GRAMEENA BANK,Andhra Pradesh Grameena Bank,38.88,5262.42
 2026-01,Axis Bank Ltd.,Axis Bank,957.72,150495.74
 2026-01,BANDHAN BANK LIMITED,Bandhan Bank,94.3,18060.63
 2026-01,Bank of Baroda,Bank of Baroda,1379.54,171716.54
 2026-01,Bank Of India,Bank of India,633.91,82164.93
 2026-01,Bank of Maharashtra,Bank of Maharashtra,227.74,26274.48
-2026-01,Baroda U.P. Bank,Baroda U.P. Bank,69.6,6122.89
 2026-01,Canara Bank,Canara Bank,993.41,129639.41
 2026-01,Central Bank of India,Central Bank of India,334.92,45601.12
-2026-01,CHAITANYA GODAVARI GRAMEENA BANK,Chaitanya Godavari Grameena Bank,38.88,5262.42
 2026-01,City Union Bank,City Union Bank,54.95,9464.31
 2026-01,DBS Bank India Limited,DBS Bank India,29.26,4302.93
 2026-01,ESAF SMALL FINANCE BANK LTD,ESAF Small Finance Bank,35.33,4651.84
@@ -2400,7 +2399,7 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-01,Punjab and Sind Bank,Punjab & Sind Bank,56.16,7237.69
 2026-01,Punjab National Bank,Punjab National Bank,1083.23,134701.09
 2026-01,RBL Bank Ltd.,RBL Bank,28.47,7025.96
-2026-01,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,48.72,5703.43
+2026-01,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,48.72,5703.43
 2026-01,Saraswat Co-operative Bank,Saraswat Co-operative Bank,31.14,3940.62
 2026-01,SARVA HARYANA GRAMIN BANK,Sarva Haryana Gramin Bank,25.02,2879.89
 2026-01,The South Indian Bank Limited,South Indian Bank,77.33,13112.64
@@ -2411,19 +2410,19 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-01,UCO Bank,UCO Bank,280.7,29816.17
 2026-01,UJJIVAN SMALL FINANCE BANK LIMITED,Ujjivan Small Finance Bank,53.53,6538.97
 2026-01,Union Bank of India,Union Bank of India,1231.73,156350.0
+2026-01,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,69.6,6122.89
 2026-01,YES Bank Ltd.,Yes Bank,157.28,23048.87
 2026-01,Slice Small Finance Bank Ltd,slice Small Finance Bank,53.68,4716.09
 2026-02,Au Small Finance Bank,AU Small Finance Bank,72.06,11039.49
 2026-02,Airtel Payments Bank Limited,Airtel Payments Bank,529.39,28565.55
+2026-02,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,36.17,4849.57
 2026-02,Axis Bank Ltd.,Axis Bank,878.88,140798.4
 2026-02,Bandhan Bank Limited,Bandhan Bank,87.76,17519.18
 2026-02,Bank Of Baroda,Bank of Baroda,1304.87,162834.24
 2026-02,Bank Of India,Bank of India,590.92,77845.93
 2026-02,Bank Of Maharashtra,Bank of Maharashtra,211.99,24652.59
-2026-02,Baroda U.P. Bank,Baroda U.P. Bank,66.57,6044.69
 2026-02,Canara Bank,Canara Bank,943.19,125452.55
 2026-02,Central Bank Of India,Central Bank of India,317.6,43687.05
-2026-02,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,36.17,4849.57
 2026-02,City Union Bank,City Union Bank,52.19,9218.97
 2026-02,Dbs Bank India Limited,DBS Bank India,27.26,4092.92
 2026-02,Esaf Small Finance Bank Ltd,ESAF Small Finance Bank,32.79,4398.41
@@ -2451,7 +2450,7 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-02,Punjab And Sind Bank,Punjab & Sind Bank,54.01,6987.49
 2026-02,Punjab National Bank,Punjab National Bank,1017.77,127462.7
 2026-02,Rbl Bank Ltd.,RBL Bank,29.1,6759.52
-2026-02,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,47.67,5594.0
+2026-02,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,47.67,5594.0
 2026-02,Saraswat Co-Operative Bank,Saraswat Co-operative Bank,29.09,3700.68
 2026-02,The South Indian Bank Limited,South Indian Bank,71.36,12108.37
 2026-02,State Bank Of India,State Bank of India,5089.65,693189.95
@@ -2461,19 +2460,19 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-02,Uco Bank,UCO Bank,262.37,28354.16
 2026-02,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,50.35,6376.72
 2026-02,Union Bank Of India,Union Bank of India,1172.18,149310.97
+2026-02,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,66.57,6044.69
 2026-02,Yes Bank Ltd.,Yes Bank,140.05,20730.14
 2026-02,Slice Small Finance Bank Ltd,slice Small Finance Bank,57.69,4935.65
 2026-03,Au Small Finance Bank,AU Small Finance Bank,80.57,12215.97
 2026-03,Airtel Payments Bank Limited,Airtel Payments Bank,601.26,31560.48
+2026-03,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,41.73,5614.76
 2026-03,Axis Bank Ltd.,Axis Bank,964.19,155184.69
 2026-03,Bandhan Bank Limited,Bandhan Bank,96.76,19268.61
 2026-03,Bank Of Baroda,Bank of Baroda,1462.42,179884.67
 2026-03,Bank Of India,Bank of India,662.66,85976.9
 2026-03,Bank Of Maharashtra,Bank of Maharashtra,238.36,28014.82
-2026-03,Baroda U.P. Bank,Baroda U.P. Bank,76.39,6813.47
 2026-03,Canara Bank,Canara Bank,1060.25,140094.96
 2026-03,Central Bank Of India,Central Bank of India,362.39,48744.66
-2026-03,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,41.73,5614.76
 2026-03,City Union Bank,City Union Bank,56.59,10109.25
 2026-03,Dbs Bank India Limited,DBS Bank India,30.02,4530.83
 2026-03,Esaf Small Finance Bank Ltd,ESAF Small Finance Bank,36.47,4876.81
@@ -2501,7 +2500,7 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-03,Punjab And Sind Bank,Punjab & Sind Bank,60.86,7582.86
 2026-03,Punjab National Bank,Punjab National Bank,1152.01,138609.97
 2026-03,Rbl Bank Ltd.,RBL Bank,33.02,7447.13
-2026-03,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,54.42,6193.29
+2026-03,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,54.42,6193.29
 2026-03,Saraswat Co-Operative Bank,Saraswat Co-operative Bank,32.48,4144.2
 2026-03,The South Indian Bank Limited,South Indian Bank,78.77,13535.91
 2026-03,State Bank Of India,State Bank of India,5759.54,766567.95
@@ -2511,19 +2510,19 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-03,Uco Bank,UCO Bank,293.22,30808.69
 2026-03,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,56.19,7040.0
 2026-03,Union Bank Of India,Union Bank of India,1315.28,165268.86
+2026-03,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,76.39,6813.47
 2026-03,Yes Bank Ltd.,Yes Bank,151.34,23469.18
 2026-03,Slice Small Finance Bank Ltd,slice Small Finance Bank,65.93,5630.97
 2026-04,Au Small Finance Bank,AU Small Finance Bank,77.92,12022.11
 2026-04,Airtel Payments Bank Limited,Airtel Payments Bank,574.58,30043.17
+2026-04,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,41.93,5731.4
 2026-04,Axis Bank Ltd.,Axis Bank,952.58,149134.87
 2026-04,Bandhan Bank Limited,Bandhan Bank,95.15,18723.84
 2026-04,Bank Of Baroda,Bank of Baroda,1447.17,177130.18
 2026-04,Bank Of India,Bank of India,650.76,84375.71
 2026-04,Bank Of Maharashtra,Bank of Maharashtra,235.63,27760.17
-2026-04,Baroda U.P. Bank,Baroda U.P. Bank,78.32,7166.0
 2026-04,Canara Bank,Canara Bank,1051.37,139106.74
 2026-04,Central Bank Of India,Central Bank of India,356.07,47629.23
-2026-04,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,41.93,5731.4
 2026-04,City Union Bank,City Union Bank,55.63,9610.5
 2026-04,Dbs Bank India Limited,DBS Bank India,29.05,4350.61
 2026-04,Esaf Small Finance Bank Ltd,ESAF Small Finance Bank,34.75,4579.62
@@ -2551,7 +2550,7 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-04,Punjab And Sind Bank,Punjab & Sind Bank,60.14,7447.38
 2026-04,Punjab National Bank,Punjab National Bank,1165.01,140662.17
 2026-04,Rbl Bank Ltd.,RBL Bank,27.95,6565.1
-2026-04,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,52.35,6239.14
+2026-04,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,52.35,6239.14
 2026-04,Saraswat Co-Operative Bank,Saraswat Co-operative Bank,32.01,4126.52
 2026-04,The South Indian Bank Limited,South Indian Bank,76.02,12856.06
 2026-04,State Bank Of India,State Bank of India,5662.03,758411.55
@@ -2561,19 +2560,19 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-04,Uco Bank,UCO Bank,284.91,29851.86
 2026-04,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,55.05,6876.85
 2026-04,Union Bank Of India,Union Bank of India,1314.55,164080.33
+2026-04,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,78.32,7166.0
 2026-04,Yes Bank Ltd.,Yes Bank,154.4,23143.83
 2026-04,Slice Small Finance Bank Ltd,slice Small Finance Bank,72.47,5987.28
 2026-05,Au Small Finance Bank,AU Small Finance Bank,82.34,12401.18
 2026-05,Airtel Payments Bank Limited,Airtel Payments Bank,571.01,29750.64
+2026-05,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,44.3,6014.55
 2026-05,Axis Bank Ltd.,Axis Bank,987.51,155628.38
 2026-05,Bandhan Bank Limited,Bandhan Bank,95.62,18011.72
 2026-05,Bank Of Baroda,Bank of Baroda,1505.15,180646.94
 2026-05,Bank Of India,Bank of India,683.13,86917.28
 2026-05,Bank Of Maharashtra,Bank of Maharashtra,239.66,28064.66
-2026-05,Baroda U.P. Bank,Baroda U.P. Bank,82.73,7228.41
 2026-05,Canara Bank,Canara Bank,1096.06,144801.1
 2026-05,Central Bank Of India,Central Bank of India,372.05,49116.09
-2026-05,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,44.3,6014.55
 2026-05,City Union Bank,City Union Bank,58.24,10006.79
 2026-05,Dbs Bank India Limited,DBS Bank India,29.58,4447.54
 2026-05,Esaf Small Finance Bank Ltd,ESAF Small Finance Bank,36.48,4804.92
@@ -2600,7 +2599,7 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-05,One Mobikwik Systems Limited,One MobiKwik Systems,29.58,2462.4
 2026-05,Punjab And Sind Bank,Punjab & Sind Bank,63.93,7942.3
 2026-05,Punjab National Bank,Punjab National Bank,1238.41,147063.56
-2026-05,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,57.07,6528.63
+2026-05,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,57.07,6528.63
 2026-05,Saraswat Co-Operative Bank,Saraswat Co-operative Bank,32.62,4123.94
 2026-05,Sarva Haryana Gramin Bank,Sarva Haryana Gramin Bank,27.82,3530.7
 2026-05,The South Indian Bank Limited,South Indian Bank,79.6,13358.98
@@ -2611,19 +2610,19 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-05,Uco Bank,UCO Bank,300.71,30727.34
 2026-05,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,57.25,6941.11
 2026-05,Union Bank Of India,Union Bank of India,1365.03,169627.47
+2026-05,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,82.73,7228.41
 2026-05,Yes Bank Ltd.,Yes Bank,161.78,24167.15
 2026-05,Slice Small Finance Bank Ltd,slice Small Finance Bank,80.79,6412.24
 2026-06,AU Small Finance Bank,AU Small Finance Bank,81.49,12295.72
 2026-06,Airtel Payments Bank Limited,Airtel Payments Bank,550.03,27854.6
+2026-06,CHAITANYA GODAVARI GRAMEENA BANK,Andhra Pradesh Grameena Bank,45.24,6174.72
 2026-06,Axis Bank Ltd.,Axis Bank,957.73,148855.12
 2026-06,BANDHAN BANK LIMITED,Bandhan Bank,94.85,17588.66
 2026-06,Bank of Baroda,Bank of Baroda,1467.82,174039.96
 2026-06,Bank Of India,Bank of India,667.82,84268.91
 2026-06,Bank of Maharashtra,Bank of Maharashtra,234.35,27394.2
-2026-06,Baroda U.P. Bank,Baroda U.P. Bank,84.36,6831.68
 2026-06,Canara Bank,Canara Bank,1074.62,141292.84
 2026-06,Central Bank of India,Central Bank of India,374.32,48725.91
-2026-06,CHAITANYA GODAVARI GRAMEENA BANK,Chaitanya Godavari Grameena Bank,45.24,6174.72
 2026-06,City Union Bank,City Union Bank,57.95,10187.28
 2026-06,DBS Bank India Limited,DBS Bank India,28.86,4351.34
 2026-06,ESAF SMALL FINANCE BANK LTD,ESAF Small Finance Bank,35.6,4653.05
@@ -2650,7 +2649,7 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-06,One Mobikwik Systems Limited,One MobiKwik Systems,27.63,2239.7
 2026-06,Punjab and Sind Bank,Punjab & Sind Bank,60.8,7239.2
 2026-06,Punjab National Bank,Punjab National Bank,1227.73,141068.08
-2026-06,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,58.14,6473.48
+2026-06,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,58.14,6473.48
 2026-06,Saraswat Co-operative Bank,Saraswat Co-operative Bank,31.95,4042.67
 2026-06,SARVA HARYANA GRAMIN BANK,Sarva Haryana Gramin Bank,27.5,2907.83
 2026-06,The South Indian Bank Limited,South Indian Bank,78.36,13003.98
@@ -2661,19 +2660,19 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-06,UCO Bank,UCO Bank,299.44,30452.72
 2026-06,UJJIVAN SMALL FINANCE BANK LIMITED,Ujjivan Small Finance Bank,56.25,6787.85
 2026-06,Union Bank of India,Union Bank of India,1334.41,165510.22
+2026-06,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,84.36,6831.68
 2026-06,Yes Bank Ltd.,Yes Bank,156.25,23465.94
 2026-06,Slice Small Finance Bank Ltd,slice Small Finance Bank,85.34,6443.64
 2026-07,Au Small Finance Bank,AU Small Finance Bank,86.05,12919.49
 2026-07,Airtel Payments Bank Limited,Airtel Payments Bank,572.59,29355.62
+2026-07,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,48.91,6670.88
 2026-07,Axis Bank Ltd.,Axis Bank,982.03,155600.4
 2026-07,Bandhan Bank Limited,Bandhan Bank,100.06,18117.94
 2026-07,Bank of Baroda,Bank of Baroda,1522.95,175620.26
 2026-07,Bank of India,Bank of India,687.51,85774.09
 2026-07,Bank of Maharashtra,Bank of Maharashtra,236.49,27376.58
-2026-07,Baroda U.P. Bank,Baroda U.P. Bank,91.43,7228.46
 2026-07,Canara Bank,Canara Bank,1132.45,146902.24
 2026-07,Central Bank Of India,Central Bank of India,390.79,49593.51
-2026-07,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,48.91,6670.88
 2026-07,City Union Bank,City Union Bank,61.29,10588.83
 2026-07,DBS Bank India Limited,DBS Bank India,29.71,4488.8
 2026-07,Esaf Small Finance Bank Ltd,ESAF Small Finance Bank,36.78,4747.32
@@ -2700,7 +2699,7 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-07,One Mobikwik Systems Limited,One MobiKwik Systems,28.82,2333.76
 2026-07,Punjab And Sind Bank,Punjab & Sind Bank,64.38,7534.33
 2026-07,Punjab National Bank,Punjab National Bank,1296.63,147398.63
-2026-07,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,58.9,6407.85
+2026-07,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,58.9,6407.85
 2026-07,Saraswat Co-Operative Bank,Saraswat Co-operative Bank,31.99,4110.47
 2026-07,Sarva Haryana Gramin Bank,Sarva Haryana Gramin Bank,28.6,2895.57
 2026-07,The South Indian Bank Limited,South Indian Bank,82.8,13664.18
@@ -2711,19 +2710,19 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-07,UCO Bank,UCO Bank,312.73,31334.85
 2026-07,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,59.06,7012.8
 2026-07,Union Bank of India,Union Bank of India,1383.66,169179.61
+2026-07,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,91.43,7228.46
 2026-07,Yes Bank Ltd.,Yes Bank,164.03,24690.01
 2026-07,Slice Small Finance Bank Ltd,slice Small Finance Bank,94.02,7102.13
 2026-08,AU Small Finance Bank,AU Small Finance Bank,89.26,13057.79
 2026-08,Airtel Payments Bank Limited,Airtel Payments Bank,590.0,30424.4
+2026-08,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,51.43,6595.91
 2026-08,Axis Bank Ltd.,Axis Bank,994.04,154744.99
 2026-08,Bandhan Bank Limited,Bandhan Bank,102.37,18108.11
 2026-08,Bank of Baroda,Bank of Baroda,1578.24,173647.24
 2026-08,Bank Of India,Bank of India,717.63,85480.11
 2026-08,Bank of Maharashtra,Bank of Maharashtra,248.15,27533.68
-2026-08,Baroda U.P. Bank,Baroda U.P. Bank,97.17,7479.16
 2026-08,Canara Bank,Canara Bank,1157.56,146688.96
 2026-08,Central Bank of India,Central Bank of India,402.06,48493.18
-2026-08,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,51.43,6595.91
 2026-08,City Union Bank,City Union Bank,62.0,10566.1
 2026-08,DBS Bank India Limited,DBS Bank India,29.93,4515.44
 2026-08,ESAF Small Finance Bank Ltd,ESAF Small Finance Bank,37.23,4767.35
@@ -2750,7 +2749,7 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-08,One Mobikwik Systems Limited,One MobiKwik Systems,30.04,2569.91
 2026-08,Punjab and Sind Bank,Punjab & Sind Bank,65.53,7389.3
 2026-08,Punjab National Bank,Punjab National Bank,1367.31,147258.8
-2026-08,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,65.42,6732.25
+2026-08,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,65.42,6732.25
 2026-08,Saraswat Co-operative Bank,Saraswat Co-operative Bank,33.79,4230.46
 2026-08,Sarva Haryana Gramin Bank,Sarva Haryana Gramin Bank,29.09,2753.26
 2026-08,The South Indian Bank Limited,South Indian Bank,85.03,13905.68
@@ -2761,19 +2760,19 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-08,UCO Bank,UCO Bank,326.36,31302.08
 2026-08,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,60.34,7042.88
 2026-08,Union Bank of India,Union Bank of India,1433.41,167578.93
+2026-08,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,97.17,7479.16
 2026-08,Yes Bank Ltd.,Yes Bank,163.96,25281.25
 2026-08,slice Small Finance Bank Limited,slice Small Finance Bank,105.42,7916.55
 2026-09,AU Small Finance Bank,AU Small Finance Bank,87.77,12919.51
 2026-09,Airtel Payments Bank Limited,Airtel Payments Bank,582.29,30453.34
+2026-09,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,49.31,6289.92
 2026-09,Axis Bank Ltd.,Axis Bank,974.92,152085.26
 2026-09,Bandhan Bank Limited,Bandhan Bank,101.49,18248.68
 2026-09,Bank of Baroda,Bank of Baroda,1544.37,170042.46
 2026-09,Bank of India,Bank of India,702.1,84000.28
 2026-09,Bank of Maharashtra,Bank of Maharashtra,245.81,27179.62
-2026-09,Baroda U.P. Bank,Baroda U.P. Bank,97.33,7504.58
 2026-09,Canara Bank,Canara Bank,1145.34,145842.42
 2026-09,Central Bank of India,Central Bank of India,408.89,48824.01
-2026-09,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,49.31,6289.92
 2026-09,City Union Bank,City Union Bank,60.53,10342.14
 2026-09,DBS Bank India Limited,DBS Bank India,29.05,4439.5
 2026-09,ESAF Small Finance Bank Ltd,ESAF Small Finance Bank,36.81,4735.27
@@ -2800,7 +2799,7 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-09,One Mobikwik Systems Limited,One MobiKwik Systems,31.85,2666.17
 2026-09,Punjab And Sind Bank,Punjab & Sind Bank,65.13,7414.33
 2026-09,Punjab National Bank,Punjab National Bank,1364.42,148018.08
-2026-09,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,64.65,6592.39
+2026-09,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,64.65,6592.39
 2026-09,Saraswat Co-Operative Bank,Saraswat Co-operative Bank,33.28,4187.22
 2026-09,Sarva Haryana Gramin Bank,Sarva Haryana Gramin Bank,28.89,2742.94
 2026-09,The South Indian Bank Limited,South Indian Bank,84.36,13748.06
@@ -2811,5 +2810,6 @@ month,bank_raw,bank,approved_volume_mn,value_cr
 2026-09,UCO Bank,UCO Bank,321.91,31015.14
 2026-09,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,59.25,7023.19
 2026-09,Union Bank of India,Union Bank of India,1381.43,163054.51
+2026-09,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,97.33,7504.58
 2026-09,Yes Bank Ltd.,Yes Bank,161.63,24117.36
 2026-09,slice small Finance Bank Limited,slice Small Finance Bank,113.13,8382.68

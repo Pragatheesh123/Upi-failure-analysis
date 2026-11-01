@@ -84,6 +84,20 @@ if len(unknown_names) > 0:
     raise SystemExit(f"Add these new spellings to data/bank_names.csv: {list(unknown_names)}")
 print("4.", banks["bank_raw"].nunique(), "spellings ->", banks["bank"].nunique(), "banks")
 
+# On 1 May 2025 some Gramin (rural) banks merged into one bank per state ("One State, One RRB").
+# NPCI keeps switching between the old and the new names after that, so from May 2025 we give
+# the old names the new bank's name. Before May 2025 they stay separate, as they really were.
+merged_banks = {
+    "Baroda U.P. Bank": "Uttar Pradesh Gramin Bank",
+    "Andhra Pragathi Grameena Bank": "Andhra Pradesh Grameena Bank",
+    "Chaitanya Godavari Grameena Bank": "Andhra Pradesh Grameena Bank",
+    "Andhra Pradesh Grameena Vikas Bank": "Andhra Pradesh Grameena Bank",
+    "Rajasthan Marudhara Gramin Bank": "Rajasthan Gramin Bank",
+}
+after_merger = banks["month"] >= "2025-05"
+banks.loc[after_merger, "bank"] = banks.loc[after_merger, "bank"].replace(merged_banks)
+print("4. Merged Gramin banks counted once from May 2025:", after_merger.sum(), "rows checked")
+
 
 # ---------- 5. Bank payment values ----------
 # A second NPCI table: each bank's approved payments (in millions) and their value (in Rs crore).
@@ -96,6 +110,8 @@ values["bank_raw"] = values["bank_raw"].str.strip()
 for column in ["approved_volume_mn", "value_cr"]:
     values[column] = pd.to_numeric(values[column].str.replace(",", ""), errors="coerce")
 values = values.merge(bank_names[["bank_raw", "bank"]], on="bank_raw")   # standard names (also drops "Total" rows)
+values_after_merger = values["month"] >= "2025-05"                       # same merger rule as the bank table
+values.loc[values_after_merger, "bank"] = values.loc[values_after_merger, "bank"].replace(merged_banks)
 values = values[["month", "bank_raw", "bank", "approved_volume_mn", "value_cr"]].sort_values(["month", "bank"])
 print("5.", len(values), "bank value rows")
 

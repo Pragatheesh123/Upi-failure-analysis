@@ -1,0 +1,125 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "textbox_2",
+  "position": {
+    "x": 14,
+    "y": 30,
+    "z": 200,
+    "width": 860,
+    "height": 46,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "If every bank had met the 1% target in the last 12 months, ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "63.4 mn",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " more payments would have gone through. That is only ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "0.02%",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " of all payments, but it falls mostly on ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "rural customers",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " of 3 Gramin banks.",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

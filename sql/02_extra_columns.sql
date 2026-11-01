@@ -1,5 +1,7 @@
 -- Adds extra columns to the bank table. Every question file uses these.
--- TD = system failure (bank or NPCI side), BD = user failure (wrong PIN, low balance)
+-- TD = system failure (bank or NPCI side)
+-- BD = decline: a wrong PIN, low balance, or a limit set by the bank (NPCI calls it "business decline").
+--      The column is still called user_failed_mn, but some declines are caused by the bank (NPCI OC 149).
 
 DROP VIEW IF EXISTS bank_details CASCADE;
 DROP VIEW IF EXISTS year_totals CASCADE;
@@ -9,12 +11,17 @@ CREATE VIEW bank_details AS
 SELECT *,
     LEFT(month, 4) AS year,
     total_volume_mn * approved_pct / 100 AS approved_mn,     -- payments that went through (millions)
-    total_volume_mn * bd_pct / 100 AS user_failed_mn,        -- payments that failed because of the user
+    total_volume_mn * bd_pct / 100 AS user_failed_mn,        -- payments declined (wrong PIN, low balance, bank limit)
     total_volume_mn * td_pct / 100 AS system_failed_mn,      -- payments that failed because of the system
     RIGHT(month, 2) IN ('10', '11') AS is_festival_month,    -- October or November
     td_pct > 1 AS above_npci_target,                         -- NPCI wants TD below 1%
     CASE WHEN bank_type IN ('Co-operative', 'Payment company (PPI)', 'Credit card issuer') THEN 'Others'
-         ELSE bank_type END AS bank_group                    -- small bank types joined into "Others"
+         ELSE bank_type END AS bank_group,                   -- small bank types joined into "Others"
+    CASE WHEN bank_type = 'Gramin' THEN 'Gramin banks'
+         ELSE 'All other banks' END AS gramin_or_other,      -- for the Gramin vs everyone else line
+    CASE WHEN LEFT(month, 4) = '2021' THEN '2021 (Aug-Dec)'
+         WHEN LEFT(month, 4) = '2026' THEN '2026 (Jan-Sep)'
+         ELSE LEFT(month, 4) END AS year_label               -- partial years say which months they cover
 FROM bank_monthly;
 
 -- year_totals: all payments in each year (all banks added up)

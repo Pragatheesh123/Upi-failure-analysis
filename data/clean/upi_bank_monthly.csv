@@ -2284,19 +2284,19 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2025-05,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,33,52.91,93.19,6.62,0.19,0.13,91.42,,,npci_api,False
 2025-05,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,34,52.51,92.78,7.05,0.17,0.09,92.46,,,npci_api,False
 2025-05,JIO Payments Bank Ltd,Jio Payments Bank,Payments bank,35,52.13,83.89,15.36,0.74,0.31,86.75,,,npci_api,False
-2025-05,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,36,45.69,91.48,6.48,2.04,0.39,35.16,,,npci_api,False
+2025-05,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,36,45.69,91.48,6.48,2.04,0.39,35.16,,,npci_api,False
 2025-05,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,37,44.18,91.81,7.17,1.02,0.32,68.37,,,npci_api,False
 2025-05,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,38,37.79,88.89,10.41,0.7,0.23,72.72,,,npci_api,False
 2025-05,RBL Bank Ltd.,RBL Bank,Private,39,35.46,93.76,5.57,0.67,0.1,61.82,,,npci_api,False
 2025-05,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,40,35.09,86.13,12.35,1.52,0.18,62.95,,,npci_api,False
 2025-05,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,41,35.02,84.06,15.48,0.45,0.17,77.48,,,npci_api,False
 2025-05,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,42,34.59,89.38,9.26,1.36,0.32,52.34,,,npci_api,False
-2025-05,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,43,32.88,86.88,12.5,0.62,0.18,33.49,,,npci_api,False
+2025-05,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,43,32.88,86.88,12.5,0.62,0.18,33.49,,,npci_api,False
 2025-05,ESAF Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,44,32.02,95.76,4.06,0.19,0.07,92.8,,,npci_api,False
 2025-05,DBS Bank India Limited,DBS Bank India,Foreign,45,31.69,93.36,6.53,0.12,0.06,94.01,,,npci_api,False
 2025-05,Equitas Small Finance Bank,Equitas Small Finance Bank,Small finance,46,30.47,91.32,8.47,0.21,0.07,98.98,,,npci_api,False
 2025-05,Saraswat Co-operative Bank,Saraswat Co-operative Bank,Co-operative,47,28.72,95.09,4.88,0.04,0.05,99.03,,,npci_api,False
-2025-05,Andhra Pragathi Grameena Bank,Andhra Pragathi Grameena Bank,Gramin,48,28.62,84.84,12.31,2.85,0.18,38.41,,,npci_api,False
+2025-05,Andhra Pragathi Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,48,28.62,84.84,12.31,2.85,0.18,38.41,,,npci_api,False
 2025-05,Standard Chartered Bank,Standard Chartered Bank,Foreign,49,28.24,95.89,3.67,0.43,0.08,43.42,,,npci_api,False
 2025-05,Sarva Haryana Gramin Bank,Sarva Haryana Gramin Bank,Gramin,50,26.07,90.17,6.96,2.87,0.28,43.62,,,npci_api,False
 2025-06,State Bank of India,State Bank of India,Public,1,4917.29,93.64,5.82,0.54,12.9,98.27,,,npci_api,False
@@ -2334,17 +2334,17 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2025-06,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,33,52.39,91.45,8.25,0.3,0.14,87.38,,,npci_api,False
 2025-06,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,34,52.32,93.04,6.81,0.15,0.08,72.68,,,npci_api,False
 2025-06,JIO Payments Bank Ltd,Jio Payments Bank,Payments bank,35,52.13,85.91,13.08,1.01,0.38,92.66,,,npci_api,False
-2025-06,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,36,44.19,93.21,5.56,1.23,0.28,53.69,,,npci_api,False
+2025-06,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,36,44.19,93.21,5.56,1.23,0.28,53.69,,,npci_api,False
 2025-06,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,37,43.3,91.63,6.78,1.58,0.34,73.04,,,npci_api,False
 2025-06,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,38,41.11,87.07,10.14,2.79,0.28,65.85,,,npci_api,False
 2025-06,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,39,38.69,85.05,14.21,0.74,0.22,77.12,,,npci_api,False
 2025-06,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,40,34.24,88.11,9.33,2.56,0.29,64.6,,,npci_api,False
 2025-06,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,41,34.01,86.29,12.86,0.85,0.14,57.19,,,npci_api,False
-2025-06,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,42,33.3,86.73,11.81,1.47,0.17,73.69,,,npci_api,False
+2025-06,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,42,33.3,86.73,11.81,1.47,0.17,73.69,,,npci_api,False
 2025-06,RBL Bank Ltd.,RBL Bank,Private,43,32.16,93.89,5.88,0.23,0.07,61.68,,,npci_api,False
 2025-06,ESAF Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,44,31.54,95.88,4.02,0.1,0.07,94.0,,,npci_api,False
 2025-06,DBS Bank India Limited,DBS Bank India,Foreign,45,30.55,93.29,6.52,0.19,0.07,87.06,,,npci_api,False
-2025-06,Andhra Pragathi Grameena Bank,Andhra Pragathi Grameena Bank,Gramin,46,29.66,83.04,12.7,4.26,0.23,63.9,,,npci_api,False
+2025-06,Andhra Pragathi Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,46,29.66,83.04,12.7,4.26,0.23,63.9,,,npci_api,False
 2025-06,Equitas Small Finance Bank,Equitas Small Finance Bank,Small finance,47,28.87,91.34,8.66,0.0,0.07,99.13,,,npci_api,False
 2025-06,Saraswat Co-operative Bank,Saraswat Co-operative Bank,Co-operative,48,28.21,94.61,5.3,0.08,0.06,89.18,,,npci_api,False
 2025-06,Sarva Haryana Gramin Bank,Sarva Haryana Gramin Bank,Gramin,49,24.99,94.6,4.55,0.84,0.14,64.95,,,npci_api,False
@@ -2384,15 +2384,15 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2025-07,City Union Bank,City Union Bank,Private,33,56.65,92.3,7.56,0.14,0.13,99.87,,,npci_api,False
 2025-07,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,34,55.91,91.44,7.29,1.27,0.24,67.84,,,npci_api,False
 2025-07,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,35,54.99,89.92,8.92,1.16,0.19,80.13,,,npci_api,False
-2025-07,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,36,48.24,92.71,5.61,1.68,0.32,56.53,,,npci_api,False
+2025-07,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,36,48.24,92.71,5.61,1.68,0.32,56.53,,,npci_api,False
 2025-07,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,37,46.93,91.33,7.04,1.64,0.42,85.31,,,npci_api,False
 2025-07,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,38,45.7,84.88,14.23,0.89,0.3,74.6,,,npci_api,False
 2025-07,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,39,40.36,88.11,10.35,1.54,0.38,56.78,,,npci_api,False
 2025-07,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,40,37.37,84.63,13.82,1.56,0.2,62.99,,,npci_api,False
-2025-07,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,41,36.15,85.28,12.34,2.38,0.32,40.95,,,npci_api,False
+2025-07,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,41,36.15,85.28,12.34,2.38,0.32,40.95,,,npci_api,False
 2025-07,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,42,34.96,89.09,10.03,0.88,0.19,91.19,,,npci_api,False
 2025-07,ESAF Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,43,33.38,95.7,4.26,0.04,0.09,97.84,,,npci_api,False
-2025-07,Andhra Pragathi Grameena Bank,Andhra Pragathi Grameena Bank,Gramin,44,31.91,82.27,13.96,3.78,0.28,32.42,,,npci_api,False
+2025-07,Andhra Pragathi Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,44,31.91,82.27,13.96,3.78,0.28,32.42,,,npci_api,False
 2025-07,DBS Bank India Limited,DBS Bank India,Foreign,45,31.81,93.09,6.76,0.15,0.08,95.78,,,npci_api,False
 2025-07,RBL Bank Ltd.,RBL Bank,Private,46,31.22,92.43,7.09,0.48,0.1,79.93,,,npci_api,False
 2025-07,Equitas Small Finance Bank,Equitas Small Finance Bank,Small finance,47,30.07,91.14,8.86,0.01,0.08,99.28,,,npci_api,False
@@ -2434,16 +2434,16 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2025-08,City Union Bank,City Union Bank,Private,33,57.26,92.59,7.3,0.11,0.1,99.53,,,npci_api,False
 2025-08,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,34,55.86,92.16,6.56,1.28,0.2,54.34,,,npci_api,False
 2025-08,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,35,54.77,90.46,8.26,1.28,0.21,71.19,,,npci_api,False
-2025-08,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,36,53.78,87.67,4.69,7.63,0.92,44.49,,,npci_api,False
+2025-08,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,36,53.78,87.67,4.69,7.63,0.92,44.49,,,npci_api,False
 2025-08,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,37,51.33,85.08,13.62,1.3,0.39,71.78,,,npci_api,False
 2025-08,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,38,50.92,90.77,6.54,2.69,0.51,70.32,,,npci_api,False
 2025-08,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,39,40.42,88.02,9.51,2.47,0.35,44.22,,,npci_api,False
 2025-08,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,40,38.08,83.77,13.79,2.44,0.23,52.46,,,npci_api,False
 2025-08,ESAF Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,41,34.96,95.92,4.01,0.08,0.08,98.84,,,npci_api,False
 2025-08,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,42,34.89,88.91,9.83,1.26,0.23,67.83,,,npci_api,False
-2025-08,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,43,32.73,85.57,11.74,2.69,0.4,31.73,,,npci_api,False
+2025-08,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,43,32.73,85.57,11.74,2.69,0.4,31.73,,,npci_api,False
 2025-08,RBL Bank Ltd.,RBL Bank,Private,44,32.15,92.71,6.73,0.56,0.09,76.46,,,npci_api,False
-2025-08,Andhra Pragathi Grameena Bank,Andhra Pragathi Grameena Bank,Gramin,45,32.07,83.11,13.12,3.77,0.24,60.28,,,npci_api,False
+2025-08,Andhra Pragathi Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,45,32.07,83.11,13.12,3.77,0.24,60.28,,,npci_api,False
 2025-08,DBS Bank India Limited,DBS Bank India,Foreign,46,31.37,92.08,6.44,1.48,0.11,60.18,,,npci_api,False
 2025-08,Saraswat Co-operative Bank,Saraswat Co-operative Bank,Co-operative,47,30.02,94.06,4.57,1.37,0.09,71.34,,,npci_api,False
 2025-08,Equitas Small Finance Bank,Equitas Small Finance Bank,Small finance,48,29.43,91.02,8.64,0.33,0.1,68.99,,,npci_api,False
@@ -2484,16 +2484,16 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2025-09,Punjab and Sind Bank,Punjab & Sind Bank,Public,32,59.04,90.1,8.39,1.51,0.43,62.6,,,npci_api,False
 2025-09,City Union Bank,City Union Bank,Private,33,56.06,92.58,7.27,0.15,0.13,96.36,,,npci_api,False
 2025-09,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,34,55.19,92.93,6.8,0.28,0.15,89.39,,,npci_api,False
-2025-09,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,35,54.02,85.15,4.64,10.22,1.45,43.42,,,npci_api,False
+2025-09,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,35,54.02,85.15,4.64,10.22,1.45,43.42,,,npci_api,False
 2025-09,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,36,53.83,91.01,8.54,0.45,0.2,85.0,,,npci_api,False
 2025-09,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,37,50.72,83.8,14.81,1.4,0.43,71.15,,,npci_api,False
 2025-09,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,38,49.94,87.81,6.32,5.88,0.88,66.18,,,npci_api,False
 2025-09,SBI Cards and Payment Services Limited,SBI Card,Credit card issuer,40,44.04,95.53,4.3,0.18,0.14,97.1,,,npci_api,False
-2025-09,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,41,42.78,86.27,11.97,1.76,0.42,43.83,,,npci_api,False
+2025-09,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,41,42.78,86.27,11.97,1.76,0.42,43.83,,,npci_api,False
 2025-09,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,42,39.87,88.26,9.3,2.44,0.37,39.15,,,npci_api,False
 2025-09,ESAF Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,43,34.03,95.8,4.06,0.14,0.11,88.78,,,npci_api,False
 2025-09,ICICI Bank Credit Card,ICICI Bank Credit Card,Credit card issuer,44,32.88,95.93,4.02,0.05,0.07,97.11,,,npci_api,False
-2025-09,Andhra Pragathi Grameena Bank,Andhra Pragathi Grameena Bank,Gramin,45,31.46,83.27,13.51,3.22,0.15,63.33,,,npci_api,False
+2025-09,Andhra Pragathi Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,45,31.46,83.27,13.51,3.22,0.15,63.33,,,npci_api,False
 2025-09,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,46,31.17,83.04,11.11,5.85,0.6,37.6,,,npci_api,False
 2025-09,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,47,30.47,83.19,13.69,3.12,0.23,50.4,,,npci_api,False
 2025-09,DBS Bank India Limited,DBS Bank India,Foreign,48,30.33,93.33,6.61,0.07,0.08,94.32,,,npci_api,False
@@ -2685,12 +2685,12 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2026-01,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,34,61.69,92.17,7.74,0.09,0.18,93.01,,,npci_api,False
 2026-01,UJJIVAN SMALL FINANCE BANK LIMITED,Ujjivan Small Finance Bank,Small finance,35,60.33,88.73,11.11,0.16,0.29,92.79,,,npci_api,False
 2026-01,City Union Bank,City Union Bank,Private,36,60.03,91.53,8.42,0.05,0.17,99.82,,,npci_api,False
-2026-01,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,37,57.4,84.87,13.13,1.99,0.58,87.29,,,npci_api,False
+2026-01,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,37,57.4,84.87,13.13,1.99,0.58,87.29,,,npci_api,False
 2026-01,KERALA GRAMIN BANK,Kerala Gramin Bank,Gramin,38,57.0,92.43,7.27,0.3,0.17,89.16,,,npci_api,False
 2026-01,Slice Small Finance Bank Limited,slice Small Finance Bank,Small finance,39,56.48,95.04,4.84,0.11,0.29,90.38,,,npci_api,False
 2026-01,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,40,55.87,87.39,11.59,1.02,0.35,59.51,,,npci_api,False
 2026-01,TELANGANA GRAMEENA BANK,Telangana Grameena Bank,Gramin,41,48.68,86.99,10.66,2.34,0.38,48.74,,,npci_api,False
-2026-01,CHAITANYA GODAVARI GRAMEENA BANK,Chaitanya Godavari Grameena Bank,Gramin,42,43.44,89.52,9.69,0.8,0.26,69.21,,,npci_api,False
+2026-01,CHAITANYA GODAVARI GRAMEENA BANK,Andhra Pradesh Grameena Bank,Gramin,42,43.44,89.52,9.69,0.8,0.26,69.21,,,npci_api,False
 2026-01,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,43,41.15,83.7,14.61,1.69,0.29,42.54,,,npci_api,False
 2026-01,ESAF SMALL FINANCE BANK LTD,ESAF Small Finance Bank,Small finance,44,37.02,95.45,3.92,0.63,0.18,78.32,,,npci_api,False
 2026-01,Saraswat Co-operative Bank,Saraswat Co-operative Bank,Co-operative,45,33.06,94.18,5.56,0.27,0.09,89.22,,,npci_api,False
@@ -2730,18 +2730,18 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2026-02,JIO PAYMENTS BANK LTD,Jio Payments Bank,Payments bank,29,89.08,82.14,17.58,0.28,1.32,95.74,,,npci_api,False
 2026-02,AU small Finance Bank,AU Small Finance Bank,Small finance,30,81.88,88.0,12.0,0.0,0.42,52.09,,,npci_api,False
 2026-02,The South Indian Bank Limited,South Indian Bank,Private,31,75.83,94.11,5.84,0.06,0.15,97.25,,,npci_api,False
-2026-02,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,32,75.3,88.41,4.33,7.26,1.74,38.99,,,npci_api,False
+2026-02,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,32,75.3,88.41,4.33,7.26,1.74,38.99,,,npci_api,False
 2026-02,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,33,68.12,74.79,20.33,4.88,1.45,69.67,,,npci_api,False
 2026-02,Punjab and Sind Bank,Punjab & Sind Bank,Public,34,61.26,88.17,11.57,0.26,0.36,91.25,,,npci_api,False
 2026-02,Slice Small Finance Bank Limited,slice Small Finance Bank,Small finance,35,60.71,95.03,4.97,0.0,0.26,92.54,,,npci_api,False
 2026-02,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,36,59.48,91.34,7.97,0.7,0.2,83.94,,,npci_api,False
 2026-02,UJJIVAN SMALL FINANCE BANK LIMITED,Ujjivan Small Finance Bank,Small finance,37,57.23,87.98,11.95,0.07,0.27,94.09,,,npci_api,False
 2026-02,City Union Bank,City Union Bank,Private,38,57.07,91.46,8.34,0.2,0.17,99.8,,,npci_api,False
-2026-02,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,39,56.22,84.8,13.35,1.86,0.58,76.17,,,npci_api,False
+2026-02,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,39,56.22,84.8,13.35,1.86,0.58,76.17,,,npci_api,False
 2026-02,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,40,53.13,87.04,11.51,1.45,0.27,71.7,,,npci_api,False
 2026-02,KERALA GRAMIN BANK,Kerala Gramin Bank,Gramin,41,52.11,92.54,7.17,0.3,0.17,77.41,,,npci_api,False
 2026-02,TELANGANA GRAMEENA BANK,Telangana Grameena Bank,Gramin,42,45.12,86.99,11.67,1.33,0.21,69.3,,,npci_api,False
-2026-02,CHAITANYA GODAVARI GRAMEENA BANK,Chaitanya Godavari Grameena Bank,Gramin,43,41.7,86.75,11.64,1.61,0.34,48.07,,,npci_api,False
+2026-02,CHAITANYA GODAVARI GRAMEENA BANK,Andhra Pradesh Grameena Bank,Gramin,43,41.7,86.75,11.64,1.61,0.34,48.07,,,npci_api,False
 2026-02,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,44,38.34,83.03,15.54,1.43,0.24,51.88,,,npci_api,False
 2026-02,ESAF SMALL FINANCE BANK LTD,ESAF Small Finance Bank,Small finance,45,34.11,96.13,3.61,0.26,0.13,96.43,,,npci_api,False
 2026-02,RBL Bank Ltd.,RBL Bank,Private,46,31.46,92.52,7.07,0.41,0.12,59.65,,,npci_api,False
@@ -2779,19 +2779,19 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2026-03,Bandhan Bank Limited,Bandhan Bank,Private,28,102.11,94.77,4.5,0.74,0.65,80.86,,,npci_api,False
 2026-03,Jio Payments Bank Ltd,Jio Payments Bank,Payments bank,29,101.97,80.8,18.89,0.3,1.49,98.74,,,npci_api,False
 2026-03,Au Small Finance Bank,AU Small Finance Bank,Small finance,30,92.46,87.14,12.76,0.1,0.4,95.24,,,npci_api,False
-2026-03,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,31,90.1,84.79,5.05,10.17,2.77,43.14,,,npci_api,False
+2026-03,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,31,90.1,84.79,5.05,10.17,2.77,43.14,,,npci_api,False
 2026-03,The South Indian Bank Limited,South Indian Bank,Private,32,84.24,93.51,6.28,0.21,0.15,98.35,,,npci_api,False
 2026-03,Nsdl Payments Bank Limited,NSDL Payments Bank,Payments bank,33,78.59,75.74,22.63,1.63,1.33,90.81,,,npci_api,False
 2026-03,Slice Small Finance Bank Limited,slice Small Finance Bank,Small finance,34,70.17,93.96,5.77,0.27,0.29,88.41,,,npci_api,False
 2026-03,Punjab And Sind Bank,Punjab & Sind Bank,Public,35,69.58,87.47,12.25,0.28,0.4,90.35,,,npci_api,False
 2026-03,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,36,66.82,91.41,8.05,0.54,0.19,90.27,,,npci_api,True
 2026-03,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,37,64.24,87.46,12.29,0.25,0.3,92.18,,,npci_api,False
-2026-03,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,38,64.16,84.83,14.49,0.68,0.48,94.64,,,npci_api,False
+2026-03,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,38,64.16,84.83,14.49,0.68,0.48,94.64,,,npci_api,False
 2026-03,City Union Bank,City Union Bank,Private,39,62.47,90.59,9.03,0.38,0.19,99.85,,,npci_api,False
 2026-03,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,40,61.01,88.01,10.86,1.14,0.36,55.12,,,npci_api,False
 2026-03,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,41,58.84,93.23,6.54,0.23,0.16,89.49,,,npci_api,False
 2026-03,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,42,52.64,86.27,11.89,1.84,0.17,90.28,,,npci_api,False
-2026-03,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,Gramin,43,49.65,84.05,14.76,1.2,0.4,42.77,,,npci_api,False
+2026-03,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,43,49.65,84.05,14.76,1.2,0.4,42.77,,,npci_api,False
 2026-03,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,44,44.51,81.31,15.23,3.46,0.35,37.78,,,npci_api,False
 2026-03,Esaf Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,45,38.08,95.77,3.54,0.69,0.18,91.69,,,npci_api,False
 2026-03,Rbl Bank Ltd.,RBL Bank,Private,46,35.74,92.39,7.27,0.33,0.09,76.16,,,npci_api,False
@@ -2829,19 +2829,19 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2026-04,Jio Payments Bank Ltd,Jio Payments Bank,Payments bank,28,102.39,80.65,18.91,0.45,1.18,96.83,,,npci_api,False
 2026-04,Bandhan Bank Limited,Bandhan Bank,Private,29,100.26,94.9,4.67,0.42,0.48,98.22,,,npci_api,False
 2026-04,Au Small Finance Bank,AU Small Finance Bank,Small finance,30,89.99,86.59,12.79,0.62,0.34,89.3,,,npci_api,False
-2026-04,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,31,85.89,91.18,5.48,3.33,1.18,51.78,,,npci_api,False
+2026-04,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,31,85.89,91.18,5.48,3.33,1.18,51.78,,,npci_api,False
 2026-04,The South Indian Bank Limited,South Indian Bank,Private,32,81.23,93.59,6.27,0.14,0.13,97.25,,,npci_api,False
 2026-04,Nsdl Payments Bank Limited,NSDL Payments Bank,Payments bank,33,80.35,73.05,23.28,3.67,1.32,84.35,,,npci_api,False
 2026-04,Slice Small Finance Bank Limited,slice Small Finance Bank,Small finance,34,76.91,94.23,5.67,0.1,0.24,92.65,,,npci_api,False
 2026-04,Punjab And Sind Bank,Punjab & Sind Bank,Public,35,69.04,87.12,12.59,0.29,0.34,89.62,,,npci_api,False
-2026-04,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,36,65.75,79.61,14.36,6.03,0.45,70.27,,,npci_api,False
+2026-04,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,36,65.75,79.61,14.36,6.03,0.45,70.27,,,npci_api,False
 2026-04,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,37,64.04,91.45,8.25,0.3,0.14,94.33,,,npci_api,False
 2026-04,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,38,63.65,86.48,12.78,0.75,0.27,82.49,,,npci_api,False
 2026-04,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,39,61.4,85.98,11.44,2.58,0.66,29.74,,,npci_api,False
 2026-04,City Union Bank,City Union Bank,Private,40,60.88,91.38,8.35,0.27,0.13,99.75,,,npci_api,False
 2026-04,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,41,57.67,92.76,6.84,0.41,0.18,73.75,,,npci_api,False
 2026-04,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,42,53.21,85.61,11.3,3.09,0.16,85.05,,,npci_api,False
-2026-04,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,Gramin,43,48.58,86.3,12.67,1.03,0.31,49.89,,,npci_api,False
+2026-04,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,43,48.58,86.3,12.67,1.03,0.31,49.89,,,npci_api,False
 2026-04,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,44,44.54,83.24,15.59,1.17,0.19,59.45,,,npci_api,False
 2026-04,Esaf Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,45,36.72,94.62,3.69,1.69,0.22,78.64,,,npci_api,False
 2026-04,Saraswat Co-Operative Bank,Saraswat Co-operative Bank,Co-operative,46,34.24,93.48,5.89,0.63,0.11,68.64,,,npci_api,False
@@ -2879,19 +2879,19 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2026-05,Jio Payments Bank Ltd,Jio Payments Bank,Payments bank,28,106.77,80.78,19.07,0.14,1.28,99.19,,,npci_api,False
 2026-05,Bandhan Bank Limited,Bandhan Bank,Private,29,101.98,93.76,5.3,0.93,0.66,29.16,,,npci_api,False
 2026-05,Au Small Finance Bank,AU Small Finance Bank,Small finance,30,95.59,86.14,13.66,0.2,0.4,85.3,,,npci_api,False
-2026-05,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,31,92.52,89.42,5.67,4.91,1.57,49.12,,,npci_api,False
+2026-05,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,31,92.52,89.42,5.67,4.91,1.57,49.12,,,npci_api,False
 2026-05,Slice Small Finance Bank Limited,slice Small Finance Bank,Small finance,32,85.94,94.0,5.93,0.07,0.28,95.9,,,npci_api,False
 2026-05,The South Indian Bank Limited,South Indian Bank,Private,33,85.44,93.16,6.45,0.39,0.16,98.2,,,npci_api,False
 2026-05,Nsdl Payments Bank Limited,NSDL Payments Bank,Payments bank,34,84.08,73.85,25.77,0.39,1.06,95.45,,,npci_api,False
 2026-05,Punjab And Sind Bank,Punjab & Sind Bank,Public,35,73.48,87.01,12.63,0.37,0.4,86.12,,,npci_api,False
-2026-05,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,36,67.91,84.03,15.26,0.71,0.42,91.26,,,npci_api,False
+2026-05,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,36,67.91,84.03,15.26,0.71,0.42,91.26,,,npci_api,False
 2026-05,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,37,67.33,90.84,8.44,0.72,0.22,88.17,,,npci_api,False
 2026-05,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,38,66.55,86.03,13.73,0.23,0.28,92.89,,,npci_api,False
 2026-05,City Union Bank,City Union Bank,Private,39,63.65,91.5,8.45,0.05,0.16,99.68,,,npci_api,False
 2026-05,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,40,63.58,86.81,11.5,1.69,0.52,39.42,,,npci_api,False
 2026-05,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,41,61.29,92.72,6.98,0.3,0.2,79.55,,,npci_api,False
 2026-05,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,42,54.81,86.71,11.72,1.57,0.31,47.99,,,npci_api,False
-2026-05,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,Gramin,43,50.14,88.36,11.0,0.64,0.21,77.23,,,npci_api,False
+2026-05,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,43,50.14,88.36,11.0,0.64,0.21,77.23,,,npci_api,False
 2026-05,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,44,46.28,83.38,15.54,1.08,0.19,60.34,,,npci_api,False
 2026-05,Esaf Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,45,38.36,95.1,3.4,1.5,0.19,66.09,,,npci_api,False
 2026-05,Saraswat Co-Operative Bank,Saraswat Co-operative Bank,Co-operative,46,35.29,92.46,6.54,1.0,0.15,58.76,,,npci_api,False
@@ -2929,19 +2929,19 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2026-06,JIO PAYMENTS BANK LTD,Jio Payments Bank,Payments bank,28,102.76,78.3,21.57,0.14,1.49,98.74,,,npci_api,False
 2026-06,BANDHAN BANK LIMITED,Bandhan Bank,Private,29,100.63,94.25,5.58,0.17,0.65,80.86,,,npci_api,False
 2026-06,AU small Finance Bank,AU Small Finance Bank,Small finance,30,94.61,86.13,13.65,0.23,0.4,95.24,,,npci_api,False
-2026-06,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,31,93.81,89.93,6.43,3.65,2.77,43.14,,,npci_api,False
+2026-06,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,31,93.81,89.93,6.43,3.65,2.77,43.14,,,npci_api,False
 2026-06,Slice Small Finance Bank Limited,slice Small Finance Bank,Small finance,32,90.55,94.25,5.71,0.04,0.29,88.41,,,npci_api,False
 2026-06,The South Indian Bank Limited,South Indian Bank,Private,33,84.02,93.25,6.67,0.08,0.15,98.35,,,npci_api,False
 2026-06,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,34,81.77,75.17,23.96,0.87,1.33,90.81,,,npci_api,False
 2026-06,Punjab and Sind Bank,Punjab & Sind Bank,Public,35,72.31,84.08,12.81,3.11,0.4,90.35,,,npci_api,False
-2026-06,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,36,69.82,83.28,15.2,1.52,0.48,94.64,,,npci_api,False
+2026-06,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,36,69.82,83.28,15.2,1.52,0.48,94.64,,,npci_api,False
 2026-06,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,37,67.91,90.39,8.49,1.12,0.19,90.27,,,npci_api,False
 2026-06,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,38,65.27,86.18,13.51,0.31,0.3,92.18,,,npci_api,True
 2026-06,City Union Bank,City Union Bank,Private,39,63.42,91.38,8.42,0.2,0.19,99.85,,,npci_api,False
 2026-06,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,40,62.32,87.17,11.42,1.42,0.36,55.12,,,npci_api,False
 2026-06,KERALA GRAMIN BANK,Kerala Gramin Bank,Gramin,41,61.2,91.97,7.1,0.92,0.16,89.49,,,npci_api,False
 2026-06,TELANGANA GRAMEENA BANK,Telangana Grameena Bank,Gramin,42,57.9,79.86,14.07,6.07,0.17,90.28,,,npci_api,False
-2026-06,CHAITANYA GODAVARI GRAMEENA BANK,Chaitanya Godavari Grameena Bank,Gramin,43,51.04,88.65,11.22,0.14,0.4,42.77,,,npci_api,False
+2026-06,CHAITANYA GODAVARI GRAMEENA BANK,Andhra Pradesh Grameena Bank,Gramin,43,51.04,88.65,11.22,0.14,0.4,42.77,,,npci_api,False
 2026-06,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,44,44.47,81.9,15.1,3.0,0.35,37.78,,,npci_api,False
 2026-06,ESAF SMALL FINANCE BANK LTD,ESAF Small Finance Bank,Small finance,45,37.65,94.55,3.42,2.03,0.18,91.69,,,npci_api,False
 2026-06,Saraswat Co-operative Bank,Saraswat Co-operative Bank,Co-operative,46,34.51,92.58,6.34,1.08,0.12,74.63,,,npci_api,False
@@ -2978,20 +2978,20 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2026-07,Karur Vysya Bank,Karur Vysya Bank,Private,27,115.216589,92.32,7.51,0.17,0.368035,91.88,,,npci_api,False
 2026-07,Bandhan Bank Limited,Bandhan Bank,Private,28,107.123257,93.41,6.2,0.4,0.626151,45.8,,,npci_api,False
 2026-07,Jio Payments Bank Ltd,Jio Payments Bank,Payments bank,29,104.70889,75.73,24.17,0.1,1.208445,99.26,,,npci_api,False
-2026-07,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,30,101.39901,90.17,7.88,1.95,1.197093,67.94,,,npci_api,False
+2026-07,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,30,101.39901,90.17,7.88,1.95,1.197093,67.94,,,npci_api,False
 2026-07,AU Small Finance Bank,AU Small Finance Bank,Small finance,31,100.425014,85.69,14.09,0.22,0.426506,88.31,,,npci_api,False
 2026-07,Slice Small Finance Bank Limited,slice Small Finance Bank,Small finance,32,99.923222,94.09,5.8,0.11,0.32034,98.25,,,npci_api,False
 2026-07,The South Indian Bank Limited,South Indian Bank,Private,33,89.367662,92.65,7.25,0.1,0.187439,98.98,,,npci_api,False
 2026-07,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,34,86.463984,74.94,24.53,0.53,1.285579,91.94,,,npci_api,False
 2026-07,Punjab And Sind Bank,Punjab & Sind Bank,Public,35,74.633656,86.27,13.24,0.49,0.415218,84.62,,,npci_api,False
-2026-07,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,36,74.239417,79.34,15.03,5.63,0.711008,60.59,,,npci_api,False
+2026-07,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,36,74.239417,79.34,15.03,5.63,0.711008,60.59,,,npci_api,False
 2026-07,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,37,71.616039,90.32,8.67,1.01,0.210397,84.82,,,npci_api,False
 2026-07,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,38,68.946963,85.65,14.01,0.33,0.321385,85.24,,,npci_api,False
 2026-07,City Union Bank,City Union Bank,Private,39,67.169037,91.24,8.59,0.17,0.150414,98.82,,,npci_api,False
 2026-07,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,40,65.992002,92.44,7.31,0.25,0.254518,84.11,,,npci_api,False
 2026-07,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,41,65.726068,87.53,12.06,0.41,0.374598,62.64,,,npci_api,False
 2026-07,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,42,60.035447,81.18,15.02,3.8,0.576903,32.86,,,npci_api,False
-2026-07,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,Gramin,43,55.300059,88.44,11.45,0.11,0.205451,94.77,,,npci_api,False
+2026-07,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,43,55.300059,88.44,11.45,0.11,0.205451,94.77,,,npci_api,False
 2026-07,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,44,44.747514,82.98,15.52,1.5,0.226285,55.85,,,npci_api,False
 2026-07,Esaf Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,45,38.877461,94.59,4.53,0.88,0.169896,83.06,,,npci_api,False
 2026-07,Saraswat Co-Operative Bank,Saraswat Co-operative Bank,Co-operative,46,34.528678,92.66,6.7,0.64,0.120071,77.35,,,npci_api,False
@@ -3028,19 +3028,19 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2026-08,Karur Vysya Bank,Karur Vysya Bank,Private,27,117.080579,92.19,7.61,0.2,0.333016,83.9,64.92,0.0,npci_api,False
 2026-08,slice Small Finance Bank Limited,slice Small Finance Bank,Small finance,28,111.853209,94.25,5.72,0.03,0.324593,100.0,54.11,97.68,npci_api,False
 2026-08,Bandhan Bank Limited,Bandhan Bank,Private,29,110.416792,92.71,6.7,0.59,0.287036,0.79,33.99,17.43,npci_api,False
-2026-08,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,30,109.671881,88.6,8.96,2.44,1.398315,58.86,32.41,0.0,npci_api,False
+2026-08,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,30,109.671881,88.6,8.96,2.44,1.398315,58.86,32.41,0.0,npci_api,False
 2026-08,AU small Finance Bank,AU Small Finance Bank,Small finance,31,104.430043,85.48,14.44,0.08,0.316509,100.0,82.89,57.96,npci_api,False
 2026-08,Jio Payments Bank Ltd,Jio Payments Bank,Payments bank,32,101.649976,78.02,21.64,0.34,1.218987,98.65,80.44,90.62,npci_api,False
 2026-08,The South Indian Bank Limited,South Indian Bank,Private,33,91.450743,92.98,6.84,0.18,0.188043,81.59,94.83,97.16,npci_api,False
 2026-08,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,34,85.056548,75.87,22.96,1.17,1.251143,84.1,22.07,0.0,npci_api,False
-2026-08,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,35,78.463399,83.38,15.44,1.18,0.586023,39.28,90.1,0.0,npci_api,False
+2026-08,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,35,78.463399,83.38,15.44,1.18,0.586023,39.28,90.1,0.0,npci_api,False
 2026-08,Punjab and Sind Bank,Punjab & Sind Bank,Public,36,76.938847,85.18,12.88,1.95,0.696423,55.94,70.03,96.83,npci_api,False
 2026-08,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,37,72.541164,90.91,8.73,0.36,0.161119,85.75,62.3,25.45,npci_api,False
 2026-08,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,38,70.348319,85.77,14.02,0.21,0.216709,100.0,63.22,0.0,npci_api,False
 2026-08,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,39,68.614167,91.87,7.29,0.84,0.093073,0.08,96.99,94.25,npci_api,False
 2026-08,City Union Bank,City Union Bank,Private,40,67.953163,91.23,8.7,0.07,0.004532,14.34,99.87,96.93,npci_api,False
 2026-08,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,41,67.330569,87.91,11.86,0.23,0.452089,48.46,51.75,94.71,npci_api,False
-2026-08,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,Gramin,42,57.575597,89.33,10.5,0.16,0.19142,84.42,95.35,0.0,npci_api,False
+2026-08,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,42,57.575597,89.33,10.5,0.16,0.19142,84.42,95.35,0.0,npci_api,False
 2026-08,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,43,56.382922,87.03,12.4,0.57,0.174327,72.81,48.47,86.81,npci_api,False
 2026-08,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,44,45.874636,84.4,14.36,1.23,0.094114,0.0,94.46,54.4,npci_api,False
 2026-08,ESAF Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,45,41.09294,90.6,8.63,0.77,0.158943,68.14,99.77,92.53,npci_api,False
@@ -3077,20 +3077,20 @@ month,bank_raw,bank,bank_type,rank_in_source,total_volume_mn,approved_pct,bd_pct
 2026-09,The Jammu & Kashmir Bank Limited,Jammu & Kashmir Bank,Private,26,130.950514,92.36,7.5,0.14,0.422816,73.43,84.2,55.68,npci_api,False
 2026-09,slice small Finance Bank Limited,slice Small Finance Bank,Small finance,27,119.568746,94.61,5.36,0.03,0.336428,94.84,97.11,97.06,npci_api,False
 2026-09,Karur Vysya Bank,Karur Vysya Bank,Private,28,114.587,91.76,7.83,0.41,0.394524,74.96,94.03,0.0,npci_api,False
-2026-09,Baroda U.P. Bank,Baroda U.P. Bank,Gramin,29,110.70268,87.92,10.46,1.62,1.233637,72.61,47.28,0.0,npci_api,False
+2026-09,Baroda U.P. Bank,Uttar Pradesh Gramin Bank,Gramin,29,110.70268,87.92,10.46,1.62,1.233637,72.61,47.28,0.0,npci_api,False
 2026-09,Bandhan Bank Limited,Bandhan Bank,Private,30,108.762956,93.31,6.57,0.12,0.42556,91.52,53.82,90.16,npci_api,False
 2026-09,AU Small Finance Bank,AU Small Finance Bank,Small finance,31,102.828935,85.35,14.49,0.15,0.349829,82.45,39.12,58.0,npci_api,False
 2026-09,Jio Payments Bank Ltd,Jio Payments Bank,Payments bank,32,97.534199,78.62,21.19,0.2,1.093971,99.19,64.48,92.17,npci_api,False
 2026-09,The South Indian Bank Limited,South Indian Bank,Private,33,90.787833,92.91,7.04,0.05,0.179156,91.82,97.52,96.15,npci_api,False
 2026-09,NSDL Payments Bank Limited,NSDL Payments Bank,Payments bank,34,78.758256,77.7,21.2,1.1,0.930444,88.85,28.14,0.0,npci_api,False
-2026-09,Rajasthan Marudhara Gramin Bank,Rajasthan Marudhara Gramin Bank,Gramin,35,77.626901,83.28,15.88,0.85,0.5397,76.98,98.85,0.0,npci_api,False
+2026-09,Rajasthan Marudhara Gramin Bank,Rajasthan Gramin Bank,Gramin,35,77.626901,83.28,15.88,0.85,0.5397,76.98,98.85,0.0,npci_api,False
 2026-09,Punjab And Sind Bank,Punjab & Sind Bank,Public,36,76.787726,84.82,13.32,1.86,0.447826,71.24,80.04,95.79,npci_api,False
 2026-09,Tamilnad Mercantile Bank Limited,Tamilnad Mercantile Bank,Private,37,71.872633,90.74,9.15,0.11,0.143874,92.91,73.54,23.65,npci_api,False
 2026-09,Ujjivan Small Finance Bank Limited,Ujjivan Small Finance Bank,Small finance,38,69.186358,85.63,14.17,0.19,0.219527,88.67,63.96,30.37,npci_api,False
 2026-09,Kerala Gramin Bank,Kerala Gramin Bank,Gramin,39,69.062005,92.35,7.3,0.36,0.221688,93.34,96.98,94.08,npci_api,False
 2026-09,Karnataka Gramin Bank,Karnataka Gramin Bank,Gramin,40,66.496332,87.71,11.96,0.34,0.213857,95.67,49.92,94.87,npci_api,False
 2026-09,City Union Bank,City Union Bank,Private,41,66.381132,91.18,8.69,0.13,0.127992,99.15,96.95,95.89,npci_api,False
-2026-09,Chaitanya Godavari Grameena Bank,Chaitanya Godavari Grameena Bank,Gramin,42,55.806254,88.35,11.06,0.58,0.232676,69.06,55.04,0.0,npci_api,False
+2026-09,Chaitanya Godavari Grameena Bank,Andhra Pradesh Grameena Bank,Gramin,42,55.806254,88.35,11.06,0.58,0.232676,69.06,55.04,0.0,npci_api,False
 2026-09,Telangana Grameena Bank,Telangana Grameena Bank,Gramin,43,54.767675,87.14,12.63,0.23,0.15979,80.21,49.02,95.5,npci_api,False
 2026-09,Maharashtra Gramin Bank,Maharashtra Gramin Bank,Gramin,44,45.423786,84.57,14.24,1.19,0.205154,54.72,93.4,47.47,npci_api,False
 2026-09,ESAF Small Finance Bank Ltd,ESAF Small Finance Bank,Small finance,45,38.777655,94.93,3.47,1.6,0.287643,45.1,99.94,94.39,npci_api,False

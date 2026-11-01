@@ -1,0 +1,125 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "textbox_2",
+  "position": {
+    "x": 14,
+    "y": 30,
+    "z": 200,
+    "width": 860,
+    "height": 46,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "System failures fell because rates fell ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "at the banks themselves",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " (bank or NPCI side), not because payments moved. Declines rose first as payments moved to ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "India Post and Airtel",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": ", then in 2026 at ",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "almost every bank",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": ".",
+                    "textStyle": {
+                      "fontSize": "10pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

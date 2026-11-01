@@ -43,11 +43,13 @@ From NPCI's "Top 50 Member Vol & Val" table (Jan 2022 on), with standard bank na
 |---|---|
 | year | First 4 characters of month |
 | approved_mn | total_volume_mn × approved_pct ÷ 100 |
-| user_failed_mn | total_volume_mn × bd_pct ÷ 100 (BD = user failures) |
+| user_failed_mn | total_volume_mn × bd_pct ÷ 100 (BD = declines: a wrong PIN, low balance, or a limit set by the bank; the column name stays) |
 | system_failed_mn | total_volume_mn × td_pct ÷ 100 (TD = system failures) |
 | is_festival_month | Month is October or November |
 | above_npci_target | td_pct > 1 (NPCI OC 149, May 2022) |
 | bank_group | bank_type for comparisons: Public, Private, Payments bank, Gramin, Small finance, Foreign, and Others (Co-operative + Payment company (PPI) + Credit card issuer) |
+| gramin_or_other | "Gramin banks" or "All other banks" (for the Gramin vs everyone else line on dashboard page 3) |
+| year_label | year, with partial years labelled: "2021 (Aug-Dec)", "2026 (Jan-Sep)" |
 
 The ₹ value of failures (question 4) is worked out in that question's query: join `bank_value_monthly` on month and bank where its approved_volume_mn is within 2% of approved_mn; average payment = value_cr × 10 ÷ approved_volume_mn. This covers 94.7% of system-failed payments.
 
@@ -76,3 +78,15 @@ The ₹ value of failures (question 4) is worked out in that question's query: j
 ## data/bank_names.csv
 
 bank_raw → bank, bank_type: every spelling NPCI used in the bank table and the vol & val table (218 spellings → 68 banks). A new spelling stops the cleaning script until it is added. The 2 NPCI name fixes are written inside `python/step2_clean_data.py` (step 3).
+
+## Power BI exports (`sql/11_powerbi_export.sql` → `powerbi/data/`)
+
+| File | Columns |
+|---|---|
+| bank_details.csv | every column of the `bank_details` view |
+| events.csv | month, event, source |
+| why_split.csv | step, change, from_banks_themselves, from_payments_moving, total_change (points) |
+| cost_by_year.csv | year, year_label, system_failed_mn, checkout_payments_hit_mn (estimate) |
+| bank_last_12_months.csv | bank, bank_group, payments_mn, system_failed_mn, avoidable_at_1pct_mn, avg_payment_rs (Rs value / approved payments, same 12 months; blank for Standard Chartered, which has no value row) |
+
+Gramin merger rule (from 2025-05, in `python/step2_clean_data.py`): Baroda U.P. Bank → Uttar Pradesh Gramin Bank; Andhra Pragathi, Chaitanya Godavari, Andhra Pradesh Grameena Vikas → Andhra Pradesh Grameena Bank; Rajasthan Marudhara → Rajasthan Gramin Bank. Applied to both the bank table and the value table.

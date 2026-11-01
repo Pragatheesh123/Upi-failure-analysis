@@ -1,56 +1,53 @@
-bank,bank_group,payments_mn,system_failed_mn,avoidable_at_1pct_mn
-Bank of India,Public,8547.71,26.003,0.000
-City Union Bank,Private,745.97,1.134,0.000
-Kotak Mahindra Bank,Private,13372.99,11.096,0.000
-South Indian Bank,Private,999.72,1.349,0.000
-AU Small Finance Bank,Small finance,1096.77,4.390,0.000
-One MobiKwik Systems,Others,201.80,0.000,0.000
-UCO Bank,Public,3967.12,4.815,0.000
-Punjab & Sind Bank,Public,821.95,11.266,3.046
-Indian Bank,Public,9279.18,17.470,0.000
-Maharashtra Gramin Bank,Gramin,509.22,8.350,3.258
-Bandhan Bank,Private,1207.29,5.386,0.000
-Canara Bank,Public,13729.84,46.517,0.000
-Airtel Payments Bank,Payments bank,8888.90,20.255,0.000
-Axis Bank,Private,12311.78,0.526,0.000
-Rajasthan Gramin Bank,Gramin,151.80,3.586,2.068
-Telangana Grameena Bank,Gramin,618.27,13.373,7.190
-Bank of Baroda,Public,19466.30,23.278,0.000
-Fino Payments Bank,Payments bank,3213.40,17.028,0.000
-Yes Bank,Private,2089.30,2.613,0.000
-Karur Vysya Bank,Private,1268.11,2.659,0.000
-Jammu & Kashmir Bank,Private,1386.46,4.669,0.000
-Saraswat Co-operative Bank,Others,405.90,2.359,0.000
-Bank of Maharashtra,Public,3028.17,4.297,0.000
-NSDL Payments Bank,Payments bank,899.30,14.279,5.286
-Standard Chartered Bank,Foreign,23.00,0.014,0.000
-slice Small Finance Bank,Small finance,895.25,0.856,0.000
-State Bank of India,Public,73655.93,224.713,0.000
-RBL Bank,Private,219.29,0.770,0.000
-Karnataka Gramin Bank,Gramin,703.75,9.190,2.152
-India Post Payments Bank,Payments bank,10139.61,43.955,0.000
-IDBI Bank,Private,2689.83,9.991,0.000
-Uttar Pradesh Gramin Bank,Gramin,197.89,8.007,6.028
-Sarva Haryana Gramin Bank,Gramin,327.34,3.306,0.033
-ESAF Small Finance Bank,Small finance,447.51,4.238,0.000
-Kerala Gramin Bank,Gramin,711.08,4.095,0.000
-Jio Payments Bank,Payments bank,1129.33,6.699,0.000
-Tri O Tech Solutions,Others,2139.25,0.000,0.000
-Baroda U.P. Bank,Gramin,759.39,31.904,24.310
-Central Bank of India,Public,4839.92,50.688,2.288
-IDFC First Bank,Private,1825.74,1.347,0.000
-Tamilnad Mercantile Bank,Private,781.05,4.336,0.000
-Federal Bank,Private,3490.01,3.793,0.000
-DBS Bank India,Foreign,384.13,0.453,0.000
-Chaitanya Godavari Grameena Bank,Gramin,453.23,2.984,0.000
-IndusInd Bank,Private,2963.82,7.882,0.000
-ICICI Bank,Private,9277.13,13.337,0.000
-Rajasthan Marudhara Gramin Bank,Gramin,611.59,13.898,7.782
-Equitas Small Finance Bank,Small finance,357.42,0.585,0.000
-Andhra Pradesh Grameena Bank,Gramin,71.39,0.864,0.150
-Ujjivan Small Finance Bank,Small finance,757.22,2.204,0.000
-Punjab National Bank,Public,15809.29,68.723,0.000
-Union Bank of India,Public,17142.61,26.681,0.000
-Karnataka Bank,Private,1918.80,3.077,0.000
-Indian Overseas Bank,Public,4972.36,19.352,0.000
-HDFC Bank,Private,20102.55,5.037,0.000
+bank,bank_group,payments_mn,system_failed_mn,avoidable_at_1pct_mn,avg_payment_rs
+Equitas Small Finance Bank,Small finance,357.42,0.585,0.000,1302
+Standard Chartered Bank,Foreign,23.00,0.014,0.000,
+Central Bank of India,Public,4839.92,50.688,2.288,1315
+ESAF Small Finance Bank,Small finance,447.51,4.238,0.000,1301
+IndusInd Bank,Private,2963.82,7.882,0.000,1360
+Kotak Mahindra Bank,Private,13372.99,11.096,0.000,1061
+Karur Vysya Bank,Private,1268.11,2.659,0.000,1842
+Bank of Maharashtra,Public,3028.17,4.297,0.000,1153
+City Union Bank,Private,745.97,1.134,0.000,1732
+IDFC First Bank,Private,1825.74,1.347,0.000,1600
+Telangana Grameena Bank,Gramin,618.27,13.373,7.190,1470
+Indian Overseas Bank,Public,4972.36,19.352,0.000,1222
+Union Bank of India,Public,17142.61,26.681,0.000,1237
+Rajasthan Gramin Bank,Gramin,763.39,17.483,9.849,1128
+Tamilnad Mercantile Bank,Private,781.05,4.336,0.000,1522
+Ujjivan Small Finance Bank,Small finance,757.22,2.204,0.000,1214
+Bank of India,Public,8547.71,26.003,0.000,1269
+Fino Payments Bank,Payments bank,3213.40,17.028,0.000,488
+Punjab National Bank,Public,15809.29,68.723,0.000,1185
+Bandhan Bank,Private,1207.29,5.386,0.000,1882
+Airtel Payments Bank,Payments bank,8888.90,20.255,0.000,524
+IDBI Bank,Private,2689.83,9.991,0.000,1676
+Uttar Pradesh Gramin Bank,Gramin,957.28,39.911,30.338,844
+Karnataka Gramin Bank,Gramin,703.75,9.190,2.152,1289
+Canara Bank,Public,13729.84,46.517,0.000,1303
+Bank of Baroda,Public,19466.30,23.278,0.000,1200
+State Bank of India,Public,73655.93,224.713,0.000,1314
+HDFC Bank,Private,20102.55,5.037,0.000,1905
+India Post Payments Bank,Payments bank,10139.61,43.955,0.000,500
+RBL Bank,Private,219.29,0.770,0.000,2270
+Maharashtra Gramin Bank,Gramin,509.22,8.350,3.258,1182
+ICICI Bank,Private,9277.13,13.337,0.000,1837
+Tri O Tech Solutions,Others,2139.25,0.000,0.000,130
+Saraswat Co-operative Bank,Others,405.90,2.359,0.000,1272
+Punjab & Sind Bank,Public,821.95,11.266,3.046,1232
+Yes Bank,Private,2089.30,2.613,0.000,1473
+Jammu & Kashmir Bank,Private,1386.46,4.669,0.000,1078
+Axis Bank,Private,12311.78,0.526,0.000,1562
+DBS Bank India,Foreign,384.13,0.453,0.000,1491
+slice Small Finance Bank,Small finance,895.25,0.856,0.000,807
+AU Small Finance Bank,Small finance,1096.77,4.390,0.000,1511
+UCO Bank,Public,3967.12,4.815,0.000,1030
+South Indian Bank,Private,999.72,1.349,0.000,1668
+One MobiKwik Systems,Others,201.80,0.000,0.000,832
+Federal Bank,Private,3490.01,3.793,0.000,1365
+Kerala Gramin Bank,Gramin,711.08,4.095,0.000,1106
+Andhra Pradesh Grameena Bank,Gramin,524.62,3.848,0.000,1324
+Sarva Haryana Gramin Bank,Gramin,327.34,3.306,0.033,1089
+NSDL Payments Bank,Payments bank,899.30,14.279,5.286,436
+Karnataka Bank,Private,1918.80,3.077,0.000,1322
+Jio Payments Bank,Payments bank,1129.33,6.699,0.000,493
+Indian Bank,Public,9279.18,17.470,0.000,1121

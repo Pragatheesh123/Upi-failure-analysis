@@ -1,13 +1,36 @@
 table bank_last_12_months
 
-	measure 'Avoidable at 1% (mn)' = SUM(bank_last_12_months[avoidable_at_1pct_mn])
-		formatString: #,0.0
+	measure 'Avoidable at target (mn)' = SUMX(bank_last_12_months, MAX(0, bank_last_12_months[system_failed_mn] - bank_last_12_months[payments_mn] * [Target TD % Value] / 100))
+		formatString: #,0.0\ \m\n
 
-	measure 'Avoidable at Gramin banks (mn)' = CALCULATE([Avoidable at 1% (mn)], bank_last_12_months[bank_group] = "Gramin")
-		formatString: #,0.0
+	measure 'Avoidable value at target (Rs crore, estimate)' = SUMX(bank_last_12_months, MAX(0, bank_last_12_months[system_failed_mn] - bank_last_12_months[payments_mn] * [Target TD % Value] / 100) * bank_last_12_months[avg_payment_rs] / 10)
+		formatString: \≈\ \₹#,0\ \c\r
+
+	measure 'Avoidable share of payments %' = DIVIDE([Avoidable at target (mn)], SUM(bank_last_12_months[payments_mn])) * 100
+		formatString: 0.00\%
+
+	measure 'Avoidable share at Gramin %' = DIVIDE(CALCULATE([Avoidable at target (mn)], bank_last_12_months[bank_group] = "Gramin"), [Avoidable at target (mn)]) * 100
+		formatString: 0\%
+
+	measure 'Avoidable at 3 Gramin banks (mn)' = CALCULATE([Avoidable at target (mn)], bank_last_12_months[bank] IN {"Uttar Pradesh Gramin Bank", "Rajasthan Gramin Bank", "Telangana Grameena Bank"})
+		formatString: #,0.0\ \m\n
+
+	measure 'Share at 3 Gramin banks %' = DIVIDE([Avoidable at 3 Gramin banks (mn)], [Avoidable at target (mn)]) * 100
+		formatString: 0\%
 
 	measure 'System failed, last 12 months (mn)' = SUM(bank_last_12_months[system_failed_mn])
-		formatString: #,0.0
+		formatString: #,0.0\ \m\n
+
+	measure 'Avoidable note' = FORMAT([Avoidable share of payments %], "0.00") & "% of all payments"
+
+	measure '3 banks note' = FORMAT([Avoidable at 3 Gramin banks (mn)], "0.0") & " mn of " & FORMAT([Avoidable at target (mn)], "0.0") & " mn"
+
+	measure 'Avoidable top 5 (mn)' = IF(RANKX(ALL(bank_last_12_months[bank]), [Avoidable at target (mn)]) <= 5, [Avoidable at target (mn)])
+		formatString: #,0.0\ \m\n
+
+	measure 'Target note' = "Now: " & FORMAT([Target TD % Value], "0.00") & "% · drag 0.25% to 2%"
+
+	measure 'Top 5 bar colour' = IF(SELECTEDVALUE(bank_last_12_months[bank_group]) = "Gramin", "#C0392B", "#1F3A5F")
 
 	column bank
 		dataType: string
@@ -34,13 +57,19 @@ table bank_last_12_months
 		summarizeBy: sum
 		sourceColumn: avoidable_at_1pct_mn
 
+	column avg_payment_rs
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: avg_payment_rs
+
 	partition bank_last_12_months = m
 		mode: import
 		source =
 				let
 				    Source = Csv.Document(File.Contents("D:\upi failure\powerbi\data\bank_last_12_months.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
 				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				    Typed = Table.TransformColumnTypes(Promoted, {{"bank", type text}, {"bank_group", type text}, {"payments_mn", type number}, {"system_failed_mn", type number}, {"avoidable_at_1pct_mn", type number}}, "en-US")
+				    Kept = Table.SelectColumns(Promoted, {"bank", "bank_group", "payments_mn", "system_failed_mn", "avoidable_at_1pct_mn", "avg_payment_rs"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"bank", type text}, {"bank_group", type text}, {"payments_mn", type number}, {"system_failed_mn", type number}, {"avoidable_at_1pct_mn", type number}, {"avg_payment_rs", type number}}, "en-US")
 				in
 				    Typed
 

@@ -1,0 +1,16 @@
+table 'Target TD %'
+
+	measure 'Target TD % Value' = SELECTEDVALUE('Target TD %'[Target TD %], 1)
+		formatString: 0.00\%
+
+	column 'Target TD %'
+		dataType: double
+		formatString: 0.00
+		summarizeBy: none
+		sourceColumn: [Value]
+
+	partition 'Target TD %' = calculated
+		mode: import
+		source = GENERATESERIES(0.25, 2, 0.25)
+
+	annotation PBI_Id = targettd

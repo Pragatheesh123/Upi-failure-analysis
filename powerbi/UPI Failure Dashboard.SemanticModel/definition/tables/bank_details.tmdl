@@ -10,32 +10,79 @@ table bank_details
 		formatString: #,0.0
 
 	measure 'System fail %' = DIVIDE([System failed (mn)], [Payments (mn)]) * 100
-		formatString: 0.00
+		formatString: 0.00\%
 
 	measure 'User fail %' = DIVIDE([User failed (mn)], [Payments (mn)]) * 100
-		formatString: 0.00
+		formatString: 0.00\%
 
 	measure 'Refund success %' = DIVIDE(SUMX(bank_details, bank_details[debit_reversal_count_mn] * bank_details[debit_reversal_success_pct] / 100), CALCULATE(SUM(bank_details[debit_reversal_count_mn]), NOT ISBLANK(bank_details[debit_reversal_success_pct]))) * 100
-		formatString: 0.00
+		formatString: 0.0\%
 
-	measure 'Banks' = DISTINCTCOUNT(bank_details[bank])
+	measure Banks = DISTINCTCOUNT(bank_details[bank])
 		formatString: 0
-
-	measure 'Months above 1%' = COUNTROWS(FILTER(bank_details, bank_details[td_pct] > 1))
-		formatString: 0
-
-	measure 'System fail colour' = IF([System fail %] > 1, "#C0392B", "#2E8B57")
 
 	measure 'Latest month' = CALCULATE(MAX(bank_details[month_date]), ALL(bank_details))
 		formatString: mmm yyyy
 
+	measure 'System fail colour' = IF([System fail %] > 1, "#C0392B", "#2E8B57")
+
+	measure 'Payments (mn, last 12 months)' = VAR start_date = EDATE([Latest month], -12) RETURN CALCULATE([Payments (mn)], bank_details[month_date] > start_date)
+		formatString: #,0
+
+	measure 'System failed (mn, last 12 months)' = VAR start_date = EDATE([Latest month], -12) RETURN CALCULATE([System failed (mn)], bank_details[month_date] > start_date)
+		formatString: #,0.0
+
 	measure 'System fail % (last 12 months)' = VAR start_date = EDATE([Latest month], -12) RETURN CALCULATE([System fail %], bank_details[month_date] > start_date)
-		formatString: 0.00
+		formatString: 0.00\%
+
+	measure 'User fail % (last 12 months)' = VAR start_date = EDATE([Latest month], -12) RETURN CALCULATE([User fail %], bank_details[month_date] > start_date)
+		formatString: 0.00\%
 
 	measure 'Refund success % (last 12 months)' = VAR start_date = EDATE([Latest month], -12) RETURN CALCULATE([Refund success %], bank_details[month_date] > start_date)
-		formatString: 0.00
+		formatString: 0.0\%
+
+	measure 'Payments (bn, last 12 months)' = [Payments (mn, last 12 months)] / 1000
+		formatString: #,0.0\ \b\n
 
 	measure 'Last 12 months colour' = IF([System fail % (last 12 months)] > 1, "#C0392B", "#2E8B57")
+
+	measure 'Payments (bn) 2022' = CALCULATE([Payments (mn)], bank_details[year] = "2022") / 1000
+		formatString: #,0.0
+
+	measure 'System fail % 2022' = CALCULATE([System fail %], bank_details[year] = "2022")
+		formatString: 0.00\%
+
+	measure 'User fail % 2022' = CALCULATE([User fail %], bank_details[year] = "2022")
+		formatString: 0.00\%
+
+	measure 'Refund success % 2022' = CALCULATE([Refund success %], bank_details[year] = "2022")
+		formatString: 0.0\%
+
+	measure 'Payments note' = "2022: " & FORMAT([Payments (bn) 2022], "0.0") & " bn"
+
+	measure 'System failure note' = "2022: " & FORMAT([System fail % 2022], "0.00") & "% · target below 1%"
+
+	measure 'Decline note' = "2022: " & FORMAT([User fail % 2022], "0.00") & "% · target below 5%"
+
+	measure 'Refund note' = "2022: " & FORMAT([Refund success % 2022], "0.0") & "% · money taken, then failed"
+
+	measure 'System share of failures %' = DIVIDE([System failed (mn)], [System failed (mn)] + [User failed (mn)]) * 100
+		formatString: 0.0\%
+
+	measure 'Share India Post + Airtel %' = COALESCE(DIVIDE(CALCULATE([Payments (mn)], bank_details[bank] IN {"India Post Payments Bank", "Airtel Payments Bank"}), CALCULATE([Payments (mn)], REMOVEFILTERS(bank_details[bank], bank_details[bank_group], bank_details[bank_type]))) * 100, 0)
+		formatString: 0.0
+
+	measure 'Share Paytm %' = COALESCE(DIVIDE(CALCULATE([Payments (mn)], bank_details[bank] = "Paytm Payments Bank"), CALCULATE([Payments (mn)], REMOVEFILTERS(bank_details[bank], bank_details[bank_group], bank_details[bank_type]))) * 100, 0)
+		formatString: 0.0
+
+	measure 'Event marker (BD %)' = IF(CALCULATE(COUNTROWS(events), TREATAS(VALUES(bank_details[month]), events[month])) > 0, [User fail %])
+		formatString: 0.00\%
+
+	measure 'Event text' = CALCULATE(SELECTEDVALUE(events[event]), TREATAS(VALUES(bank_details[month]), events[month]))
+
+	measure 'Event source' = CALCULATE(SELECTEDVALUE(events[source]), TREATAS(VALUES(bank_details[month]), events[month]))
+
+	measure 'Refund bar colour' = IF(SELECTEDVALUE(bank_details[bank_group]) = "Gramin", "#C0392B", "#1F3A5F")
 
 	column month
 		dataType: string
@@ -61,6 +108,17 @@ table bank_details
 		dataType: string
 		summarizeBy: none
 		sourceColumn: year
+
+	column year_label
+		dataType: string
+		sortByColumn: year
+		summarizeBy: none
+		sourceColumn: year_label
+
+	column gramin_or_other
+		dataType: string
+		summarizeBy: none
+		sourceColumn: gramin_or_other
 
 	column total_volume_mn
 		dataType: double
@@ -109,8 +167,8 @@ table bank_details
 				let
 				    Source = Csv.Document(File.Contents("D:\upi failure\powerbi\data\bank_details.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
 				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				    Kept = Table.SelectColumns(Promoted, {"month", "bank", "bank_type", "bank_group", "year", "total_volume_mn", "td_pct", "bd_pct", "debit_reversal_count_mn", "debit_reversal_success_pct", "system_failed_mn", "user_failed_mn"}),
-				    Typed = Table.TransformColumnTypes(Kept, {{"month", type text}, {"bank", type text}, {"bank_type", type text}, {"bank_group", type text}, {"year", type text}, {"total_volume_mn", type number}, {"td_pct", type number}, {"bd_pct", type number}, {"debit_reversal_count_mn", type number}, {"debit_reversal_success_pct", type number}, {"system_failed_mn", type number}, {"user_failed_mn", type number}}, "en-US"),
+				    Kept = Table.SelectColumns(Promoted, {"month", "bank", "bank_type", "bank_group", "year", "year_label", "gramin_or_other", "total_volume_mn", "td_pct", "bd_pct", "debit_reversal_count_mn", "debit_reversal_success_pct", "system_failed_mn", "user_failed_mn"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month", type text}, {"bank", type text}, {"bank_type", type text}, {"bank_group", type text}, {"year", type text}, {"year_label", type text}, {"gramin_or_other", type text}, {"total_volume_mn", type number}, {"td_pct", type number}, {"bd_pct", type number}, {"debit_reversal_count_mn", type number}, {"debit_reversal_success_pct", type number}, {"system_failed_mn", type number}, {"user_failed_mn", type number}}, "en-US"),
 				    WithDate = Table.AddColumn(Typed, "month_date", each Date.FromText([month] & "-01"), type date)
 				in
 				    WithDate

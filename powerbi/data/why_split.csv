@@ -1,4 +1,4 @@
 step,change,from_banks_themselves,from_payments_moving,total_change
-1,System failures 2022 to 2025,-1.22,0.17,-1.05
-2,User failures 2022 to 2025,0.51,0.53,1.04
-3,User failures 2025 to 2026,2.24,0.08,2.32
+1,"System failure %, 2022 → 2025",-1.21,0.16,-1.05
+2,"Decline %, 2022 → 2025",0.52,0.52,1.04
+3,"Decline %, 2025 → 2026",2.24,0.08,2.32

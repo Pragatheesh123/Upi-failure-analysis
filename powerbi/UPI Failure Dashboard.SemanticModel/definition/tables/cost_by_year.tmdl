@@ -5,13 +5,21 @@ table cost_by_year
 		summarizeBy: none
 		sourceColumn: year
 
+	column year_label
+		dataType: string
+		sortByColumn: year
+		summarizeBy: none
+		sourceColumn: year_label
+
 	column system_failed_mn
 		dataType: double
+		formatString: #,0
 		summarizeBy: sum
 		sourceColumn: system_failed_mn
 
 	column checkout_payments_hit_mn
 		dataType: double
+		formatString: #,0
 		summarizeBy: sum
 		sourceColumn: checkout_payments_hit_mn
 
@@ -21,7 +29,8 @@ table cost_by_year
 				let
 				    Source = Csv.Document(File.Contents("D:\upi failure\powerbi\data\cost_by_year.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
 				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-				    Typed = Table.TransformColumnTypes(Promoted, {{"year", type text}, {"system_failed_mn", type number}, {"checkout_payments_hit_mn", type number}}, "en-US")
+				    Kept = Table.SelectColumns(Promoted, {"year", "year_label", "system_failed_mn", "checkout_payments_hit_mn"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"year", type text}, {"year_label", type text}, {"system_failed_mn", type number}, {"checkout_payments_hit_mn", type number}}, "en-US")
 				in
 				    Typed
 
