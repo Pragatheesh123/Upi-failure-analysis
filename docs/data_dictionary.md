@@ -46,7 +46,7 @@ From NPCI's "Top 50 Member Vol & Val" table (Jan 2022 on), with standard bank na
 | user_failed_mn | total_volume_mn × bd_pct ÷ 100 (BD = user failures) |
 | system_failed_mn | total_volume_mn × td_pct ÷ 100 (TD = system failures) |
 | is_festival_month | Month is October or November |
-| above_npci_target | td_pct > 1 (NPCI circular OC 149A) |
+| above_npci_target | td_pct > 1 (NPCI OC 149, May 2022) |
 | bank_group | bank_type for comparisons: Public, Private, Payments bank, Gramin, Small finance, Foreign, and Others (Co-operative + Payment company (PPI) + Credit card issuer) |
 
 The ₹ value of failures (question 4) is worked out in that question's query: join `bank_value_monthly` on month and bank where its approved_volume_mn is within 2% of approved_mn; average payment = value_cr × 10 ÷ approved_volume_mn. This covers 94.7% of system-failed payments.

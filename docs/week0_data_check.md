@@ -45,7 +45,7 @@ There is also a **beneficiary** table (payee's bank) with Approved/BD/TD/Deemed 
 - **Only the top 30/50 banks are published.** "Industry average" means the volume-weighted average of the published banks, not all of UPI. Smaller banks drop in and out of the list, so some bank-months are missing for real reasons.
 - **The data is monthly.** It cannot show salary days or month-ends. Question 2 should become: *"Are technical declines higher in festival months (Oct–Nov)?"* ← suggested change to the plan.
 - **TD % includes NPCI-side failures**, not only the bank's. NPCI's own definition says "technical reasons… on bank or NPCI side". Say "bank or network" in findings, not "the bank's fault" alone.
-- **NPCI's targets** to compare against: TD below 1% and BD below 5% (NPCI circular OC 149A, June 2022). Useful as a reference line on the dashboard.
+- **NPCI's targets** to compare against: TD below 1% and BD below 5% (NPCI OC 149, 13 May 2022; OC 149A of June 2022 is the addendum). Useful as a reference line on the dashboard.
 
 ## Time range: answer to the open comment in the plan
 

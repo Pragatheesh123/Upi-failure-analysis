@@ -8,7 +8,7 @@ CREATE TABLE events (
     source TEXT
 );
 INSERT INTO events VALUES
-('2022-06', 'NPCI targets for every bank: TD below 1%, BD below 5%', 'NPCI circular OC 149A, June 2022'),
+('2022-05', 'NPCI targets (advised by RBI): TD below 1%, BD below 5%; banks above 10% BD to run customer awareness campaigns', 'NPCI OC 149 (13 May 2022) and addendum OC 149A (15 Jun 2022)'),
 ('2024-01', 'RBI stops Paytm Payments Bank taking new deposits (from Mar 2024)', 'RBI press release, 31 Jan 2024'),
 ('2024-03', 'Last month Paytm Payments Bank is in the top 50 data', 'our data: bank_monthly'),
 ('2025-03', 'NPCI says some failures came from year-end load at banks', 'Business Standard, 1 Apr 2025'),
