@@ -1,0 +1,10 @@
+{
+  "name": "UPI Failure (light)",
+  "dataColors": ["#1F3A5F", "#C0392B", "#2E8B57", "#E07A1F", "#7F8C8D", "#5B7DB1", "#A3B6CC", "#B5651D"],
+  "background": "#FFFFFF",
+  "foreground": "#1F3A5F",
+  "tableAccent": "#1F3A5F",
+  "good": "#2E8B57",
+  "bad": "#C0392B",
+  "neutral": "#7F8C8D"
+}
