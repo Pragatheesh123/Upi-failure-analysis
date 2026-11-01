@@ -1,0 +1,42 @@
+table why_split
+
+	column step
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: step
+
+	column change
+		dataType: string
+		summarizeBy: none
+		sourceColumn: change
+		sortByColumn: step
+
+	column from_banks_themselves
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: from_banks_themselves
+		formatString: 0.00
+
+	column from_payments_moving
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: from_payments_moving
+		formatString: 0.00
+
+	column total_change
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: total_change
+		formatString: 0.00
+
+	partition why_split = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\upi failure\powerbi\data\why_split.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"step", Int64.Type}, {"change", type text}, {"from_banks_themselves", type number}, {"from_payments_moving", type number}, {"total_change", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

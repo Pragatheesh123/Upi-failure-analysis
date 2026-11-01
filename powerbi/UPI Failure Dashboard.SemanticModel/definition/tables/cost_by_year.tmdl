@@ -1,0 +1,28 @@
+table cost_by_year
+
+	column year
+		dataType: string
+		summarizeBy: none
+		sourceColumn: year
+
+	column system_failed_mn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: system_failed_mn
+
+	column checkout_payments_hit_mn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: checkout_payments_hit_mn
+
+	partition cost_by_year = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\upi failure\powerbi\data\cost_by_year.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"year", type text}, {"system_failed_mn", type number}, {"checkout_payments_hit_mn", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

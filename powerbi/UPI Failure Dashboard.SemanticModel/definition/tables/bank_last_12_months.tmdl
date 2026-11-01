@@ -1,0 +1,47 @@
+table bank_last_12_months
+
+	measure 'Avoidable at 1% (mn)' = SUM(bank_last_12_months[avoidable_at_1pct_mn])
+		formatString: #,0.0
+
+	measure 'Avoidable at Gramin banks (mn)' = CALCULATE([Avoidable at 1% (mn)], bank_last_12_months[bank_group] = "Gramin")
+		formatString: #,0.0
+
+	measure 'System failed, last 12 months (mn)' = SUM(bank_last_12_months[system_failed_mn])
+		formatString: #,0.0
+
+	column bank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: bank
+
+	column bank_group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: bank_group
+
+	column payments_mn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: payments_mn
+
+	column system_failed_mn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: system_failed_mn
+
+	column avoidable_at_1pct_mn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: avoidable_at_1pct_mn
+
+	partition bank_last_12_months = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\upi failure\powerbi\data\bank_last_12_months.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"bank", type text}, {"bank_group", type text}, {"payments_mn", type number}, {"system_failed_mn", type number}, {"avoidable_at_1pct_mn", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

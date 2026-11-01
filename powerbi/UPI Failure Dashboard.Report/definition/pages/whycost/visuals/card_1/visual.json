@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "card_1",
+  "position": {
+    "x": 20,
+    "y": 485,
+    "z": 0,
+    "width": 300,
+    "height": 100,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_last_12_months"
+                    }
+                  },
+                  "Property": "Avoidable at 1% (mn)"
+                }
+              },
+              "queryRef": "bank_last_12_months.Avoidable at 1% (mn)",
+              "nativeQueryRef": "Avoidable at 1% (mn)",
+              "displayName": "Avoidable if all banks met 1% (mn)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

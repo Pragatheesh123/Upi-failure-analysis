@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "card_2",
+  "position": {
+    "x": 20,
+    "y": 595,
+    "z": 0,
+    "width": 300,
+    "height": 100,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bank_last_12_months"
+                    }
+                  },
+                  "Property": "Avoidable at Gramin banks (mn)"
+                }
+              },
+              "queryRef": "bank_last_12_months.Avoidable at Gramin banks (mn)",
+              "nativeQueryRef": "Avoidable at Gramin banks (mn)",
+              "displayName": "...of which at Gramin banks (mn)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

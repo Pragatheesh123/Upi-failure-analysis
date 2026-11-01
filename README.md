@@ -13,10 +13,11 @@ My own UPI payments kept failing, so I used NPCI's monthly data on the top 50 ba
 
 ## Power BI dashboard
 
-Open `powerbi/UPI Failure Dashboard.pbip` in Power BI Desktop and click Refresh. Red = above NPCI's 1% target, green = within.
+Open `powerbi/UPI Failure Dashboard.pbip` in Power BI Desktop and click Refresh. Red = above NPCI's 1% target, green = within. Three pages: **what** happened (overview and bank scorecard), **where** (bank types), and **why and cost** (rate vs mix split, cost by year, avoidable failures).
 
 ![Power BI overview](images/powerbi_overview.png)
 ![Power BI bank types](images/powerbi_bank_types.png)
+![Power BI why and cost](images/powerbi_why_and_cost.png)
 
 ## Charts
 
