@@ -4,7 +4,7 @@ Every number here was recalculated from `data/clean/` through the SQL files on 1
 
 ## Resume (project section)
 
-**Where Does UPI Fail? Bank-wise UPI failure analysis** | Python, PostgreSQL, Excel, Power BI | [GitHub link]
+**Where Does UPI Fail? Bank-wise UPI failure analysis** | Python, PostgreSQL, Excel, Power BI | https://github.com/Pragatheesh123/Upi-failure-analysis
 
 - Built a pipeline in Python (pandas) that downloads and cleans 5 years of NPCI data on India's top 50 UPI banks (3,100 bank-months), with automatic checks that caught and fixed an NPCI publishing error (Aug 2022 refund rates missing decimal points) and a bank merger that NPCI's tables counted twice.
 - Wrote SQL (PostgreSQL) to split each change in failure rates into "rates at the banks themselves" vs "payments moved between banks": system failures fell 81% (1.45% to 0.28%) because rates fell at the banks themselves, while half the 2022–25 rise in declines came from payments shifting to payments banks with high declines.
@@ -29,11 +29,11 @@ What I found:
 
 🎉 "Festival months have fewer failures"? Lower every year, but not statistically proven (p = 0.067).
 
-Built with Python, PostgreSQL, Excel and Power BI. Code, SQL and every decision: [GitHub link]
+Built with Python, PostgreSQL, Excel and Power BI. Code, SQL and every decision: https://github.com/Pragatheesh123/Upi-failure-analysis
 
 #DataAnalytics #UPI #SQL #PowerBI #Python #Fintech
 
 ## Before posting
-- Replace [GitHub link] with https://github.com/Pragatheesh123/Upi-failure-analysis
+- Replace https://github.com/Pragatheesh123/Upi-failure-analysis with https://github.com/Pragatheesh123/Upi-failure-analysis
 - Add the 4 Power BI screenshots (`images/powerbi_1_what.png` … `powerbi_4_cost_and_action.png`) to the post.
 - Open the NPCI and RBI originals for the events in `sql/05` (NPCI OC 149 is checked; the others are news sites quoting them).
