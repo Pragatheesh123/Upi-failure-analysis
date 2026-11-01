@@ -20,3 +20,7 @@ Thumbs.db
 
 # Raw downloads ARE committed on purpose (they prove where every number came from).
 # If a raw file is ever >50 MB, list it here and note its source URL in docs/.
+
+# Power BI local files (cache and personal settings, not part of the project)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

@@ -1,5 +1,9 @@
 # Power BI build guide (about 1 hour)
 
+> **The finished dashboard is already in this folder:** open `UPI Failure Dashboard.pbip` in Power BI Desktop and click **Refresh** (it reads `powerbi/data/bank_details.csv`; if you move the project, change the file path in Transform data). It was built from the steps below, so use this guide to learn and explain each part, or to rebuild it yourself for practice.
+> One difference: page 2 uses "last 12 months" measures, so it needs no filter:
+> `System fail % (last 12 months) = VAR start_date = EDATE([Latest month], -12) RETURN CALCULATE([System fail %], bank_details[month_date] > start_date)`, where `Latest month = CALCULATE(MAX(bank_details[month_date]), ALL(bank_details))` (the newest month in the whole table, ignoring filters). The date goes into a `VAR` first because a CALCULATE filter can't use a measure directly.
+
 Two pages: **1. Overview & bank scorecard**, **2. Bank type report**.
 Data: `powerbi/data/bank_details.csv` (made by `sql/11_powerbi_export.sql`). Every calculated column already comes from SQL; Power BI only adds things up.
 

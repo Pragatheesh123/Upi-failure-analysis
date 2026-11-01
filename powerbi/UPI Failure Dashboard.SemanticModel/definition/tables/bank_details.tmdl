@@ -1,0 +1,118 @@
+table bank_details
+
+	measure 'Payments (mn)' = SUM(bank_details[total_volume_mn])
+		formatString: #,0
+
+	measure 'System failed (mn)' = SUM(bank_details[system_failed_mn])
+		formatString: #,0.0
+
+	measure 'User failed (mn)' = SUM(bank_details[user_failed_mn])
+		formatString: #,0.0
+
+	measure 'System fail %' = DIVIDE([System failed (mn)], [Payments (mn)]) * 100
+		formatString: 0.00
+
+	measure 'User fail %' = DIVIDE([User failed (mn)], [Payments (mn)]) * 100
+		formatString: 0.00
+
+	measure 'Refund success %' = DIVIDE(SUMX(bank_details, bank_details[debit_reversal_count_mn] * bank_details[debit_reversal_success_pct] / 100), CALCULATE(SUM(bank_details[debit_reversal_count_mn]), NOT ISBLANK(bank_details[debit_reversal_success_pct]))) * 100
+		formatString: 0.00
+
+	measure 'Banks' = DISTINCTCOUNT(bank_details[bank])
+		formatString: 0
+
+	measure 'Months above 1%' = COUNTROWS(FILTER(bank_details, bank_details[td_pct] > 1))
+		formatString: 0
+
+	measure 'System fail colour' = IF([System fail %] > 1, "#C0392B", "#2E8B57")
+
+	measure 'Latest month' = CALCULATE(MAX(bank_details[month_date]), ALL(bank_details))
+		formatString: mmm yyyy
+
+	measure 'System fail % (last 12 months)' = VAR start_date = EDATE([Latest month], -12) RETURN CALCULATE([System fail %], bank_details[month_date] > start_date)
+		formatString: 0.00
+
+	measure 'Refund success % (last 12 months)' = VAR start_date = EDATE([Latest month], -12) RETURN CALCULATE([Refund success %], bank_details[month_date] > start_date)
+		formatString: 0.00
+
+	measure 'Last 12 months colour' = IF([System fail % (last 12 months)] > 1, "#C0392B", "#2E8B57")
+
+	column month
+		dataType: string
+		summarizeBy: none
+		sourceColumn: month
+
+	column bank
+		dataType: string
+		summarizeBy: none
+		sourceColumn: bank
+
+	column bank_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: bank_type
+
+	column bank_group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: bank_group
+
+	column year
+		dataType: string
+		summarizeBy: none
+		sourceColumn: year
+
+	column total_volume_mn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: total_volume_mn
+
+	column td_pct
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: td_pct
+
+	column bd_pct
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: bd_pct
+
+	column debit_reversal_count_mn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: debit_reversal_count_mn
+
+	column debit_reversal_success_pct
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: debit_reversal_success_pct
+
+	column system_failed_mn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: system_failed_mn
+
+	column user_failed_mn
+		dataType: double
+		summarizeBy: sum
+		sourceColumn: user_failed_mn
+
+	column month_date
+		dataType: dateTime
+		formatString: mmm yyyy
+		summarizeBy: none
+		sourceColumn: month_date
+
+	partition bank_details = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\upi failure\powerbi\data\bank_details.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Promoted, {"month", "bank", "bank_type", "bank_group", "year", "total_volume_mn", "td_pct", "bd_pct", "debit_reversal_count_mn", "debit_reversal_success_pct", "system_failed_mn", "user_failed_mn"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month", type text}, {"bank", type text}, {"bank_type", type text}, {"bank_group", type text}, {"year", type text}, {"total_volume_mn", type number}, {"td_pct", type number}, {"bd_pct", type number}, {"debit_reversal_count_mn", type number}, {"debit_reversal_success_pct", type number}, {"system_failed_mn", type number}, {"user_failed_mn", type number}}, "en-US"),
+				    WithDate = Table.AddColumn(Typed, "month_date", each Date.FromText([month] & "-01"), type date)
+				in
+				    WithDate
+
+	annotation PBI_ResultType = Table
