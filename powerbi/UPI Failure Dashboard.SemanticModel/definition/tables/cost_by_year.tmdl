@@ -1,5 +1,17 @@
 table cost_by_year
 
+	measure 'All failed, full years (mn)' = IF(SELECTEDVALUE(cost_by_year[year]) <> "2026", SUM(cost_by_year[system_failed_mn]))
+		formatString: #,0
+
+	measure 'Checkout, full years (mn)' = IF(SELECTEDVALUE(cost_by_year[year]) <> "2026", SUM(cost_by_year[checkout_payments_hit_mn]))
+		formatString: #,0
+
+	measure 'All failed, 2026 Jan-Sep (mn)' = IF(SELECTEDVALUE(cost_by_year[year]) = "2026", SUM(cost_by_year[system_failed_mn]))
+		formatString: #,0
+
+	measure 'Checkout, 2026 Jan-Sep (mn)' = IF(SELECTEDVALUE(cost_by_year[year]) = "2026", SUM(cost_by_year[checkout_payments_hit_mn]))
+		formatString: #,0
+
 	column year
 		dataType: string
 		summarizeBy: none

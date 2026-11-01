@@ -3,7 +3,7 @@ table bank_last_12_months
 	measure 'Avoidable at target (mn)' = SUMX(bank_last_12_months, MAX(0, bank_last_12_months[system_failed_mn] - bank_last_12_months[payments_mn] * [Target TD % Value] / 100))
 		formatString: #,0.0\ \m\n
 
-	measure 'Avoidable value at target (Rs crore, estimate)' = SUMX(bank_last_12_months, MAX(0, bank_last_12_months[system_failed_mn] - bank_last_12_months[payments_mn] * [Target TD % Value] / 100) * bank_last_12_months[avg_payment_rs] / 10)
+	measure 'Avoidable value at target (Rs crore, estimate)' = ROUND(SUMX(bank_last_12_months, MAX(0, bank_last_12_months[system_failed_mn] - bank_last_12_months[payments_mn] * [Target TD % Value] / 100) * bank_last_12_months[avg_payment_rs] / 10), -2)
 		formatString: \≈\ \₹#,0\ \c\r
 
 	measure 'Avoidable share of payments %' = DIVIDE([Avoidable at target (mn)], SUM(bank_last_12_months[payments_mn])) * 100
@@ -28,7 +28,7 @@ table bank_last_12_months
 	measure 'Avoidable top 5 (mn)' = IF(RANKX(ALL(bank_last_12_months[bank]), [Avoidable at target (mn)]) <= 5, [Avoidable at target (mn)])
 		formatString: #,0.0\ \m\n
 
-	measure 'Target note' = "Now: " & FORMAT([Target TD % Value], "0.00") & "% · drag 0.25% to 2%"
+	measure 'Target note' = "In use: " & FORMAT([Target TD % Value], "0.00") & "% · pick 0.25% to 2%"
 
 	measure 'Top 5 bar colour' = IF(SELECTEDVALUE(bank_last_12_months[bank_group]) = "Gramin", "#C0392B", "#1F3A5F")
 

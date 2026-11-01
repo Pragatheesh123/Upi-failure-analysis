@@ -44,6 +44,15 @@ table bank_details
 	measure 'Payments (bn, last 12 months)' = [Payments (mn, last 12 months)] / 1000
 		formatString: #,0.0\ \b\n
 
+	measure 'First month' = CALCULATE(MIN(bank_details[month_date]), ALL(bank_details))
+		formatString: mmm yyyy
+
+	measure 'System fail % first and last' = IF(MAX(bank_details[month_date]) = [First month] || MAX(bank_details[month_date]) = [Latest month], [System fail %])
+		formatString: 0.00\%
+
+	measure 'User fail % first and last' = IF(MAX(bank_details[month_date]) = [First month] || MAX(bank_details[month_date]) = [Latest month], [User fail %])
+		formatString: 0.00\%
+
 	measure 'Last 12 months colour' = IF([System fail % (last 12 months)] > 1, "#C0392B", "#2E8B57")
 
 	measure 'Payments (bn) 2022' = CALCULATE([Payments (mn)], bank_details[year] = "2022") / 1000

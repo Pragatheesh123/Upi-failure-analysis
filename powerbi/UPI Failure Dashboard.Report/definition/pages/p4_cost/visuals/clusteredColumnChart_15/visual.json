@@ -5,7 +5,7 @@
     "x": 650,
     "y": 152,
     "z": 1500,
-    "width": 610,
+    "width": 440,
     "height": 375,
     "tabOrder": 15
   },
@@ -36,42 +36,32 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "cost_by_year"
-                        }
-                      },
-                      "Property": "system_failed_mn"
+                    "SourceRef": {
+                      "Entity": "cost_by_year"
                     }
                   },
-                  "Function": 0
+                  "Property": "All failed, full years (mn)"
                 }
               },
-              "queryRef": "Sum(cost_by_year.system_failed_mn)",
-              "nativeQueryRef": "Sum of system_failed_mn",
+              "queryRef": "cost_by_year.All failed, full years (mn)",
+              "nativeQueryRef": "All failed, full years (mn)",
               "displayName": "All system-failed"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "cost_by_year"
-                        }
-                      },
-                      "Property": "checkout_payments_hit_mn"
+                    "SourceRef": {
+                      "Entity": "cost_by_year"
                     }
                   },
-                  "Function": 0
+                  "Property": "Checkout, full years (mn)"
                 }
               },
-              "queryRef": "Sum(cost_by_year.checkout_payments_hit_mn)",
-              "nativeQueryRef": "Sum of checkout_payments_hit_mn",
+              "queryRef": "cost_by_year.Checkout, full years (mn)",
+              "nativeQueryRef": "Checkout, full years (mn)",
               "displayName": "of which checkout payments (estimate)"
             }
           ]
@@ -113,7 +103,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(cost_by_year.system_failed_mn)"
+            "metadata": "cost_by_year.All failed, full years (mn)"
           }
         },
         {
@@ -131,7 +121,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(cost_by_year.checkout_payments_hit_mn)"
+            "metadata": "cost_by_year.Checkout, full years (mn)"
           }
         }
       ],
@@ -161,14 +151,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Top'"
+                  "Value": "false"
                 }
               }
             }
@@ -182,6 +165,20 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "1400D"
                 }
               }
             }
@@ -204,7 +201,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'System-failed payments per year (mn)'"
+                  "Value": "'System-failed payments per year, mn (orange = checkout, estimate)'"
                 }
               }
             },
@@ -229,7 +226,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             }

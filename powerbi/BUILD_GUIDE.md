@@ -63,11 +63,27 @@ System failure note = "2022: " & FORMAT([System fail % 2022], "0.00") & "% · ta
 - The same pattern gives `Payments (bn, last 12 months)`, `User fail % (last 12 months)`, `Refund success % (last 12 months)` and the matching `… 2022` measures and notes. The notes are text measures (`&` joins text, `FORMAT` turns a number into text), so the "2022: …" lines under the cards are worked out, not typed.
 - **Why fixed to the last 12 months:** the title says "nearly 10%", so the cards must use the same window. An all-time average (7.55%) would contradict it. That's why page 1 has no Year slicer.
 
+### Page 1: first and last labels on the line charts
+```DAX
+First month = CALCULATE(MIN(bank_details[month_date]), ALL(bank_details))
+System fail % first and last =
+IF(MAX(bank_details[month_date]) = [First month] || MAX(bank_details[month_date]) = [Latest month], [System fail %])
+```
+The measure only has a value in the first month (Aug 2021) and the latest month (Sep 2026). It's added as a second line with width 0, markers and data labels, so the chart shows just 2 labels: 1.62% → 0.26% (system failures) and 6.74% → 10.71% (declines). The main line's labels are switched off (Data labels → series → off). `||` means "or".
+
 ### Colours (conditional formatting by field value)
 ```DAX
 Last 12 months colour = IF([System fail % (last 12 months)] > 1, "#C0392B", "#2E8B57")   -- red above 1%, green within
 Refund bar colour = IF(SELECTEDVALUE(bank_details[bank_group]) = "Gramin", "#C0392B", "#1F3A5F")
 ```
+
+### Page 4: 2026 drawn lighter (it is only Jan-Sep)
+```DAX
+All failed, full years (mn) = IF(SELECTEDVALUE(cost_by_year[year]) <> "2026", SUM(cost_by_year[system_failed_mn]))
+All failed, 2026 Jan-Sep (mn) = IF(SELECTEDVALUE(cost_by_year[year]) = "2026", SUM(cost_by_year[system_failed_mn]))
+-- and the same two for checkout_payments_hit_mn
+```
+Power BI can't colour single columns in a chart that shows 2 measures side by side (one colour per series). So the cost chart is **two charts next to each other on the same fixed scale (0 to 1,400, axis hidden)**: 2022-2025 in navy and orange, and a narrow "part year" chart for 2026 (Jan-Sep) in lighter colours. `IF` with no "else" gives blank, and a year with a blank value is not drawn, so each chart only shows its own years. (`CALCULATE(..., year = "2026")` would be wrong here: it replaces the year filter, so every column would show 2026's number.)
 `SELECTEDVALUE` returns the bank group of the current bar.
 
 ### Page 1: share of failures caused by systems
@@ -100,6 +116,7 @@ Avoidable value at target (Rs crore, estimate) =
 SUMX(bank_last_12_months,
      MAX(0, bank_last_12_months[system_failed_mn] - bank_last_12_months[payments_mn] * [Target TD % Value] / 100)
          * bank_last_12_months[avg_payment_rs] / 10)      -- mn payments x Rs = Rs mn; / 10 = Rs crore
+-- the card wraps this in ROUND(..., -2): nearest 100 crore, so it shows "≈ ₹6,300 cr" (it is an estimate; 6,301 would look falsely exact)
 Avoidable share of payments % = DIVIDE([Avoidable at target (mn)], SUM(bank_last_12_months[payments_mn])) * 100
 Avoidable at 3 Gramin banks (mn) =
 CALCULATE([Avoidable at target (mn)],
@@ -109,7 +126,7 @@ Avoidable top 5 (mn) = IF(RANKX(ALL(bank_last_12_months[bank]), [Avoidable at ta
 ```
 - **Avoidable:** for each bank, its failed payments above the target, or 0 if it's already within (`MAX(0, …)`). Then add up the banks (`SUMX`).
 - **The 3 banks are a fixed list**, the 3 biggest at the 1% target. It's a fixed list on purpose: the recommendation names these 3 banks, so the card must show these 3 even when the slider moves.
-- **Slider note:** `Target note = "Now: " & FORMAT([Target TD % Value], "0.00") & "% · drag 0.25% to 2%"` sits under the slider, so the target in use is always visible (before anyone drags it, the slider box shows its lowest value but the measures use the default 1%).
+- **Target picker:** a single-select dropdown on the `Target TD %` column, saved with **1.00** selected, so it shows the value the cards use. `Target note = "In use: " & FORMAT([Target TD % Value], "0.00") & "% · pick 0.25% to 2%"` sits under it.
 - **Top 5:** `RANKX` ranks every bank by avoidable payments. Banks ranked 6th or lower get blank, and blank bars are not drawn. This does the same job as a Top N filter, but it's visible in a formula you can explain.
 
 ## 3. Click steps for the new parts
@@ -120,17 +137,19 @@ Avoidable top 5 (mn) = IF(RANKX(ALL(bank_last_12_months[bank]), [Avoidable at ta
   3. Format → Style → State **Selected** → Fill navy, text white.
   4. In Desktop, Ctrl + click a button to jump.
 - **Rename for this visual:** in the Visualizations pane, double-click a field (or right-click → Rename for this visual). This changes the label on that visual only, e.g. `User fail %` → "Decline %". The measure name in the model stays the same.
+- **Scorecard top 12:** Filters pane → Bank → Filter type **Top N** → Top 12 → By value `System failed (mn, last 12 months)`. Showing only the 12 biggest contributors means the table fits without a scrollbar; the total row is off (it would only total the 12).
 - **Data bars** (scorecard, System failed column): Format → Cell elements → pick the column → Data bars on.
 - **Red/green cells and bars:** Format → Cell elements (table) or Bars → Colors → **fx** → Format style **Field value** → pick the colour measure.
 - **What-if parameter (slider):**
   1. Modeling → New parameter → Numeric range.
   2. Name it "Target TD %", 0.25 to 2, step 0.25, default 1, "Add slicer to this page" ticked.
+  3. On the slicer: Slicer settings → Style **Dropdown**, Selection → **Single select**, pick 1.00, then save.
   3. Power BI makes the table, the column and the `… Value` measure.
 - **Event markers:**
   1. Put `User fail %` and `Event marker (BD %)` both in **Y-axis**, and `Event text` and `Event source` in **Tooltips**.
   2. Format → Lines → pick the "Event marker" series → width 0.
   3. Format → Markers → on, size 8, orange.
-- **Top N:** done with the `Avoidable top 5 (mn)` measure (see above). The filter-pane way works too: Filters → Bank → Filter type **Top N** → Show items Top 5 → By value `Avoidable at target (mn)`.
+- **Top 5 avoidable banks:** done with the `Avoidable top 5 (mn)` measure (see above). The filter-pane way works too: Filters → Bank → Filter type **Top N** → Show items Top 5 → By value `Avoidable at target (mn)`.
 - **Gramin vs others line:**
   1. X-axis `year_label`, **Legend** `gramin_or_other` (a column made in `sql/02`: Gramin banks vs all other banks), Y-axis `System fail %`.
   2. Format → Lines → colors: Gramin red, others green.
@@ -147,7 +166,8 @@ Avoidable top 5 (mn) = IF(RANKX(ALL(bank_last_12_months[bank]), [Avoidable at ta
 | Page 2 cards | −1.21 pts (total −1.05) · +0.52 pts (total +1.04) · +2.24 pts (total +2.32) |
 | Page 2 payments moved | India Post + Airtel 1.9 → 6.7; Paytm 5.5 → 0 |
 | Page 3 | Gramin 1.95% and 57.1%; line Gramin 3.66 … 1.93, others 1.52 … 0.23 |
-| Page 4 at 1% | 63.4 mn (0.02%) · 75% (47.4 of 63.4) · 819.7 mn · ≈ ₹6,301 cr · top 5: 30.3, 9.8, 7.2, 5.3, 3.3 |
+| Page 1 line labels | 1.62% → 0.26% (system failures) · 6.74% → 10.71% (declines) |
+| Page 4 at 1% | 63.4 mn (0.02%) · 75% (47.4 of 63.4) · 819.7 mn · ≈ ₹6,300 cr (6,301 rounded) · top 5: 30.3, 9.8, 7.2, 5.3, 3.3 |
 
 ## 5. Interview answers you should be able to give
 - **Why a measure and not a column?** A measure is recalculated for each filter (bank group, year, slider). You can't add up percentages, so % must be a measure.

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
   "name": "textbox_17",
   "position": {
-    "x": 14,
-    "y": 684,
+    "x": 20,
+    "y": 536,
     "z": 1700,
-    "width": 1252,
-    "height": 36,
+    "width": 1240,
+    "height": 152,
     "tabOrder": 17
   },
   "visual": {
@@ -19,10 +19,115 @@
               {
                 "textRuns": [
                   {
-                    "value": "Avoidable = each bank's system-failed payments above the target, last 12 months · ₹ = size of attempted payments, not money lost (estimate) · checkout payments = estimate · 1% and 5% targets and the 10% awareness level: NPCI OC 149, May 2022",
+                    "value": "What should be done (for NPCI and the banks named)",
                     "textStyle": {
-                      "fontSize": "8pt",
-                      "color": "#5F6B7A",
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1. ",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "NPCI:",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " put Uttar Pradesh Gramin, Rajasthan Gramin and Telangana Grameena banks on a monitored plan to bring system failures below 1%. They hold 3 in 4 avoidable failures.",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. ",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "Gramin banks:",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " raise automatic refunds from 57% towards the 85-92% other bank groups reach.",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. ",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "Banks with declines above 10%",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " (21 banks, about 1 in 3 payments): run the customer awareness campaigns NPCI's OC 149 asks for. ",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI"
+                    }
+                  },
+                  {
+                    "value": "NPCI:",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
+                      "fontFamily": "Segoe UI Bold",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " publish declines by reason.",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F3A5F",
                       "fontFamily": "Segoe UI"
                     }
                   }
@@ -63,6 +168,37 @@
               "expr": {
                 "Literal": {
                   "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FDECEA'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Top 50 banks only. Scroll for all banks.",
+                    "value": "Top 12 banks by system-failed payments (from the top 50 banks in NPCI's data). The cards and charts use all banks.",
                     "textStyle": {
                       "fontSize": "8pt",
                       "color": "#5F6B7A",
