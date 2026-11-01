@@ -34,6 +34,6 @@ Built with Python, PostgreSQL, Excel and Power BI. Code, SQL and every decision:
 #DataAnalytics #UPI #SQL #PowerBI #Python #Fintech
 
 ## Before posting
-- Replace https://github.com/Pragatheesh123/Upi-failure-analysis with https://github.com/Pragatheesh123/Upi-failure-analysis
+- Make the GitHub repo public first (Settings → General → Danger Zone → Change visibility → Public), otherwise the link shows "page not found".
 - Add the 4 Power BI screenshots (`images/powerbi_1_what.png` … `powerbi_4_cost_and_action.png`) to the post.
 - Open the NPCI and RBI originals for the events in `sql/05` (NPCI OC 149 is checked; the others are news sites quoting them).
