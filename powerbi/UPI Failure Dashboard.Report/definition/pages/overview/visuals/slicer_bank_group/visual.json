@@ -3,10 +3,10 @@
   "name": "slicer_bank_group",
   "position": {
     "x": 230,
-    "y": 55,
+    "y": 62,
     "z": 0,
     "width": 200,
-    "height": 80,
+    "height": 76,
     "tabOrder": 0
   },
   "visual": {
