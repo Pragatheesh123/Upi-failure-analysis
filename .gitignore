@@ -24,3 +24,10 @@ Thumbs.db
 # Power BI local files (cache and personal settings, not part of the project)
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+
+# Local working notes (kept on the laptop, not published)
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+powerbi/DASHBOARD_TARGET.md
+powerbi/target/
