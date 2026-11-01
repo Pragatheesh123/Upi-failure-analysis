@@ -11,6 +11,15 @@ My own UPI payments kept failing, so I used NPCI's monthly data on the top 50 ba
 5. **So what: about 10 small banks hold most of the fix.** If every bank had been at NPCI's 1% target over the last 12 months, 63.6 mn failed payments (about Rs 6,300 crore of attempts) would have gone through. 53 mn of those are at Gramin banks, which carry only about 1.5% of UPI payments.
 6. **Festival months (Oct–Nov) had fewer system failures in every year, but it is not statistically proven** (Mann-Whitney p = 0.067, each month compared with its own year's average).
 
+## Power BI dashboard
+
+Open `powerbi/UPI Failure Dashboard.pbip` in Power BI Desktop and click Refresh. Red = above NPCI's 1% target, green = within.
+
+![Power BI overview](images/powerbi_overview.png)
+![Power BI bank types](images/powerbi_bank_types.png)
+
+## Charts
+
 ![System vs user failures](images/q1_system_vs_user_failures.png)
 ![Gramin banks hit twice](images/q4_q5_gramin_hit_twice.png)
 
@@ -101,7 +110,7 @@ data/clean/          clean tables (CSV)
 python/              step1 download, step2 clean, step3 festival test, step4 cost model, step5 charts
 sql/                 01 load, 02 extra columns, 03-09 one file per question, 10 cost model inputs, 11 Power BI export
 excel/               upi_clean_data.xlsx (before vs after), upi_cost_model.xlsx (what-if)
-powerbi/             dashboard, theme, build guide, data
+powerbi/             UPI Failure Dashboard.pbip (open in Power BI Desktop), theme, build guide, data
 images/              charts for this README
 docs/                decisions log, data dictionary, coding style, data check
 ```
